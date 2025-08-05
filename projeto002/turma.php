@@ -105,18 +105,18 @@ if (isset($_GET['idTurma'])) {
                         </div>
                         <div class="col-md-6">
                             <label for="semestreTurma" class="form-label mt-2">Semestre: </label>
-                            <input type="text" value="<?php echo $semestre ?>" name="semestre" class="form-control" placeholder="Informe o semestre do aluno">
+                            <input type="text" value="<?php echo $semestre ?>" name="semestre" class="form-control" placeholder="Informe o semestre do aluno (1 ou 2)">
                         </div>
-                        <div class="col-md-6">
-                            <label for="anoTurma" class="form-label mt-2">ano: </label>
-                            <input type="text" value="<?php echo $ano ?>" name="ano" class="form-control" placeholder="Informe o ano (2025)">
+                        <div class="col-md-4">
+                            <label for="anoTurma" class="form-label mt-2">Ano: </label>
+                            <input type="text" value="<?php echo $ano ?>" name="ano" class="form-control" placeholder="Informe o ano (ex: 2025)">
                         </div>
-                        <div class="col-md-6">
-                            <label for="blocoTurma" class="form-label mt-2">bloco: </label>
+                        <div class="col-md-4">
+                            <label for="blocoTurma" class="form-label mt-2">Bloco: </label>
                             <input type="text" value="<?php echo $bloco ?>" name="bloco" class="form-control" placeholder="Informe o bloco da turma">
                         </div>
-                        <div class="col-md-6">
-                            <label for="salaTurma" class="form-label mt-2">sala: </label>
+                        <div class="col-md-4">
+                            <label for="salaTurma" class="form-label mt-2">Sala: </label>
                             <input type="text" value="<?php echo $sala ?>" name="sala" class="form-control" placeholder="Informe a sala da turma">
                         </div>
                     </div>
