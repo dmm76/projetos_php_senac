@@ -14,10 +14,10 @@
 </head>
 
 <body>
+    <!-- NavBar Padrão vindo de includes/menu -->
+    <?php include_once("includes/menu.php"); ?>
     <div class="container card">
-        <div class="row">
-            
-        </div>
+        
     </div>
 </body>
 
