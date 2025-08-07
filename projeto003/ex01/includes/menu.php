@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">Gerenciador de Tarefas</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="tarefa.php">Tarefa</a> </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="tarefas.php">Tarefas</a> </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="usuarios.php">Usuarios</a> </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="relatorio.php">Relatório</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="index.php">Principal</a> </li>
+                <li class="nav-item"> <a class="nav-link disabled" aria-disabled="true">Disabled</a> </li>
+            </ul>
+            <form class="d-flex" role="search"> <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success" type="submit">Search</button> </form>
+        </div>
+    </div>
+</nav>
