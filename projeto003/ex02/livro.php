@@ -22,7 +22,8 @@ if ($_POST) {
 
     if ($idLivro == 0) {
         // Vamos fazer a verificacao antes de inserir se ja existe um usuario com o mesmo titulo
-        $sql = "SELECT * FROM livros WHERE titulo = '$titulo'";
+        $sql = "SELECT * FROM livro WHERE titulo = '$titulo'";
+        echo $sql; // Verifica se a consulta está correta
         $resultado = mysqli_query($conexao, $sql);
         if (mysqli_num_rows($resultado) > 0) { //Busca a quantidade de linhas do SELECT
             header("Location: livro.php?tipoMsg=erro&msg=Já existe um livro com esse titulo!");
@@ -39,7 +40,7 @@ if ($_POST) {
             }
         }
     } else {
-        $sql = "UPDATE livros SET titulo = '$titulo', autor = '$autor', editora = '$editora', anoPublicacao = '$anoPublicacao', descricao = '$descricao', capa = '$capa' WHERE idLivro = '{$idLivro}'";
+        $sql = "UPDATE livro SET titulo = '$titulo', autor = '$autor', editora = '$editora', anoPublicacao = '$anoPublicacao', descricao = '$descricao', capa = '$capa' WHERE idLivro = '{$idLivro}'";
         if (mysqli_query($conexao, $sql)) {
             header("Location: livro.php?tipoMsg=sucesso&msg=O livro <b>$titulo</b> foi atualizado com sucesso!");
         } else {
@@ -53,7 +54,7 @@ if (isset($_GET['idLivro'])) {
     $idLivro = $_GET['idLivro'];
 
     if (isset($_GET['acao'])) {
-        $sql = "DELETE FROM livros WHERE idLivro = '{$idLivro}'";
+        $sql = "DELETE FROM livro WHERE idLivro = '{$idLivro}'";
 
         if (mysqli_query($conexao, $sql)) {
             header("Location: livro.php?tipoMsg=sucesso&msg=O livro <b>$titulo</b> foi excluido com sucesso!");
@@ -70,7 +71,7 @@ if (isset($_GET['idLivro'])) {
     }
 
     // Prepara a consulta protegida contra SQL Injection
-    $stmt = mysqli_prepare($conexao, "SELECT * FROM livros WHERE idLivro = ?");
+    $stmt = mysqli_prepare($conexao, "SELECT * FROM livro WHERE idLivro = ?");
     mysqli_stmt_bind_param($stmt, "i", $idLivro);
     mysqli_stmt_execute($stmt);
     $resultado = mysqli_stmt_get_result($stmt);
@@ -86,8 +87,8 @@ if (isset($_GET['idLivro'])) {
     $autor = $row['autor'];
     $editora = $row['editora'];
     $anoPublicacao = $row['anoPublicacao'];
-    $descricao = $_POST['descricao'];
-    $capa = $_POST['capa'];
+    $descricao = $row['descricao'];
+    $capa = $row['capa'];
 }
 
 ?>
@@ -159,7 +160,7 @@ if (isset($_GET['idLivro'])) {
                     </tr>
 
                     <?php
-                    $sql = "SELECT * FROM livros ORDER BY titulo ASC";
+                    $sql = "SELECT * FROM livro ORDER BY titulo ASC";
                     $resultado = mysqli_query($conexao, $sql);
 
                     if($resultado != null){
