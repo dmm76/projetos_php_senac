@@ -1,10 +1,3 @@
----
-✍️ **Autor:** Douglas Marcelo Monquero
-👨‍🏫 **Professor:** João Ferlini
-🏫 **Instituições:** Senac e Unicesumar
-📅 **Ano:** 2025
----
-
 # 📌 Lista de Exercícios em PHP
 
 Este repositório contém **3 exercícios práticos** desenvolvidos em PHP com MySQL e Bootstrap para praticar CRUD, navegação entre páginas, relatórios e organização de código.
@@ -78,3 +71,12 @@ Sistema para gerenciar receitas culinárias, com listagem, cadastro e visualiza�
    ```bash
    git clone https://github.com/dmm76/projetos_php_senac.git
    ```
+
+---
+
+✍️ **Autor:** Douglas Marcelo Monquero
+👨‍🏫 **Professor:** João Ferlini
+🏫 **Instituições:** Senac e Unicesumar
+📅 **Ano:** 2025
+
+---
