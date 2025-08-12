@@ -1,3 +1,12 @@
+<?php
+include_once("includes/conexao.php");
+include_once("includes/classes/Aluno.php");
+
+$bd = new Database();
+$aluno = new Aluno($bd);
+$alunos = $aluno->listar();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,18 +28,35 @@
                     <a href="criar.php" class="btn btn-outline-primary btn-sm">+ Novo Aluno</a>
                 </div>
             </div>
-            <table class="table table-bordered table-sm"><tr>
-                <th>Id Aluno</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-                <th>Ações</th>
-            </tr>            
-
-            </table>
+            <table class="table table-bordered table-sm">
+                <tr>
+                    <th>Id Aluno</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>                            
+                    <?php foreach ($alunos as $aluno){
+                      echo '
+                        <tr>
+                            <td>'.$aluno['idAluno'].'</td>
+                            <td>'.$aluno['nome'].'</td>
+                            <td>'.$aluno['email'].'</td>
+                            <td>'.$aluno['telefone'].'</td>
+                            <td>
+                                <a href="criar.php?idAluno='.$aluno['idAluno'].'
+                                ">Editar</a>
+                                <a onclick="return confirm(\'Deseja excluir realmente\');" href="excluir.php?idAluno='.$aluno['idAluno'].'
+                                ">Excluir</a>
+                            </td>
+                        </tr>';                          
+                    }                        
+                    ?>                  
+             
+            </table>           
         </div>
     </div>
-    
+
 </body>
 
 </html>

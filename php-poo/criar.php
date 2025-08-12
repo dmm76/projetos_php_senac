@@ -1,20 +1,52 @@
 <?php
-    include_once("includes/classes/Aluno.php");
+include_once("includes/classes/Aluno.php");
 
-    $bd = new Database();
-    $aluno = new Aluno($bd);
+$bd = new Database();
+$aluno = new Aluno($bd);
 
-    if($_SERVER['REQUEST_METHOD']=='POST'){
-        $data = [
-            'nome' => $_POST['nome'],
-            'email' => $_POST['email'],
-            'telefone' => $_POST['telefone']
-        ];
+if (isset($_GET['idAluno'])) {
+    $idAluno = $_GET['idAluno'];
 
-        if($aluno->inserir($data)){
-            header("Location: criar.php?deu certo");
-        }       
+    $alunoModel = new Aluno($bd);
+    $alunoDados = $alunoModel->buscar($idAluno);
+
+    $idAluno = $alunoDados['idAluno'];
+    $nome = $alunoDados['nome'];
+    $email = $alunoDados['email'];
+    $telefone = $alunoDados['telefone'];
+
+    // echo $telefone; //teste tem tela
+
+} else {
+    $idAluno = 0;
+    $nome = "";
+    $telefone = "";
+    $email = "";
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $data = [
+        'idAluno' => $_POST['idAluno'],
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'telefone' => $_POST['telefone']
+    ];
+
+    echo $_POST['idAluno'];
+
+    if ($_POST['idAluno'] == 0) {
+
+        if ($aluno->inserir($data)) {
+            //aqui que volta para index.php quando a inserção da certo
+            header("Location: index.php?deu certo");
+        }
+    } else {
+        if ($aluno->atualizar($data)) {
+            header("Location: index.php?deu certo em atualizar");
+        }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,28 +70,29 @@
                     <a href="index.php" class="btn btn-outline-secondary btn-sm">Voltar</a>
                 </div>
             </div>
-            <form method="POST">
+            <form method="POST" action="">
+                <input type="" value="<?php echo $idAluno ?>" name="idAluno">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Nome</label>
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" value="<?php echo $nome ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">E-mail</label>
-                        <input type="text" class="form-control" name="email">
+                        <input type="text" class="form-control" name="email" value="<?php echo $email ?>">
                     </div>
                     <div class="col-md-6">
                         <label for="">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone">
+                        <input type="text" class="form-control" id="telefone" name="telefone" value="<?php echo $telefone ?>">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12">
-                        <button class="btn btn-success btn-sm">Enviar</button>  
+                        <button type="submit" class="btn btn-success btn-sm">Enviar</button>
                     </div>
-                </div> 
+                </div>
             </form>
         </div>
     </div>
@@ -71,7 +104,6 @@
         }
 
         var mask = IMask(elemento, maskOption);
-
     </script>
 
 </body>
