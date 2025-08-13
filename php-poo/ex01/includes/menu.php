@@ -5,6 +5,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="tarefa.php">Tarefa</a> </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="tarefas.php">Tarefas</a> </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="usuario.php">Usuario</a> </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="usuarios.php">Usuarios</a> </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="relatorio.php">Relatório</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="index.php">Principal</a> </li>
