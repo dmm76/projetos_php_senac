@@ -9,7 +9,6 @@ $autores = mysqli_query($bd->conexao, "SELECT DISTINCT autor FROM livro ORDER BY
 $editoras = mysqli_query($bd->conexao, "SELECT DISTINCT editora FROM livro ORDER BY editora");
 $anos = mysqli_query($bd->conexao, "SELECT DISTINCT anoPublicacao FROM livro ORDER BY anoPublicacao DESC");
 
-
 // Filtros
 // ------- Monta filtros de forma segura -------
 $conds  = [];
