@@ -12,14 +12,14 @@ class Solicitacao
     public function inserir(array $data)
     {
        
-        $cadastro = $data['cadastro'];
+        $cadastro = date('Y-m-d H:i:s');
         $idSolicitante = $data['idSolicitante'];
         $idPaciente = $data['idPaciente'];
         $idMedico = $data['idMedico'];
         
 
-        $sql = "INSERT INTO solicitacoes(idsolicitacoes, cadastro, idSolicitante, idPaciente, idMedico)
-                    VALUES ('$idSolicitante', '$cadastro', '$idSolicitante', '$idPaciente', '$idMedico')";
+        $sql = "INSERT INTO solicitacoes(cadastro, idSolicitante, idPaciente, idMedico)
+                    VALUES ('$cadastro', '$idSolicitante', '$idPaciente', '$idMedico')";
 
         return $this->bd->query($sql);
     }

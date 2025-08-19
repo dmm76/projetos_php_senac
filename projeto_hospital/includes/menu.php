@@ -14,6 +14,8 @@
                 </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="solicitacoes.php">Solicitações</a>
                 </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="atendimentos.php">Atendimentos</a>
+                </li>
                 <li class="nav-item"> <a class="nav-link" href="index.php">Principal</a> </li>
                 <li class="nav-item"> <a class="nav-link disabled" aria-disabled="true">Disabled</a> </li>
             </ul>

@@ -2,12 +2,23 @@
 include_once("includes/conexao.php");
 include_once("includes/classes/Solicitacao.php");
 
-
 //solicitacoes(idSolicitacoes, cadastro, idSolicitante, idPaciente, idMedico)
 
 $bd = new Database();
 $solicitacao = new Solicitacao($bd);
-//$solicitacoes = $solicitacoes->listar();
+$solicitacoes = $solicitacao->listar();
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $data = [
+        'idSolicitante' => $_POST['idSolicitante'],
+        'idPaciente' => $_POST['idPaciente'],
+        'idMedico' => $_POST['idMedico'],        
+    ];
+    if($solicitacao->inserir($data)){
+        header("Location: solicitacoes.php?msg=Deu certo");
+    }else{
+        header("Location: solicitacoes.php?msg=Deu erro!");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,17 +32,11 @@ $solicitacao = new Solicitacao($bd);
 </head>
 
 <body>
-
     <?php include_once("includes/menu.php"); ?>
     <div class="container">
         <div class="row">
             <form action="" method="POST">
-                <input type="hidden" name="idUsuario">
-
-                <div class="mb-3">
-                    <label for="cadastro" class="form-label">Cadastro</label>
-                    <input type="text" class="form-control" id="cadastro" name="cadastro" placeholder="Cadastro">
-                </div>
+                <input type="hidden" name="idUsuario">                
                 <div class="mb-3">
                     <label for="idSolicitante" class="form-label">id Solicitante</label>
                     <input type="text" class="form-control" id="idSolicitante" name="idSolicitante" placeholder="Digite o idSolicitante">

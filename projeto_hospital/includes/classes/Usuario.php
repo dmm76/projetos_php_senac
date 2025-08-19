@@ -1,6 +1,7 @@
 <?php
 include_once("includes/conexao.php");
 //usuario(idUsuario, cadastro, nome, email, senha, nivel)
+
 class Usuario
 {
     private $bd;
@@ -12,22 +13,22 @@ class Usuario
     public function inserir(array $data)
     {
        
-        $cadastro = $data['cadastro'];
+        $cadastro = date('Y-m-d H:i:s');
         $nome = $data['nome'];
         $email = $data['email'];
         $senha = $data['senha'];
         $nivel = $data['nivel'];       
 
-        $sql = "INSERT INTO usuario(idUsuario, cadastro, nome, email, senha, nivel)
-                    VALUES ('$nome', '$cadastro', '$nome', '$email', '$senha', '$nivel')";
+        $sql = "INSERT INTO usuarios(cadastro, nome, email, senha, nivel)
+                    VALUES ('$cadastro', '$nome', '$email', '$senha', '$nivel')";
 
         return $this->bd->query($sql);
     }
 
     public function listar()
     {
-        $sql = "SELECT * FROM alunos
-            ORDER BY idAluno ASC";
+        $sql = "SELECT * FROM usuarios
+            ORDER BY idUsuario ASC";
 
         //essa linha pega todos os dados vindos do banco e insere em resultado
         $resultado = $this->bd->query($sql);
@@ -41,31 +42,31 @@ class Usuario
         return $rows;
     }
 
-    public function buscar($idAluno)
+    public function buscar($idUsuario)
     {
-        $sql = "SELECT * FROM alunos WHERE idAluno = '{$idAluno}'";
+        $sql = "SELECT * FROM usuarios WHERE idUsuario = '{$idUsuario}'";
         $resultado = $this->bd->query($sql);
         return $resultado->fetch_assoc();
     }
 
     public function atualizar(array $data)
     {
-        $idAluno = $data['idAluno'];
+        $idUsuario = $data['idUsuario'];
         $cadastro = $data['cadastro'];
         $nome = $data['nome'];
-        $email = $data['nome'];
-        $senha = $data['nome'];
-        $nivel = $data['nome'];   
+        $email = $data['email'];
+        $senha = $data['senha'];
+        $nivel = $data['nivel'];   
        
         $sql = "UPDATE produto SET cadastro = '$cadastro', nome = '{$nome}', email = '$email', senha = '$senha', nivel = '$nivel'
-                    WHERE idAluno = '{$idAluno}'";
+                    WHERE idUsuario = '{$idUsuario}'";
 
         return $this->bd->query($sql);
     }
 
-    public function deletar($idAluno){
-        $id = (int)$idAluno;
-        $sql = "DELETE fROM alunos where idAlunos = {$id}";
+    public function deletar($idUsuario){
+        $id = (int)$idUsuario;
+        $sql = "DELETE FROM usuarios where idUsuario = {$id}";
         return $this->bd->query($sql);
     }
 }

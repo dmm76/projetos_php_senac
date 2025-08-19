@@ -12,14 +12,14 @@ class Paciente
     public function inserir(array $data)
     {
        
-        $cadastro = $data['cadastro'];
+        $cadastro = date('Y-m-d H:i:s');
         $nome = $data['nome'];
         $email = $data['email'];
         $telefone = $data['telefone'];
         $endereco = $data['endereco'];       
 
-        $sql = "INSERT INTO pacientes(idpacientes, cadastro, nome, email, telefone, endereco)
-                    VALUES ('$nome', '$cadastro', '$nome', '$email', '$telefone', '$endereco')";
+        $sql = "INSERT INTO pacientes(cadastro, nome, email, telefone, endereco)
+                    VALUES ('$cadastro', '$nome', '$email', '$telefone', '$endereco')";
 
         return $this->bd->query($sql);
     }

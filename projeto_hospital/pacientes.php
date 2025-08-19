@@ -7,7 +7,21 @@ include_once("includes/classes/Paciente.php");
 
 $bd = new Database();
 $paciente = new Paciente($bd);
-//$pacientes = $pacientes->listar();
+$pacientes = $paciente->listar();
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $data = [
+        'cpf' => $_POST['cpf'],
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'telefone' => $_POST['telefone'],
+        'endereco' => $_POST['endereco'],
+    ];
+    if($paciente->inserir($data)){
+        header("Location: pacientes.php?msg=Deu certo");
+    }else{
+        header("Location: pacientes.php?msg=Deu erro!");
+    }
+}
 ?>
 
 <!DOCTYPE html>
