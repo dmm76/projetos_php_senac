@@ -1,6 +1,6 @@
 <?php
 include_once("includes/conexao.php");
-//pacientes(idpacientes, cadastro, cpf, nome, email, telefone, endereco)
+//pacientes(idpacientes, cadastro, nome, cpf, email, telefone, endereco, idUsuario)
 class Paciente
 {
     private $bd;
@@ -11,17 +11,28 @@ class Paciente
 
     public function inserir(array $data)
     {
-       
+        $idPaciente = $data['idPaciente'];
         $cadastro = date('Y-m-d H:i:s');
         $nome = $data['nome'];
+        $cpf = $data['cpf'];
         $email = $data['email'];
         $telefone = $data['telefone'];
-        $endereco = $data['endereco'];       
+        $endereco = $data['endereco'];
+        $idUsuario = $data['idUsuario'];
 
-        $sql = "INSERT INTO pacientes(cadastro, nome, email, telefone, endereco)
-                    VALUES ('$cadastro', '$nome', '$email', '$telefone', '$endereco')";
+        if ($idPaciente == 0) {
 
-        return $this->bd->query($sql);
+            $sql = "INSERT INTO pacientes(cadastro, nome, cpf, email, telefone, endereco, idUsuario )
+                    VALUES ('$cadastro', '$nome', '$cpf', '$email', '$telefone', '$endereco', '$idUsuario')";
+
+            return $this->bd->query($sql);
+        } else {
+            $sql = "UPDATE pacientes SET nome = '{$nome}', cpf = '$cpf',
+                    email = '$email', telefone = '$telefone', endereco = '$endereco'
+                    WHERE idPaciente = '{$idPaciente}'";
+
+            return $this->bd->query($sql);
+        }
     }
 
     public function listar()
@@ -48,24 +59,25 @@ class Paciente
         return $resultado->fetch_assoc();
     }
 
-    public function atualizar(array $data)
+    // public function atualizar(array $data)
+    // {
+    //     $idPaciente = $data['idPaciente'];
+    //     $cadastro = $data['cadastro'];
+    //     $nome = $data['nome'];
+    //     $email = $data['email'];
+    //     $telefone = $data['telefone'];
+    //     $endereco = $data['endereco'];
+
+    //     $sql = "UPDATE pacientes SET cadastro = '$cadastro', nome = '{$nome}', email = '$email', telefone = '$telefone', endereco = '$endereco'
+    //                 WHERE idPaciente = '{$idPaciente}'";
+
+    //     return $this->bd->query($sql);
+    // }
+
+    public function deletar($idPaciente)
     {
-        $idPaciente = $data['idPaciente'];
-        $cadastro = $data['cadastro'];
-        $nome = $data['nome'];
-        $email = $data['email'];
-        $telefone = $data['telefone'];
-        $endereco = $data['endereco'];   
-       
-        $sql = "UPDATE produto SET cadastro = '$cadastro', nome = '{$nome}', email = '$email', telefone = '$telefone', endereco = '$endereco'
-                    WHERE idPaciente = '{$idPaciente}'";
-
-        return $this->bd->query($sql);
-    }
-
-    public function deletar($idPaciente){
         $id = (int)$idPaciente;
-        $sql = "DELETE fROM pacientes where idpacientes = {$id}";
+        $sql = "DELETE FROM pacientes where idPaciente = {$id}";
         return $this->bd->query($sql);
     }
 }

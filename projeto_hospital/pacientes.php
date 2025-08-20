@@ -8,19 +8,43 @@ include_once("includes/classes/Paciente.php");
 $bd = new Database();
 $paciente = new Paciente($bd);
 $pacientes = $paciente->listar();
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = [
+        'idPaciente' => $_POST['idPaciente'],
         'cpf' => $_POST['cpf'],
         'nome' => $_POST['nome'],
         'email' => $_POST['email'],
         'telefone' => $_POST['telefone'],
         'endereco' => $_POST['endereco'],
     ];
-    if($paciente->inserir($data)){
+    if ($paciente->inserir($data)) {
         header("Location: pacientes.php?msg=Deu certo");
-    }else{
+    } else {
         header("Location: pacientes.php?msg=Deu erro!");
     }
+}
+if (isset($_GET['idPaciente'])) {
+    $idPaciente = $_GET['idPaciente'];
+
+    $PacienteModel = new Paciente($bd);
+    $PacienteDados = $PacienteModel->buscar($idPaciente);
+
+    $idPaciente = $PacienteDados['idPaciente'];
+    $cpf = $PacienteDados['cpf'];
+    $nome = $PacienteDados['nome'];
+    $email = $PacienteDados['email'];
+    $telefone = $PacienteDados['telefone'];
+    $endereco = $PacienteDados['endereco'];
+
+    echo $nome; //teste tem tela
+
+} else {
+    $idPaciente = 0;
+    $cpf = 0;
+    $nome = "";
+    $email = "";
+    $telefone = "";
+    $endereco = "";
 }
 ?>
 
@@ -35,35 +59,69 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 
 <body>
-
+    <!-- pacientes(idpacientes, cadastro, cpf, nome, email, telefone, endereco) -->
     <?php include_once("includes/menu.php"); ?>
     <div class="container">
         <div class="row">
             <form action="" method="POST">
-                <input type="hidden" name="idUsuario">
+                <input type="hidden" name="idPaciente" value='<?php echo $idPaciente ?>'>
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome completo">
+                    <input type="text" class="form-control" id="nome" name="nome" value='<?php echo $nome ?>' placeholder="Digite o nome completo">
                 </div>
                 <div class="mb-3">
                     <label for="cpf" class="form-label">CPF</label>
-                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite o cpf completo">
+                    <input type="text" class="form-control" id="cpf" name="cpf" value='<?php echo $cpf ?>' placeholder="Digite o cpf completo">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite o email">
+                    <input type="email" class="form-control" id="email" name="email" value='<?php echo $email ?>' placeholder="Digite o email">
                 </div>
                 <div class="mb-3">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                    <input type="text" class="form-control" id="telefone" name="telefone" value='<?php echo $telefone ?>' placeholder="Digite seu telefone">
                 </div>
                 <div class="mb-3">
                     <label for="endereco" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Digite o nome completo">
-                </div>                
+                    <input type="text" class="form-control" id="endereco" name="endereco" value='<?php echo $endereco ?>' placeholder="Digite o nome completo">
+                </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
+        </div>
+        <div class="row">
+            <table class="table table-bordered table-hover table-sm">
+                <tr>
+                    <th>Id</th>
+                    <th>Cadastro</th>
+                    <th>CPF</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Ações</th>
+                </tr>
+                <?php
+                foreach ($pacientes as $paciente) {
+                    echo '
+                            <tr>
+                                <td>' . $paciente['idPaciente'] . '</td>
+                                <td>' . $paciente['cadastro'] . '</td>    
+                                <td>' . $paciente['cpf'] . '</td>    
+                                <td>' . $paciente['nome'] . '</td>
+                                <td>' . $paciente['email'] . '</td>
+                                <td>' . $paciente['telefone'] . '</td>
+                                <td>' . $paciente['endereco'] . '</td>
+                                <td>
+                                    <a href="?idPaciente=' . $paciente['idPaciente'] . '">Editar</a>
+                                    <a onclick="return confirm(\'Deseja realmente excluir?\');"
+                                    href="excluirPaciente.php?idPaciente=' . $paciente['idPaciente'] . '">Excluir</a>
+                                </td>
+                            </tr>       
+                        ';
+                }
+                ?>
+            </table>
         </div>
     </div>
     <script src="https://unpkg.com/imask"></script>

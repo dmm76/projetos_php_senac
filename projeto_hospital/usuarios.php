@@ -11,6 +11,7 @@ $usuarios = $usuario->listar();
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $data = [
+        'idUsuario' => $_POST['idUsuario'],
         'nome' => $_POST['nome'],
         'email' => $_POST['email'],
         'senha' => $_POST['senha'],
@@ -32,21 +33,21 @@ if (isset($_GET['idUsuario'])) {
     $idUsuario = $UsuarioDados['idUsuario'];
     $nome = $UsuarioDados['nome'];
     $email = $UsuarioDados['email'];
-    //$senha = $UsuarioDados['senha'];
+    $senha = $UsuarioDados['senha'];
     $nivel = $UsuarioDados['nivel'];
 
     //echo $nome; //teste tem tela
 
 } else {
-    $idAluno = 0;
+    $idUsuario = 0;
     $nome = "";
     $email = "";
-   // $senha = "";
+    $senha = "";
     $nivel = "";
 }
 
 ?>
-
+<!-- //usuario(idUsuario, cadastro, nome, email, senha, nivel) -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +63,7 @@ if (isset($_GET['idUsuario'])) {
     <div class="container">
         <div class="row">
             <form action="" method="POST" >
-                <input type="hidden" name="idUsuario" value='<?php echo $idUsuario ?>'>
+                <input type="" name="idUsuario" value='<?php echo $idUsuario ?>'>
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
@@ -110,7 +111,7 @@ if (isset($_GET['idUsuario'])) {
                                 <td>
                                     <a href="?idUsuario='.$usuario['idUsuario'].'">Editar</a>
                                     <a onclick="return confirm(\'Deseja realmente excluir?\');"
-                                    href="excluir.php?idUsuario='.$usuario['idUsuario'].'">Excluir</a>
+                                    href="excluirUsuario.php?idUsuario='.$usuario['idUsuario'].'">Excluir</a>
                                 </td>
                             </tr>       
                         ';  
