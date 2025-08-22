@@ -36,7 +36,7 @@ if (isset($_GET['idPaciente'])) {
     $telefone = $PacienteDados['telefone'];
     $endereco = $PacienteDados['endereco'];
 
-    echo $nome; //teste tem tela
+    //echo $nome; //teste tem tela
 
 } else {
     $idPaciente = 0;
@@ -64,29 +64,36 @@ if (isset($_GET['idPaciente'])) {
     <div class="container">
         <div class="row">
             <form action="" method="POST">
-                <input type="hidden" name="idPaciente" value='<?php echo $idPaciente ?>'>
+                <input type="hidden" name="idPaciente" value='<?php echo $idPaciente ?>' disabled>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" value='<?php echo $nome ?>' placeholder="Digite o nome completo">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" name="endereco" value='<?php echo $endereco ?>' placeholder="Digite o nome completo">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" value='<?php echo $cpf ?>' placeholder="Digite o cpf completo">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value='<?php echo $email ?>' placeholder="Digite o email">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone" value='<?php echo $telefone ?>' placeholder="Digite seu telefone">
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
 
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" value='<?php echo $nome ?>' placeholder="Digite o nome completo">
-                </div>
-                <div class="mb-3">
-                    <label for="cpf" class="form-label">CPF</label>
-                    <input type="text" class="form-control" id="cpf" name="cpf" value='<?php echo $cpf ?>' placeholder="Digite o cpf completo">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value='<?php echo $email ?>' placeholder="Digite o email">
-                </div>
-                <div class="mb-3">
-                    <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" value='<?php echo $telefone ?>' placeholder="Digite seu telefone">
-                </div>
-                <div class="mb-3">
-                    <label for="endereco" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" name="endereco" value='<?php echo $endereco ?>' placeholder="Digite o nome completo">
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+
             </form>
         </div>
         <div class="row">

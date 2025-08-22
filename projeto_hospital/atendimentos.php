@@ -8,6 +8,8 @@ include_once("includes/classes/Atendimento.php");
 $bd = new Database();
 $atendimento = new Atendimento($bd);
 $atendimentos = $atendimento->listar();
+$pacientes = $atendimento->listarPacientes();
+$medicos = $atendimento->listarMedicos();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = [
@@ -53,7 +55,6 @@ if (isset($_GET['idAtendimento'])) {
     $dia = "";
     $dataInicio = "";
     $dataFim = "";
-    $status = "";
     $idPaciente = 0;
     $idAtendimento = 0;
     $idMedico = 0;
@@ -80,15 +81,46 @@ if (isset($_GET['idAtendimento'])) {
     <div class="container">
         <div class="row">
             <form action="" method="POST">
-                <input type="" name="idAtendimento" value='<?php echo $idAtendimento ?>'>
+                <input type="hidden" name="idAtendimento" value='<?php echo $idAtendimento ?>'>
                 <div class="row ">
+                    <div class="row">
+                        <div class="mb-3 col-sm-4">
+                            <label for="idAtendimento" class="form-label">Identificação Atendimento</label>
+                            <input type="number" class="form-control" id="idAtendimento" name="idAtendimento" value='<?php echo $idAtendimento ?>' placeholder="Digite id Atendimento" disabled>
+                        </div>
+                        <div class="mb-3 col-sm-4">
+                            <label for="Paciente" class="form-label">Identificação Paciente</label>
+                            <select name="idPaciente" id="idPaciente" class="form-select">
+                                <option value="">Selecione um Paciente</option>
+                                </option> 
+                                <?php                                    
+                                    foreach ($pacientes as $paciente) {
+                                    if($idPaciente==$paciente['idPaciente']){$sel = 'selected';} else {$sql = '';}
+                                    echo '<option .$sel. value="' . $paciente['idPaciente'] . '">' . $paciente['nome'] . '</option>';
+                                    }
+                                ?>
+                                
+                            </select>
+                        </div>
+                        <div class="mb-3 col-sm-4">
+                            <label for="idMedico" class="form-label">Identificação Médico</label>
+                            <select name="idMedico" id="idMedico" class="form-select">
+                                <option value="">Selecione um Médico</option>
+                               <?php
+                                foreach ($medicos as $medico) {
+                                    echo '<option value="' . $medico['idUsuario'] . '">' . $medico['nome'] . '</option>';
+                                }
+                                ?>                               
+                            </select>
+                        </div>
+                    </div>
                     <div class="mb-3 col-sm-3">
                         <label for="dataInicio" class="form-label">Data Inicio</label>
-                        <input type="date" class="form-control" id="dataInicio" name="dataInicio" value='<?php echo $dataInicio ?>' placeholder="Digite o dataInicio completo">
+                        <input type="date" class="form-control" id="dataInicio" name="dataInicio" value='<?php echo $dataInicio ?>' placeholder="Digite a data Inicio">
                     </div>
                     <div class="mb-3 col-sm-3">
                         <label for="dataFim" class="form-label">Data Fim</label>
-                        <input type="date" class="form-control" id="dataFim" name="dataFim" value='<?php echo $dataFim ?>' placeholder="Digite o dataFim">
+                        <input type="date" class="form-control" id="dataFim" name="dataFim" value='<?php echo $dataFim ?>' placeholder="Digite a data Fim">
                     </div>
                     <div class="mb-3 col-sm-6">
                         <label for="status" class="form-label">Status</label>
@@ -110,22 +142,6 @@ if (isset($_GET['idAtendimento'])) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mb-3 col-sm-4">
-                        <label for="idPaciente" class="form-label">IdPaciente</label>
-                        <input type="number" class="form-control" id="idPaciente" name="idPaciente" value='<?php echo $idPaciente ?>' placeholder="Digite a Id Paciente">
-                    </div>
-                    <div class="mb-3 col-sm-4">
-                        <label for="idAtendimento" class="form-label">Id Atendimento</label>
-                        <input type="number" class="form-control" id="idAtendimento" name="idAtendimento" value='<?php echo $idAtendimento ?>' placeholder="Digite id Atendimento">
-                    </div>
-                    <div class="mb-3 col-sm-4">
-                        <label for="idMedico" class="form-label">Id Médico</label>
-                        <input type="number" class="form-control" id="idMedico" name="idMedico" value='<?php echo $idMedico ?>' placeholder="Digite id Médico">
-                    </div>
-                </div>
-
-                <div class="row">
-
                     <div class="mb-3 col-sm-6">
                         <label for="obsTriagem" class="form-label">OBS Triagem</label>
                         <textarea class="form-control" id="obsTriagem" name="obsTriagem" placeholder="Observação Triagem" rows="3"><?php echo $obsTriagem ?></textarea>
@@ -142,35 +158,24 @@ if (isset($_GET['idAtendimento'])) {
             <table class="table table-bordered table-hover table-sm">
                 <tr>
                     <th>Id Atendimento</th>
-                    <th>Cadastro</th>
                     <th>Dia</th>
                     <th>Hora</th>
-                    <th>data Inicio</th>
-                    <th>data Fim</th>
                     <th>id Paciente</th>
-                    <th>id Atendimento</th>
+
                     <th>id Médico</th>
-                    <th>Status</th>
-                    <th>Obs Triagem</th>
-                    <th>Obs Atendimento</th>
                     <th>Ações</th>
                 </tr>
                 <?php
                 foreach ($atendimentos as $atendimento) {
                     echo '
                             <tr>
-                                <td>' . $atendimento['idAtendimento'] . '</td>
-                                <td>' . $atendimento['cadastro'] . '</td>    
+                                <td>' . $atendimento['idAtendimento'] . '</td>                                 
                                 <td>' . $atendimento['data'] . '</td>    
-                                <td>' . $atendimento['hora'] . '</td>
-                                <td>' . $atendimento['dataInicio'] . '</td>
-                                <td>' . $atendimento['dataFim'] . '</td>
-                                <td>' . $atendimento['idPaciente'] . '</td>
-                                <td>' . $atendimento['idAtendimento'] . '</td>
-                                <td>' . $atendimento['idMedico'] . '</td>
-                                <td>' . $atendimento['status'] . '</td>
-                                <td>' . $atendimento['obsTriagem'] . '</td>
-                                <td>' . $atendimento['obsAtendimento'] . '</td>
+                                <td>' . $atendimento['hora'] . '</td>                                
+                                <td>' . $atendimento['nomePaciente'] . '</td>
+                                
+                                <td>' . $atendimento['nomeMedico'] . '</td>
+                               
 
                                 <td>
                                     <a href="?idAtendimento=' . $atendimento['idAtendimento'] . '">Editar</a>

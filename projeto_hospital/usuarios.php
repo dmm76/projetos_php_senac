@@ -9,7 +9,7 @@ $bd = new Database();
 $usuario = new Usuario($bd);
 $usuarios = $usuario->listar();
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = [
         'idUsuario' => $_POST['idUsuario'],
         'nome' => $_POST['nome'],
@@ -17,9 +17,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         'senha' => $_POST['senha'],
         'nivel' => $_POST['nivel'],
     ];
-    if($usuario->inserir($data)){
+    if ($usuario->inserir($data)) {
         header("Location: usuarios.php?msg=Deu certo");
-    }else{
+    } else {
         header("Location: usuarios.php?msg=Deu erro!");
     }
 }
@@ -62,31 +62,41 @@ if (isset($_GET['idUsuario'])) {
     <?php include_once("includes/menu.php"); ?>
     <div class="container">
         <div class="row">
-            <form action="" method="POST" >
-                <input type="" name="idUsuario" value='<?php echo $idUsuario ?>'>
+            <form action="" method="POST">
+                <input type="hidden" name="idUsuario" value='<?php echo $idUsuario ?>'>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" value='<?php echo $nome ?>' placeholder="Digite o nome completo">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value='<?php echo $email ?>' placeholder="Digite o email">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="nivel" class="form-label">Nível</label>
+                        <select name="nivel" id="nivel" class="form-select">Nível
+                            <option value="">Selecione um nível</option>
+                            <option <?php if ($nivel == 'recepcao') {
+                                        echo 'selected';
+                                    } ?> value="recepcao">Recepção</option>
+                            <option <?php if ($nivel == 'enfermeiro') {
+                                        echo 'selected';
+                                    } ?> value="enfermeiro">Enfermeiro</option>
+                            <option <?php if ($nivel == 'medico') {
+                                        echo 'selected';
+                                    } ?> value="medico">Médico</option>
+                            <option <?php if ($nivel == 'adm') {
+                                        echo 'selected';
+                                    } ?> value="adm">Administrador</option>
+                        </select>
+                    </div>
+                </div>        
 
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" value='<?php echo $nome ?>' placeholder="Digite o nome completo">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value='<?php echo $email ?>' placeholder="Digite o email">
-                </div>
-                <div class="mb-3">
-                    <label for="senha" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha"  placeholder="Digite sua senha">
-                </div>                
-                <div class="mb-3">
-                    <label for="nivel" class="form-label">Nível</label>
-                    <select name="nivel" id="nivel" class="form-select">Nível
-                        <option value="">Selecione um nível</option>                        
-                        <option <?php if($nivel =='recepcao') {echo 'selected';} ?> value="recepcao">Recepção</option>
-                        <option <?php if($nivel =='enfermeiro') {echo 'selected';} ?> value="enfermeiro">Enfermeiro</option>
-                        <option <?php if($nivel =='medico') {echo 'selected';} ?> value="medico">Médico</option>
-                        <option <?php if($nivel =='adm') {echo 'selected';} ?> value="adm">Administrador</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-primary mb-3">Enviar</button>
             </form>
         </div>
@@ -101,22 +111,21 @@ if (isset($_GET['idUsuario'])) {
                     <th>Ações</th>
                 </tr>
                 <?php
-                    foreach ($usuarios as $usuario){
-                        echo'
+                foreach ($usuarios as $usuario) {
+                    echo '
                             <tr>
-                                <td>'.$usuario['idUsuario'].'</td>
-                                <td>'.$usuario['nome'].'</td>    
-                                <td>'.$usuario['email'].'</td>    
-                                <td>'.$usuario['nivel'].'</td>
+                                <td>' . $usuario['idUsuario'] . '</td>
+                                <td>' . $usuario['nome'] . '</td>    
+                                <td>' . $usuario['email'] . '</td>    
+                                <td>' . $usuario['nivel'] . '</td>
                                 <td>
-                                    <a href="?idUsuario='.$usuario['idUsuario'].'">Editar</a>
+                                    <a href="?idUsuario=' . $usuario['idUsuario'] . '">Editar</a>
                                     <a onclick="return confirm(\'Deseja realmente excluir?\');"
-                                    href="excluirUsuario.php?idUsuario='.$usuario['idUsuario'].'">Excluir</a>
+                                    href="excluirUsuario.php?idUsuario=' . $usuario['idUsuario'] . '">Excluir</a>
                                 </td>
                             </tr>       
-                        ';  
-                                              
-                    }
+                        ';
+                }
                 ?>
             </table>
         </div>
