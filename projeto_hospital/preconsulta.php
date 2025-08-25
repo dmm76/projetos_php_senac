@@ -25,7 +25,7 @@ if (isset($_GET['dataAtendimento'])) { //isset = se tem setado _GET dataAtendime
     $cpf = '';
 }
 
-$status = '';
+$status = 'recepcionado';
 $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, $status);
 ?>
 <!DOCTYPE html>
@@ -73,11 +73,13 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                         <th class="text-center">Data</th>
                         <th class="text-center">Hora</th>                        
                         <th class="text-center">Médico</th>
-                        <th class="text-center">Status</th>
+                        <th class="text-center">Status</th>                      
                         <th class="text-center">Ações</th>
                     </tr>
                     <?php
                     foreach ($atendimentos as $atendimento) {
+                        $acoes = '<a class="btn btn-warning btn-sm" href="atendimentos.php?acao=preatendimento&idAtendimento=' . $atendimento['idAtendimento'] . '">Marcar Triado</a>';
+                      
                         if($atendimento['status']=='agendado'){
                             $status = '<a href="#" class="btn btn-warning btn-sm">Agendado</a>';
                         }
@@ -85,7 +87,8 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                             $status = '<a href="#" class="btn btn-warning btn-sm">Recepcionado</a>';
                         }
                         if($atendimento['status']=='triado'){
-                            $status = '<a href="#" class="btn btn-success btn-sm">Triado</a>';
+                            $status = '<a href="#" class="btn btn-success btn-sm">Triado</a>';                           
+                            $acoes = '';
                         }
                         echo '
                             <tr>
@@ -94,9 +97,9 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                                 <td class="text-center">' . $atendimento['data'] . '</td>    
                                 <td class="text-center">' . $atendimento['hora'] . '</td> 
                                 <td class="text-center">' . $atendimento['nomeMedico'] . '</td>
-                                 <td class="text-center">' . $status. '</td>
+                                 <td class="text-center">'.$status.'</td>
                                 <td class="text-center">
-                                    <a class="btn btn-warning btn-sm" href="?status=recepcionado&idAtendimento=' . $atendimento['idAtendimento'] . '">Marcar Presente</a>                                    
+                                         '.$acoes.'                              
                                 </td>
                             </tr>       
                         ';

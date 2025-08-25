@@ -99,29 +99,29 @@ if (isset($_GET['idPaciente'])) {
         <div class="row">
             <table class="table table-bordered table-hover table-sm">
                 <tr>
-                    <th>Id</th>
-                    <th>Cadastro</th>
-                    <th>CPF</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Endereço</th>
-                    <th>Ações</th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Cadastro</th>
+                    <th class="text-center">CPF</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Telefone</th>
+                    <th class="text-center">Endereço</th>
+                    <th class="text-center">Ações</th>
                 </tr>
                 <?php
                 foreach ($pacientes as $paciente) {
                     echo '
                             <tr>
-                                <td>' . $paciente['idPaciente'] . '</td>
-                                <td>' . $paciente['cadastro'] . '</td>    
-                                <td>' . $paciente['cpf'] . '</td>    
-                                <td>' . $paciente['nome'] . '</td>
-                                <td>' . $paciente['email'] . '</td>
-                                <td>' . $paciente['telefone'] . '</td>
-                                <td>' . $paciente['endereco'] . '</td>
-                                <td>
-                                    <a href="?idPaciente=' . $paciente['idPaciente'] . '">Editar</a>
-                                    <a onclick="return confirm(\'Deseja realmente excluir?\');"
+                                <td class="text-center">' . $paciente['idPaciente'] . '</td>
+                                <td class="text-center">' . $paciente['cadastro'] . '</td>    
+                                <td class="text-center">' . $paciente['cpf'] . '</td>    
+                                <td class="text-center">' . $paciente['nome'] . '</td>
+                                <td class="text-center">' . $paciente['email'] . '</td>
+                                <td class="text-center">' . $paciente['telefone'] . '</td>
+                                <td class="text-center">' . $paciente['endereco'] . '</td>
+                                <td class="text-center">
+                                    <a class="btn btn-warning btn-sm" href="?idPaciente=' . $paciente['idPaciente'] . '">Editar</a>
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm(\'Deseja realmente excluir?\');"
                                     href="excluirPaciente.php?idPaciente=' . $paciente['idPaciente'] . '">Excluir</a>
                                 </td>
                             </tr>       

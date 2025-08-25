@@ -12,6 +12,16 @@ $pacientes = $atendimento->listarPacientes();
 $medicos = $atendimento->listarMedicos();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $status = 'agendado';
+
+    if (!isset($_POST['obsTriagem'])) {
+        $obsTriagem = '';
+    } else {
+        $obsTriagem = $_POST['obsTriagem'];
+        $status = 'triado';
+    }
+
     $data = [
         'idAtendimento' => $_POST['idAtendimento'],
         'dataInicio' => $_POST['dataInicio'],
@@ -19,9 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'idPaciente' => $_POST['idPaciente'],
         'idAtendimento' => $_POST['idAtendimento'],
         'idMedico' => $_POST['idMedico'],
-        'status' => $_POST['status'],
-        'obsTriagem' => $_POST['obsTriagem'],
+        'status' => $status,
+        'obsTriagem' => $obsTriagem,
         'obsAtendimento' => $_POST['obsAtendimento'],
+
     ];
     if ($atendimento->inserir($data)) {
         header("Location: atendimentos.php?msg=Deu certo");
@@ -84,41 +95,51 @@ if (isset($_GET['idAtendimento'])) {
                 <input type="hidden" name="idAtendimento" value='<?php echo $idAtendimento ?>'>
                 <div class="row ">
                     <div class="row">
-                        <div class="mb-3 col-sm-4">
+                        <div class="mb-3 col-sm-3">
                             <label for="idAtendimento" class="form-label">Identificação Atendimento</label>
                             <input type="number" class="form-control" id="idAtendimento" name="idAtendimento" value='<?php echo $idAtendimento ?>' placeholder="Digite id Atendimento" disabled>
                         </div>
-                        <div class="mb-3 col-sm-4">
+                        <div class="mb-3 col-sm-3">
+                            <label for="dataInicio" class="form-label">Data Inicio</label>
+                            <input type="date" class="form-control" id="dataInicio" name="dataInicio" value='<?php echo $dataInicio ?>' placeholder="Digite a data Inicio">
+                        </div>
+                        <div class="mb-3 col-sm-3">
                             <label for="Paciente" class="form-label">Identificação Paciente</label>
                             <select name="idPaciente" id="idPaciente" class="form-select">
                                 <option value="">Selecione um Paciente</option>
-                                </option> 
-                                <?php                                    
-                                    foreach ($pacientes as $paciente) {
-                                    if($idPaciente==$paciente['idPaciente']){$sel = 'selected';} else {$sql = '';}
-                                    echo '<option .$sel. value="' . $paciente['idPaciente'] . '">' . $paciente['nome'] . '</option>';
+                                </option>
+                                <?php
+                                foreach ($pacientes as $paciente) {
+                                    if ($idPaciente == $paciente['idPaciente']) {
+                                        $sel = 'selected';
+                                    } else {
+                                        $sel = '';
                                     }
+                                    echo '<option ' . $sel . ' value="' . $paciente['idPaciente'] . '">' . $paciente['nome'] . '</option>';
+                                }
                                 ?>
-                                
+
                             </select>
                         </div>
-                        <div class="mb-3 col-sm-4">
+                        <div class="mb-3 col-sm-3">
                             <label for="idMedico" class="form-label">Identificação Médico</label>
                             <select name="idMedico" id="idMedico" class="form-select">
                                 <option value="">Selecione um Médico</option>
-                               <?php
+                                <?php
                                 foreach ($medicos as $medico) {
-                                    echo '<option value="' . $medico['idUsuario'] . '">' . $medico['nome'] . '</option>';
+                                    if ($idMedico == $medico['idUsuario']) {
+                                        $sel = 'selected';
+                                    } else {
+                                        $sel = '';
+                                    }
+                                    echo '<option ' . $sel . ' value="' . $medico['idUsuario'] . '">' . $medico['nome'] . '</option>';
                                 }
-                                ?>                               
+                                ?>
                             </select>
-                        </div>
+                        </div>                        
                     </div>
-                    <div class="mb-3 col-sm-3">
-                        <label for="dataInicio" class="form-label">Data Inicio</label>
-                        <input type="date" class="form-control" id="dataInicio" name="dataInicio" value='<?php echo $dataInicio ?>' placeholder="Digite a data Inicio">
-                    </div>
-                    <div class="mb-3 col-sm-3">
+
+                    <!-- <div class="mb-3 col-sm-3">
                         <label for="dataFim" class="form-label">Data Fim</label>
                         <input type="date" class="form-control" id="dataFim" name="dataFim" value='<?php echo $dataFim ?>' placeholder="Digite a data Fim">
                     </div>
@@ -139,17 +160,25 @@ if (isset($_GET['idAtendimento'])) {
                                         echo 'selected';
                                     } ?> value="finalizado">Finalizado</option>
                         </select>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
-                    <div class="mb-3 col-sm-6">
-                        <label for="obsTriagem" class="form-label">OBS Triagem</label>
-                        <textarea class="form-control" id="obsTriagem" name="obsTriagem" placeholder="Observação Triagem" rows="3"><?php echo $obsTriagem ?></textarea>
-                    </div>
-                    <div class="mb-3 col-sm-6">
+                    <?php
+                    if (isset($_GET['acao'])) {
+                        if ($_GET['acao'] == 'preatendimento') {
+                            echo '
+                            <div class="mb-3 col-sm-6">
+                            <label for="obsTriagem" class="form-label">OBS Triagem</label>
+                            <textarea class="form-control" id="obsTriagem" name="obsTriagem" placeholder="Observação Triagem" rows="3">' . $obsTriagem . '</textarea>
+                            </div>
+                        ';
+                        }
+                    }
+                    ?>
+                    <!-- <div class="mb-3 col-sm-6">
                         <label for="obsAtendimento" class="form-label">OBS Atendimento</label>
                         <textarea class="form-control" id="obsAtendimento" name="obsAtendimento" placeholder="Observação Atendimento" rows="3"><?php echo $obsAtendimento ?></textarea>
-                    </div>
+                    </div> -->
                 </div>
                 <button type="submit" class="btn btn-primary mb-3">Enviar</button>
             </form>
@@ -157,29 +186,26 @@ if (isset($_GET['idAtendimento'])) {
         <div class="row">
             <table class="table table-bordered table-hover table-sm">
                 <tr>
-                    <th>Id Atendimento</th>
-                    <th>Dia</th>
-                    <th>Hora</th>
-                    <th>id Paciente</th>
-
-                    <th>id Médico</th>
-                    <th>Ações</th>
+                    <th class="text-center">Id Atendimento</th>
+                    <th class="text-center">Dia</th>
+                    <th class="text-center">Hora</th>
+                    <th class="text-center">id Paciente</th>
+                    <th class="text-center">id Médico</th>
+                    <th class="text-center">Ações</th>
                 </tr>
                 <?php
                 foreach ($atendimentos as $atendimento) {
                     echo '
                             <tr>
-                                <td>' . $atendimento['idAtendimento'] . '</td>                                 
-                                <td>' . $atendimento['data'] . '</td>    
-                                <td>' . $atendimento['hora'] . '</td>                                
-                                <td>' . $atendimento['nomePaciente'] . '</td>
-                                
-                                <td>' . $atendimento['nomeMedico'] . '</td>
-                               
+                                <td class="text-center">' . $atendimento['idAtendimento'] . '</td>                                 
+                                <td class="text-center">' . $atendimento['data'] . '</td>    
+                                <td class="text-center">' . $atendimento['hora'] . '</td>                                
+                                <td class="text-center">' . $atendimento['nomePaciente'] . '</td>                                
+                                <td class="text-center">' . $atendimento['nomeMedico'] . '</td>                         
 
-                                <td>
-                                    <a href="?idAtendimento=' . $atendimento['idAtendimento'] . '">Editar</a>
-                                    <a onclick="return confirm(\'Deseja realmente excluir?\');"
+                                <td class="text-center">
+                                    <a class="btn btn-warning btn-sm" href="?idAtendimento=' . $atendimento['idAtendimento'] . '">Editar</a>
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm(\'Deseja realmente excluir?\');"
                                     href="excluirAtendimento.php?idAtendimento=' . $atendimento['idAtendimento'] . '">Excluir</a>
                                 </td>
                             </tr>       

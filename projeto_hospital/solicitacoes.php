@@ -60,15 +60,15 @@ if (isset($_GET['idSolicitacoes'])) {
                 <di class="row">
                     <div class="mb-3 col-sm-4" >
                         <label for="idSolicitante" class="form-label">id Solicitante</label>
-                        <input type="number" class="form-control" id="idSolicitante" name="idSolicitante" placeholder="Digite o idSolicitante">
+                        <input type="number" class="form-control" id="idSolicitante" name="idSolicitante" value='<?php echo $idSolicitante ?>' placeholder="Digite o idSolicitante">
                     </div>
                     <div class="mb-3 col-sm-4">
                         <label for="idPaciente" class="form-label">id Solicitacao</label>
-                        <input type="number" class="form-control" id="idPaciente" name="idPaciente" placeholder="Digite o idPaciente">
+                        <input type="number" class="form-control" id="idPaciente" name="idPaciente" value='<?php echo $idPaciente ?>' placeholder="Digite o idPaciente">
                     </div>
                     <div class="mb-3 col-sm-4">
                         <label for="idMedico" class="form-label">Id Médico</label>
-                        <input type="number" class="form-control" id="idMedico" name="idMedico" placeholder="Digite o idMedico">
+                        <input type="number" class="form-control" id="idMedico" name="idMedico" value='<?php echo $idMedico ?>' placeholder="Digite o idMedico">
                     </div>
                 </di>
 
@@ -78,23 +78,23 @@ if (isset($_GET['idSolicitacoes'])) {
         <div class="row">
             <table class="table table-bordered table-hover table-sm">
                 <tr>
-                    <th>Id</th>
-                    <th>Id Solicitante</th>
-                    <th>Id Solicitação</th>
-                    <th>Id Médico</th>                    
-                    <th>Ações</th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Id Solicitante</th>
+                    <th class="text-center">Id Solicitação</th>
+                    <th class="text-center">Id Médico</th>                    
+                    <th class="text-center">Ações</th>
                 </tr>
                 <?php
                 foreach ($solicitacoes as $solicitacao) {
                     echo '
                             <tr>
-                                <td>' . $solicitacao['idSolicitacoes'] . '</td>
-                                <td>' . $solicitacao['idSolicitante'] . '</td>
-                                <td>' . $solicitacao['idPaciente'] . '</td>    
-                                <td>' . $solicitacao['idMedico'] . '</td>                                    
-                                <td>
-                                    <a href="?idSolicitacoes=' . $solicitacao['idSolicitacoes'] . '">Editar</a>
-                                    <a onclick="return confirm(\'Deseja realmente excluir?\');"
+                                <td class="text-center">' . $solicitacao['idSolicitacoes'] . '</td>
+                                <td class="text-center">' . $solicitacao['idSolicitante'] . '</td>
+                                <td class="text-center">' . $solicitacao['idPaciente'] . '</td>    
+                                <td class="text-center">' . $solicitacao['idMedico'] . '</td>                                    
+                                <td class="text-center">
+                                    <a class="btn btn-warning btn-sm" href="?idSolicitacoes=' . $solicitacao['idSolicitacoes'] . '">Editar</a>
+                                    <a class="btn btn-danger btn-sm" onclick="return confirm(\'Deseja realmente excluir?\');"
                                     href="excluirsolicitacoes.php?idSolicitacoes=' . $solicitacao['idSolicitacoes'] . '">Excluir</a>
                                 </td>
                             </tr>       

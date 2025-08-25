@@ -64,7 +64,7 @@ class Atendimento
     }
 
 
-    public function listarAtendimentos($dataAtendimento, $nome, $cpf){
+    public function listarAtendimentos($dataAtendimento, $nome, $cpf, $status){
         $where = '';
         if($nome != ""){
             $where .= "AND pacientes.nome LIKE '%$nome%'";
@@ -72,6 +72,10 @@ class Atendimento
 
         if($cpf != ""){
             $where .= "AND pacientes.cpf = '{$cpf}'";
+        }
+
+        if($status != ''){
+            $where .= "AND atendimentos.status = '$status'";
         }
 
         $sql ="SELECT

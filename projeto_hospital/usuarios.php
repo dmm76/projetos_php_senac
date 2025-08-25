@@ -95,8 +95,8 @@ if (isset($_GET['idUsuario'])) {
                                     } ?> value="adm">Administrador</option>
                         </select>
                     </div>
-                </div>        
-
+                </div>
+                                    
                 <button type="submit" class="btn btn-primary mb-3">Enviar</button>
             </form>
         </div>
@@ -104,24 +104,24 @@ if (isset($_GET['idUsuario'])) {
         <div class="row">
             <table class="table table-bordered table-hover table-sm">
                 <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Nível</th>
-                    <th>Ações</th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">E-mail</th>
+                    <th class="text-center">Nível</th>
+                    <th class="text-center">Ações</th>
                 </tr>
                 <?php
                 foreach ($usuarios as $usuario) {
                     echo '
                             <tr>
-                                <td>' . $usuario['idUsuario'] . '</td>
-                                <td>' . $usuario['nome'] . '</td>    
-                                <td>' . $usuario['email'] . '</td>    
-                                <td>' . $usuario['nivel'] . '</td>
-                                <td>
-                                    <a href="?idUsuario=' . $usuario['idUsuario'] . '">Editar</a>
-                                    <a onclick="return confirm(\'Deseja realmente excluir?\');"
-                                    href="excluirUsuario.php?idUsuario=' . $usuario['idUsuario'] . '">Excluir</a>
+                                <td class="text-center">' . $usuario['idUsuario'] . '</td>
+                                <td class="text-center">' . $usuario['nome'] . '</td>    
+                                <td class="text-center">' . $usuario['email'] . '</td>    
+                                <td class="text-center">' . $usuario['nivel'] . '</td>
+                                <td class="text-center">
+                                    <a class="btn btn-warning btn-sm" href="?idUsuario=' . $usuario['idUsuario'] . '">Editar</a>
+                                    <a  class="btn btn-danger btn-sm"onclick="return confirm(\'Deseja realmente excluir?\');"
+                                    href="excluirUsuario.php?idUsuario=' . $usuario['idUsuario'] . '">Excluir</a>                                         
                                 </td>
                             </tr>       
                         ';
