@@ -2,9 +2,6 @@
 include_once("includes/conexao.php");
 include_once("includes/classes/Paciente.php");
 
-
-//pacientes(idpacientes, cadastro, cpf, nome, email, telefone, endereco)
-
 $bd = new Database();
 $paciente = new Paciente($bd);
 $pacientes = $paciente->listar();
@@ -24,12 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 if (isset($_GET['idPaciente'])) {
-    $idPaciente = $_GET['idPaciente'];
 
+    $idPaciente = $_GET['idPaciente'];
     $PacienteModel = new Paciente($bd);
     $PacienteDados = $PacienteModel->buscar($idPaciente);
-
-    $idPaciente = $PacienteDados['idPaciente'];
+    // $idPaciente = $PacienteDados['idPaciente'];
     $cpf = $PacienteDados['cpf'];
     $nome = $PacienteDados['nome'];
     $email = $PacienteDados['email'];
@@ -64,7 +60,7 @@ if (isset($_GET['idPaciente'])) {
     <div class="container">
         <div class="row">
             <form action="" method="POST">
-                <input type="hidden" name="idPaciente" value='<?php echo $idPaciente ?>' disabled>
+                <input type="hidden" name="idPaciente" value='<?php echo $idPaciente ?>'>
                 <div class="row mb-3">
                     <div class="col-md-3">
                         <label for="nome" class="form-label">Nome</label>

@@ -63,7 +63,7 @@ if (isset($_GET['idSolicitacoes'])) {
                         <input type="number" class="form-control" id="idSolicitante" name="idSolicitante" value='<?php echo $idSolicitante ?>' placeholder="Digite o idSolicitante">
                     </div>
                     <div class="mb-3 col-sm-4">
-                        <label for="idPaciente" class="form-label">id Solicitacao</label>
+                        <label for="idPaciente" class="form-label">id Paciente</label>
                         <input type="number" class="form-control" id="idPaciente" name="idPaciente" value='<?php echo $idPaciente ?>' placeholder="Digite o idPaciente">
                     </div>
                     <div class="mb-3 col-sm-4">
@@ -80,7 +80,7 @@ if (isset($_GET['idSolicitacoes'])) {
                 <tr>
                     <th class="text-center">Id</th>
                     <th class="text-center">Id Solicitante</th>
-                    <th class="text-center">Id Solicitação</th>
+                    <th class="text-center">Id Paciente</th>
                     <th class="text-center">Id Médico</th>                    
                     <th class="text-center">Ações</th>
                 </tr>

@@ -28,13 +28,19 @@ class Atendimento
         if ($idAtendimento == 0) {
             $sql = "INSERT INTO atendimentos(cadastro, data, hora, dataInicio, dataFim, idPaciente, idUsuario, idMedico, status, obsTriagem, obsAtendimento)
                     VALUES ('$cadastro', '$dia', '$hora', '$dataInicio', '$dataFim', '$idPaciente', '$idUsuario', '$idMedico', '$status', '$obsTriagem', '$obsAtendimento')";
-            return $this->bd->query($sql);           
+            return $this->bd->query($sql);
         } else {
+            if ($status == 'triado') {
+                $update = ", obsTriagem = '$obsTriagem'";
+            }
+            if ($status == 'finalizado') {
+                $update = ", obsAtendimento = '$obsAtendimento'";
+            }
             $sql = "UPDATE atendimentos SET data = '{$dia}', hora='{$hora}', dataInicio = '$dataInicio',
                 dataFim = '$dataFim', idPaciente = '$idPaciente', idUsuario = '$idUsuario', idMedico = '$idMedico',
-                status = '$status', obsTriagem = '$obsTriagem', obsAtendimento = '$obsAtendimento'
+                status = '$status' $update
                 WHERE idAtendimento = '{$idAtendimento}'";
-            return $this->bd->query($sql);
+                return $this->bd->query($sql);
         }
     }
 
@@ -64,21 +70,22 @@ class Atendimento
     }
 
 
-    public function listarAtendimentos($dataAtendimento, $nome, $cpf, $status){
+    public function listarAtendimentos($dataAtendimento, $nome, $cpf, $status)
+    {
         $where = '';
-        if($nome != ""){
+        if ($nome != "") {
             $where .= "AND pacientes.nome LIKE '%$nome%'";
         }
 
-        if($cpf != ""){
+        if ($cpf != "") {
             $where .= "AND pacientes.cpf = '{$cpf}'";
         }
 
-        if($status != ''){
+        if ($status != '') {
             $where .= "AND atendimentos.status = '$status'";
         }
 
-        $sql ="SELECT
+        $sql = "SELECT
                 atendimentos.idAtendimento, atendimentos.data, 
                 atendimentos.hora,
                 atendimentos.status,
@@ -91,7 +98,7 @@ class Atendimento
                     atendimentos.data = '{$dataAtendimento}'
                     $where
                 ORDER BY data, hora ASC";
-       $resultado = $this->bd->query($sql);
+        $resultado = $this->bd->query($sql);
 
         $rows = [];
         if ($resultado && $resultado->num_rows > 0) {
@@ -102,7 +109,8 @@ class Atendimento
         return $rows;
     }
 
-    public function listarPacientes(){
+    public function listarPacientes()
+    {
         $sql = "SELECT * FROM pacientes ORDER BY nome";
 
         $resultado = $this->bd->query($sql);
@@ -116,7 +124,8 @@ class Atendimento
         return $rows;
     }
 
-     public function listarMedicos(){
+    public function listarMedicos()
+    {
         $sql = "SELECT * FROM usuarios
                 WHERE nivel = 'medico' ORDER BY nome";
 
@@ -131,7 +140,8 @@ class Atendimento
         return $rows;
     }
 
-    public function alterarStatus($status, $idAtendimento){
+    public function alterarStatus($status, $idAtendimento)
+    {
         $sql = "UPDATE atendimentos SET status = '$status' WHERE idAtendimento = '{$idAtendimento}'";
         return $this->bd->query($sql);
     }

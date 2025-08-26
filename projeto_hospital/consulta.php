@@ -4,7 +4,6 @@ include_once("includes/classes/Atendimento.php");
 //atendimentos(idAtendimento, cadastro, data, hora, dataInicio, dataFim, idPaciente, idAtendimento, idMedico, status, obsTriagem, obsAtendimento)
 $bd = new Database();
 $atendimento = new Atendimento($bd);
-$status = 'agendado';
 
 
 if (isset($_GET['status'])) {
@@ -20,13 +19,13 @@ if (isset($_GET['dataAtendimento'])) { //isset = se tem setado _GET dataAtendime
     $dataAtendimento = $_GET['dataAtendimento'];
     $nome = $_GET['nome'];
     $cpf = $_GET['cpf'];
-    $status = $_GET['statusPesquisa'];
 } else {
     $dataAtendimento = date('Y-m-d');
     $nome = '';
     $cpf = '';
 }
 
+$status = 'triado';
 $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, $status);
 ?>
 <!DOCTYPE html>
@@ -36,28 +35,19 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Cadastro de Receitas - POO</title>
+    <title>Consulta</title>
 </head>
 
 <body>
     <?php include_once("includes/menu.php"); ?>
+
     <div class="container">
         <div class="card mt-3">
             <div class="card-body">
-                <h3>Recepção</h3>
-                <form action="" method="GET">
-
+                <h3>Sistema de Consulta</h3>
+                <form action="">
                     <div class="row mb-3">
-                        <div class="col-md-2">
-                            <label for="">Status</label>
-                            <select class="form-select" name="statusPesquisa">
-                                <option <?php if($status=='agendado'){echo 'selected';} ?> value="agendado">Agendado</option>
-                                <option <?php if($status=='recepcionado'){echo 'selected';} ?> value="recepcionado">Recepcionado</option>
-                                <option <?php if($status=='triado'){echo 'selected';} ?> value="triado">Triado</option>
-                                <option <?php if($status=='finalizado'){echo 'selected';} ?> value="finalizado">Finalizado</option>
-                            </select>
-                        </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="">Data da Consulta:</label>
                             <input type="date" name="dataAtendimento" value="<?php echo $dataAtendimento ?>" class="form-control">
                         </div>
@@ -65,7 +55,7 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                             <label for="">Nome do Paciente:</label>
                             <input type="text" name="nome" value="<?php echo $nome ?>" class="form-control" placeholder="Digite o nome do paciente">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="">CPF:</label>
                             <input type="text" name="cpf" id="cpf" value="<?php echo $cpf ?>" class="form-control" placeholder="Digite o cpf ....">
                         </div>
@@ -90,21 +80,10 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                     </tr>
                     <?php
                     foreach ($atendimentos as $atendimento) {
-                        if ($atendimento['status'] == 'agendado') {
-                            $status = '<a href="#" class="btn btn-warning btn-sm">Agendado</a>';
-                            $acoes = '<a class="btn btn-warning btn-sm" href="?status=recepcionado&idAtendimento=' . $atendimento['idAtendimento'] . '">Marcar Presente</a>';
-                        }
-                        if ($atendimento['status'] == 'recepcionado') {
-                            $status = '<a href="#" class="btn btn-secondary btn-sm">Recepcionado</a>';
-                            $acoes = '';
-                        }
+                        $acoes = '<a class="btn btn-warning btn-sm" href="atendimentos.php?acao=atendimento&idAtendimento=' . $atendimento['idAtendimento'] . '">Fazer Atendimento</a>';
+
                         if ($atendimento['status'] == 'triado') {
                             $status = '<a href="#" class="btn btn-success btn-sm">Triado</a>';
-                            $acoes = '';
-                        }
-                        if ($atendimento['status'] == 'finalizado') {
-                            $status = '<a href="#" class="btn btn-primary btn-sm">Finalizado</a>';
-                            $acoes = '';
                         }
                         echo '
                             <tr>
@@ -113,9 +92,9 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                                 <td class="text-center">' . $atendimento['data'] . '</td>    
                                 <td class="text-center">' . $atendimento['hora'] . '</td> 
                                 <td class="text-center">' . $atendimento['nomeMedico'] . '</td>
-                                 <td class="text-center">' . $status . '</td>
+                                <td class="text-center">' . $status . '</td>
                                 <td class="text-center">
-                                    ' . $acoes . '
+                                    ' . $acoes . '                              
                                 </td>
                             </tr>       
                         ';

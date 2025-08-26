@@ -22,6 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $status = 'triado';
     }
 
+    if (!isset($_POST['obsAtendimento'])) {
+        $obsAtendimento = '';
+    } else {
+        $obsAtendimento = $_POST['obsAtendimento'];
+        $status = 'finalizado';
+    }
+
     $data = [
         'idAtendimento' => $_POST['idAtendimento'],
         'dataInicio' => $_POST['dataInicio'],
@@ -169,16 +176,30 @@ if (isset($_GET['idAtendimento'])) {
                             echo '
                             <div class="mb-3 col-sm-6">
                             <label for="obsTriagem" class="form-label">OBS Triagem</label>
-                            <textarea class="form-control" id="obsTriagem" name="obsTriagem" placeholder="Observação Triagem" rows="3">' . $obsTriagem . '</textarea>
+                            <textarea class="form-control" id="obsTriagem" name="obsTriagem" rows="8"  placeholder="Observação Triagem" rows="3">' . $obsTriagem . '</textarea>
                             </div>
                         ';
                         }
                     }
-                    ?>
-                    <!-- <div class="mb-3 col-sm-6">
-                        <label for="obsAtendimento" class="form-label">OBS Atendimento</label>
-                        <textarea class="form-control" id="obsAtendimento" name="obsAtendimento" placeholder="Observação Atendimento" rows="3"><?php echo $obsAtendimento ?></textarea>
-                    </div> -->
+                    if (isset($_GET['acao'])) {
+                        if ($_GET['acao'] == 'atendimento') {
+                            echo '
+                            <div class="mb-3 col-sm-6">
+                            <label for="obsTriagem" class="form-label">OBS Triagem</label>
+                            <textarea class="form-control" disabled id="obsTriagem" rows="8" placeholder="Observação Triagem" rows="3">' . $obsTriagem . '</textarea>
+                            </div>
+                        ';
+                        }
+                        if ($_GET['acao'] == 'atendimento') {
+                            echo '
+                            <div class="mb-3 col-sm-6">
+                            <label for="obsTriagem" class="form-label">OBS Atendimentos</label>
+                            <textarea class="form-control" id="obsAtendimento" name="obsAtendimento" rows="8"  placeholder="Observação Atendimento" rows="3">' . $obsAtendimento . '</textarea>
+                            </div>
+                        ';
+                        }
+                    }
+                    ?>                    
                 </div>
                 <button type="submit" class="btn btn-primary mb-3">Enviar</button>
             </form>

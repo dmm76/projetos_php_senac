@@ -35,7 +35,7 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Cadastro de Receitas - POO</title>
+    <title>Sistema Hospitalar - Pré Consulta</title>
 </head>
 
 <body>
@@ -43,6 +43,7 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
     <div class="container">
         <div class="card mt-3">
             <div class="card-body">
+                <h3>Sistema de Pré-Consulta</h3>
                 <form action="">
                     <div class="row mb-3">
                         <div class="col-md-3">

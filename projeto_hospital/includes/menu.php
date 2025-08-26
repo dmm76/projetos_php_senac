@@ -18,6 +18,10 @@
                 </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="preconsulta.php">Pré Consulta</a>
                 </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="consulta.php">Consulta</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="relatorio.php">Relatório</a>
+                </li>
                 <li class="nav-item"> <a class="nav-link" href="index.php">Principal</a> </li>
                 <li class="nav-item"> <a class="nav-link disabled" aria-disabled="true">Disabled</a> </li>
             </ul>
