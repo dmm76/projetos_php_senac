@@ -143,12 +143,12 @@ if (isset($_GET['idAtendimento'])) {
                                 }
                                 ?>
                             </select>
-                        </div>                        
+                        </div>
                     </div>
 
                     <!-- <div class="mb-3 col-sm-3">
-                        <label for="dataFim" class="form-label">Data Fim</label>
-                        <input type="date" class="form-control" id="dataFim" name="dataFim" value='<?php echo $dataFim ?>' placeholder="Digite a data Fim">
+                    <label for="dataFim" class="form-label">Data Fim</label>
+                    <input type="date" class="form-control" id="dataFim" name="dataFim" value='<?php echo $dataFim ?>' placeholder="Digite a data Fim">
                     </div>
                     <div class="mb-3 col-sm-6">
                         <label for="status" class="form-label">Status</label>
@@ -185,21 +185,22 @@ if (isset($_GET['idAtendimento'])) {
                         if ($_GET['acao'] == 'atendimento') {
                             echo '
                             <div class="mb-3 col-sm-6">
-                            <label for="obsTriagem" class="form-label">OBS Triagem</label>
-                            <textarea class="form-control" disabled id="obsTriagem" rows="8" placeholder="Observação Triagem" rows="3">' . $obsTriagem . '</textarea>
+                                <label for="obsTriagem" class="form-label">OBS Triagem</label>
+                                <textarea class="form-control" disabled id="obsTriagem" rows="8" placeholder="Observação Triagem" rows="3">' . $obsTriagem . '</textarea>
                             </div>
                         ';
                         }
                         if ($_GET['acao'] == 'atendimento') {
                             echo '
                             <div class="mb-3 col-sm-6">
-                            <label for="obsTriagem" class="form-label">OBS Atendimentos</label>
-                            <textarea class="form-control" id="obsAtendimento" name="obsAtendimento" rows="8"  placeholder="Observação Atendimento" rows="3">' . $obsAtendimento . '</textarea>
+                                <label for="obsTriagem" class="form-label">OBS Atendimentos</label>
+                                <textarea class="form-control" id="obsAtendimento" name="obsAtendimento" rows="8"  placeholder="Observação Atendimento" rows="3">' . $obsAtendimento . '</textarea>
+                                <a class="ms-2" href="exames.php?idPaciente=' . $idPaciente . '&idMedico=' . $idMedico . '&idAtendimento=' . $idAtendimento . '">Solicitar Exames</a>
                             </div>
                         ';
                         }
                     }
-                    ?>                    
+                    ?>
                 </div>
                 <button type="submit" class="btn btn-primary mb-3">Enviar</button>
             </form>

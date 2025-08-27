@@ -10,13 +10,15 @@
                 </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="usuarios.php">Usuarios</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="pacientes.php">Pacientes</a>
-                </li>
-                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="solicitacoes.php">Solicitações</a>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="pacientes.php">Pacientes</a>                
                 </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="atendimentos.php">Atendimentos</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="preconsulta.php">Pré Consulta</a>
+                </li>
+                </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="solicitacoes.php">Solicitações</a>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="exames.php">Exames</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="consulta.php">Consulta</a>
                 </li>

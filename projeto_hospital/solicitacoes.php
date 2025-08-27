@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'idSolicitacoes' => $_POST['idSolicitacoes'],
         'idSolicitante' => $_POST['idSolicitante'],
         'idPaciente' => $_POST['idPaciente'],
-        'idMedico' => $_POST['idMedico'],
+        'idAtendimento' => $_POST['idAtendimento'],
     ];
     if ($solicitacao->inserir($data)) {
         header("Location: solicitacoes.php?msg=Deu certo");
@@ -29,15 +29,15 @@ if (isset($_GET['idSolicitacoes'])) {
     $idSolicitacoes = $SolicitacaoDados['idSolicitacoes'];
     $idSolicitante = $SolicitacaoDados['idSolicitante'];
     $idPaciente = $SolicitacaoDados['idPaciente'];
-    $idMedico = $SolicitacaoDados['idMedico'];  
+    $idAtendimento = $SolicitacaoDados['idAtendimento'];
 
     //echo $nome; //teste tem tela
 
 } else {
-    $idSolicitacoes = 0;    
+    $idSolicitacoes = 0;
     $idSolicitante = "";
     $idPaciente = "";
-    $idMedico = "";
+    $idAtendimento = "";
 }
 ?>
 
@@ -56,23 +56,23 @@ if (isset($_GET['idSolicitacoes'])) {
     <div class="container">
         <div class="row">
             <form action="" method="POST">
-                <input type="" name="idSolicitacoes">
-                <di class="row">
-                    <div class="mb-3 col-sm-4" >
-                        <label for="idSolicitante" class="form-label">id Solicitante</label>
-                        <input type="number" class="form-control" id="idSolicitante" name="idSolicitante" value='<?php echo $idSolicitante ?>' placeholder="Digite o idSolicitante">
+                <input type="" name="idSolicitacoes" value='<?php echo $idSolicitacoes ?>'>
+                <div class="row mt-3">
+                    <div class="mb-3 col-sm-4">
+                        <label for="idSolicitante" class="form-label ">id Solicitante</label>
+                        <input type="number" class="form-control" id="idSolicitante" min=0 name="idSolicitante" value='<?php echo $idSolicitante ?>' placeholder="Digite o idSolicitante">
                     </div>
                     <div class="mb-3 col-sm-4">
                         <label for="idPaciente" class="form-label">id Paciente</label>
-                        <input type="number" class="form-control" id="idPaciente" name="idPaciente" value='<?php echo $idPaciente ?>' placeholder="Digite o idPaciente">
+                        <input type="number" class="form-control" id="idPaciente" min=0 name="idPaciente" value='<?php echo $idPaciente ?>' placeholder="Digite o idPaciente">
                     </div>
                     <div class="mb-3 col-sm-4">
-                        <label for="idMedico" class="form-label">Id Médico</label>
-                        <input type="number" class="form-control" id="idMedico" name="idMedico" value='<?php echo $idMedico ?>' placeholder="Digite o idMedico">
+                        <label for="idAtendimento" class="form-label">Id Atendimento</label>
+                        <input type="number" class="form-control" id="idAtendimento" min=0 name="idMedico" value='<?php echo $idAtendimento ?>' placeholder="Digite o id Atendimento">
                     </div>
-                </di>
+                </div>
 
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button  type="submit" class="btn btn-primary mb-3">Enviar</button>
             </form>
         </div>
         <div class="row">
@@ -81,7 +81,7 @@ if (isset($_GET['idSolicitacoes'])) {
                     <th class="text-center">Id</th>
                     <th class="text-center">Id Solicitante</th>
                     <th class="text-center">Id Paciente</th>
-                    <th class="text-center">Id Médico</th>                    
+                    <th class="text-center">Id Atendimento</th>
                     <th class="text-center">Ações</th>
                 </tr>
                 <?php
@@ -91,7 +91,7 @@ if (isset($_GET['idSolicitacoes'])) {
                                 <td class="text-center">' . $solicitacao['idSolicitacoes'] . '</td>
                                 <td class="text-center">' . $solicitacao['idSolicitante'] . '</td>
                                 <td class="text-center">' . $solicitacao['idPaciente'] . '</td>    
-                                <td class="text-center">' . $solicitacao['idMedico'] . '</td>                                    
+                                <td class="text-center">' . $solicitacao['idAtendimento'] . '</td>                                    
                                 <td class="text-center">
                                     <a class="btn btn-warning btn-sm" href="?idSolicitacoes=' . $solicitacao['idSolicitacoes'] . '">Editar</a>
                                     <a class="btn btn-danger btn-sm" onclick="return confirm(\'Deseja realmente excluir?\');"

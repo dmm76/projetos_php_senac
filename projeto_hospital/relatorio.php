@@ -1,12 +1,11 @@
 <?php
-// relatorio_atendimentos.php
-// Página de Relatório de Atendimentos (médico)
-// Requisitos atendidos:
-// - Filtros por intervalo de datas, status, paciente (nome/cpf) e médico (nome)
-// - Resumo com contagens por status e métricas (total, média de duração)
-// - Tabela com os resultados
-// - Exportação para CSV e botão de impressão
-// - Layout Bootstrap 5 (mesmo estilo do seu index)
+// relatorio_atendimentos.php — VERSÃO COMPLETA
+// - Filtros por período, status, paciente (nome/cpf) e médico (nome)
+// - Considera médicos via usuarios.nivel = 'medico'
+// - Resumo: total por status, "em andamento" (sem dataFim) e duração média (min)
+// - Duração calculada no próprio SELECT (sem query por linha)
+// - CSV + impressão
+// - Tratamento de datas '0000-00-00'
 
 include_once("includes/conexao.php");
 
@@ -29,25 +28,21 @@ $types  = '';
 
 // Janela de data (inclusive)
 $conds[] = "a.data >= ?";   $params[] = $dataInicio; $types .= 's';
-$conds[] = "a.data <= ?";   $params[] = $dataFim;     $types .= 's';
+$conds[] = "a.data <= ?";   $params[] = $dataFim;    $types .= 's';
 
-if ($status !== 'todos') {
-  $conds[] = "a.status = ?"; $params[] = $status; $types .= 's';
-}
-
-if ($nomePaciente !== '') {
-  $conds[] = "p.nome LIKE ?"; $params[] = "%$nomePaciente%"; $types .= 's';
-}
-
-if ($cpf !== '') {
-  $conds[] = "p.cpf LIKE ?"; $params[] = "%$cpf%"; $types .= 's';
-}
-
-if ($nomeMedico !== '') {
-  $conds[] = "u.nome LIKE ?"; $params[] = "%$nomeMedico%"; $types .= 's';
-}
+if ($status !== 'todos') { $conds[] = "a.status = ?"; $params[] = $status; $types .= 's'; }
+if ($nomePaciente !== '') { $conds[] = "p.nome LIKE ?"; $params[] = "%$nomePaciente%"; $types .= 's'; }
+if ($cpf !== '')          { $conds[] = "p.cpf  LIKE ?"; $params[] = "%$cpf%";          $types .= 's'; }
+if ($nomeMedico !== '')   { $conds[] = "u.nome LIKE ?"; $params[] = "%$nomeMedico%";   $types .= 's'; }
 
 $where = count($conds) ? ('WHERE ' . implode(' AND ', $conds)) : '';
+
+// Expressão de duração segura (ignora NULL e '0000-00-00')
+$exprDuracao = "CASE 
+  WHEN a.dataInicio IS NOT NULL AND a.dataFim IS NOT NULL 
+   AND a.dataInicio <> '0000-00-00' AND a.dataFim <> '0000-00-00'
+  THEN TIMESTAMPDIFF(MINUTE, a.dataInicio, a.dataFim) 
+  ELSE NULL END";
 
 // --------- Query principal (lista) ---------
 $sqlLista = "SELECT 
@@ -59,18 +54,20 @@ $sqlLista = "SELECT
     a.status,
     a.obsTriagem,
     a.obsAtendimento,
-    p.nome  AS nomePaciente,
-    p.cpf   AS cpfPaciente,
-    u.nome  AS nomeMedico
+    p.nome      AS nomePaciente,
+    p.cpf       AS cpfPaciente,
+    p.telefone  AS telPaciente,
+    u.nome      AS nomeMedico,
+    $exprDuracao AS duracaoMin
   FROM atendimentos a
     JOIN pacientes p ON p.idPaciente = a.idPaciente
-    JOIN usuarios  u ON u.idUsuario  = a.idMedico
+    JOIN usuarios  u ON u.idUsuario  = a.idMedico AND u.nivel = 'medico'
   $where
   ORDER BY a.data ASC, a.hora ASC";
 
 $stmtLista = $con->prepare($sqlLista);
 if (!$stmtLista) { die("Erro ao preparar SQL lista: " . $con->error); }
-if ($types !== '') $stmtLista->bind_param($types, ...$params);
+if ($types !== '') { $stmtLista->bind_param($types, ...$params); }
 $stmtLista->execute();
 $resLista = $stmtLista->get_result();
 $linhas   = $resLista->fetch_all(MYSQLI_ASSOC);
@@ -79,44 +76,48 @@ $linhas   = $resLista->fetch_all(MYSQLI_ASSOC);
 $sqlAgg = "SELECT a.status, COUNT(*) as total
   FROM atendimentos a
     JOIN pacientes p ON p.idPaciente = a.idPaciente
-    JOIN usuarios  u ON u.idUsuario  = a.idMedico
+    JOIN usuarios  u ON u.idUsuario  = a.idMedico AND u.nivel = 'medico'
   $where
   GROUP BY a.status";
 
 $stmtAgg = $con->prepare($sqlAgg);
 if (!$stmtAgg) { die("Erro ao preparar SQL agregação: " . $con->error); }
-if ($types !== '') $stmtAgg->bind_param($types, ...$params);
+if ($types !== '') { $stmtAgg->bind_param($types, ...$params); }
 $stmtAgg->execute();
 $resAgg = $stmtAgg->get_result();
-$contagens = [
-  'agendado'     => 0,
-  'recepcionado' => 0,
-  'triado'       => 0,
-  'finalizado'   => 0,
-];
-while ($row = $resAgg->fetch_assoc()) {
-  $contagens[$row['status']] = (int)$row['total'];
-}
-
+$contagens = [ 'agendado'=>0, 'recepcionado'=>0, 'triado'=>0, 'finalizado'=>0 ];
+while ($row = $resAgg->fetch_assoc()) { $contagens[$row['status']] = (int)$row['total']; }
 $totalRegistros = array_sum($contagens);
 
-// --------- Métrica: duração média (em minutos) ---------
-$sqlAvg = "SELECT AVG(TIMESTAMPDIFF(MINUTE, a.dataInicio, a.dataFim)) as mediaMinutos
+// --------- Em andamento (sem dataFim) ---------
+$sqlEmAnd = "SELECT COUNT(*) AS qtd
   FROM atendimentos a
     JOIN pacientes p ON p.idPaciente = a.idPaciente
-    JOIN usuarios  u ON u.idUsuario  = a.idMedico
+    JOIN usuarios  u ON u.idUsuario  = a.idMedico AND u.nivel = 'medico'
   $where
-  AND a.dataInicio IS NOT NULL AND a.dataFim IS NOT NULL";
+  AND (a.dataFim IS NULL OR a.dataFim = '0000-00-00')";
+$stmtAnd = $con->prepare($sqlEmAnd);
+if (!$stmtAnd) { die("Erro ao preparar SQL em andamento: " . $con->error); }
+if ($types !== '') { $stmtAnd->bind_param($types, ...$params); }
+$stmtAnd->execute();
+$resAnd = $stmtAnd->get_result();
+$rowAnd = $resAnd->fetch_assoc();
+$emAndamento = (int)($rowAnd['qtd'] ?? 0);
+
+// --------- Métrica: duração média (em minutos) ---------
+$sqlAvg = "SELECT AVG($exprDuracao) as mediaMinutos
+  FROM atendimentos a
+    JOIN pacientes p ON p.idPaciente = a.idPaciente
+    JOIN usuarios  u ON u.idUsuario  = a.idMedico AND u.nivel = 'medico'
+  $where";
 
 $stmtAvg = $con->prepare($sqlAvg);
 if (!$stmtAvg) { die("Erro ao preparar SQL média: " . $con->error); }
-if ($types !== '') $stmtAvg->bind_param($types, ...$params);
+if ($types !== '') { $stmtAvg->bind_param($types, ...$params); }
 $stmtAvg->execute();
 $resAvg = $stmtAvg->get_result();
 $mediaMinutos = 0;
-if ($row = $resAvg->fetch_assoc()) {
-  $mediaMinutos = $row['mediaMinutos'] !== null ? round((float)$row['mediaMinutos'], 1) : 0;
-}
+if ($row = $resAvg->fetch_assoc()) { $mediaMinutos = $row['mediaMinutos'] !== null ? round((float)$row['mediaMinutos'], 1) : 0; }
 
 // --------- Exportação CSV ---------
 if (isset($_GET['export']) && $_GET['export'] === 'csv') {
@@ -125,36 +126,25 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
   header('Content-Disposition: attachment; filename=' . $arquivo);
 
   $out = fopen('php://output', 'w');
-  // Cabeçalho
-  fputcsv($out, [
-    'ID', 'Data', 'Hora', 'Paciente', 'CPF', 'Médico', 'Status', 'Início', 'Fim', 'Duração (min)'
-  ], ';');
-
+  fputcsv($out, ['ID','Data','Hora','Paciente','Telefone','CPF','Médico','Status','Início','Fim','Duração (min)'], ';');
   foreach ($linhas as $l) {
-    $duracao = '';
-    if (!empty($l['dataInicio']) && !empty($l['dataFim'])) {
-      $q = $con->query("SELECT TIMESTAMPDIFF(MINUTE, '" . $con->real_escape_string($l['dataInicio']) . "', '" . $con->real_escape_string($l['dataFim']) . "') AS dif");
-      $d = $q ? $q->fetch_assoc() : null;
-      $duracao = $d ? (int)$d['dif'] : '';
-    }
-
     fputcsv($out, [
       $l['idAtendimento'],
       $l['data'],
       $l['hora'],
       $l['nomePaciente'],
+      $l['telPaciente'],
       $l['cpfPaciente'],
       $l['nomeMedico'],
       $l['status'],
       $l['dataInicio'],
       $l['dataFim'],
-      $duracao,
+      $l['duracaoMin'] !== null ? (int)$l['duracaoMin'] : ''
     ], ';');
   }
   fclose($out);
   exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -164,10 +154,7 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Relatório de Atendimentos</title>
   <style>
-    @media print {
-      .no-print { display: none !important; }
-      .table th, .table td { border-color: #000 !important; }
-    }
+    @media print { .no-print { display:none!important; } .table th, .table td { border-color:#000!important; } }
   </style>
 </head>
 <body>
@@ -228,31 +215,20 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
       </div>
     </div>
     <div class="col-md-2">
-      <div class="card border-warning">
-        <div class="card-body">
-          <div class="d-flex justify-content-between"><span>Agendado</span><strong><?php echo (int)$contagens['agendado']; ?></strong></div>
-        </div>
-      </div>
+      <div class="card border-warning"><div class="card-body"><div class="d-flex justify-content-between"><span>Agendado</span><strong><?php echo (int)$contagens['agendado']; ?></strong></div></div></div>
     </div>
     <div class="col-md-2">
-      <div class="card border-secondary">
-        <div class="card-body">
-          <div class="d-flex justify-content-between"><span>Recepcionado</span><strong><?php echo (int)$contagens['recepcionado']; ?></strong></div>
-        </div>
-      </div>
+      <div class="card border-secondary"><div class="card-body"><div class="d-flex justify-content-between"><span>Recepcionado</span><strong><?php echo (int)$contagens['recepcionado']; ?></strong></div></div></div>
     </div>
     <div class="col-md-2">
-      <div class="card border-success">
-        <div class="card-body">
-          <div class="d-flex justify-content-between"><span>Triado</span><strong><?php echo (int)$contagens['triado']; ?></strong></div>
-        </div>
-      </div>
+      <div class="card border-success"><div class="card-body"><div class="d-flex justify-content-between"><span>Triado</span><strong><?php echo (int)$contagens['triado']; ?></strong></div></div></div>
     </div>
     <div class="col-md-3">
       <div class="card border-primary">
         <div class="card-body">
           <div class="d-flex justify-content-between"><span>Finalizado</span><strong><?php echo (int)$contagens['finalizado']; ?></strong></div>
           <small class="text-muted">Duração média: <?php echo (int)$mediaMinutos; ?> min</small>
+          <div class="mt-2"><span class="badge text-bg-dark">Em andamento: <?php echo (int)$emAndamento; ?></span></div>
         </div>
       </div>
     </div>
@@ -268,6 +244,7 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
             <tr>
               <th class="text-center">ID</th>
               <th>Paciente</th>
+              <th class="text-center">Telefone</th>
               <th class="text-center">CPF</th>
               <th>Médico</th>
               <th class="text-center">Data</th>
@@ -281,17 +258,10 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
           </thead>
           <tbody>
           <?php if (!count($linhas)) : ?>
-            <tr><td colspan="11" class="text-center text-muted">Nenhum registro encontrado para os filtros informados.</td></tr>
+            <tr><td colspan="12" class="text-center text-muted">Nenhum registro encontrado para os filtros informados.</td></tr>
           <?php else: ?>
             <?php foreach ($linhas as $l): ?>
               <?php
-                $duracao = '';
-                if (!empty($l['dataInicio']) && !empty($l['dataFim'])) {
-                  $q = $con->query("SELECT TIMESTAMPDIFF(MINUTE, '" . $con->real_escape_string($l['dataInicio']) . "', '" . $con->real_escape_string($l['dataFim']) . "') AS dif");
-                  $d = $q ? $q->fetch_assoc() : null;
-                  $duracao = $d ? (int)$d['dif'] : '';
-                }
-                // Badge de status
                 $badge = match($l['status']) {
                   'agendado'     => '<span class="badge text-bg-warning">Agendado</span>',
                   'recepcionado' => '<span class="badge text-bg-secondary">Recepcionado</span>',
@@ -299,10 +269,12 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
                   'finalizado'   => '<span class="badge text-bg-primary">Finalizado</span>',
                   default        => '<span class="badge text-bg-light">-</span>'
                 };
+                $dur = $l['duracaoMin'];
               ?>
               <tr>
                 <td class="text-center"><?php echo (int)$l['idAtendimento']; ?></td>
                 <td><?php echo htmlspecialchars($l['nomePaciente']); ?></td>
+                <td class="text-center"><?php echo htmlspecialchars($l['telPaciente']); ?></td>
                 <td class="text-center"><?php echo htmlspecialchars($l['cpfPaciente']); ?></td>
                 <td><?php echo htmlspecialchars($l['nomeMedico']); ?></td>
                 <td class="text-center"><?php echo htmlspecialchars($l['data']); ?></td>
@@ -310,12 +282,12 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
                 <td class="text-center"><?php echo $badge; ?></td>
                 <td class="text-center"><?php echo htmlspecialchars($l['dataInicio']); ?></td>
                 <td class="text-center"><?php echo htmlspecialchars($l['dataFim']); ?></td>
-                <td class="text-center"><?php echo $duracao !== '' ? (int)$duracao : '-'; ?></td>
+                <td class="text-center"><?php echo $dur !== null ? (int)$dur : '-'; ?></td>
                 <td>
                   <?php
                     $obs = [];
-                    if (!empty($l['obsTriagem'])) $obs[] = 'Triagem: ' . $l['obsTriagem'];
-                    if (!empty($l['obsAtendimento'])) $obs[] = 'Atend.: ' . $l['obsAtendimento'];
+                    if (!empty($l['obsTriagem']))      $obs[] = 'Triagem: ' . $l['obsTriagem'];
+                    if (!empty($l['obsAtendimento']))  $obs[] = 'Atend.: ' . $l['obsAtendimento'];
                     echo htmlspecialchars(implode(' | ', $obs));
                   ?>
                 </td>
@@ -332,9 +304,7 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
 <script src="https://unpkg.com/imask"></script>
 <script>
   const elemento = document.getElementById('cpf');
-  if (elemento) {
-    IMask(elemento, { mask: '000.000.000-00' });
-  }
+  if (elemento) { IMask(elemento, { mask: '000.000.000-00' }); }
 </script>
 </body>
 </html>

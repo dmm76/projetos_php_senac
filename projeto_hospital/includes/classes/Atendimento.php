@@ -70,7 +70,7 @@ class Atendimento
     }
 
 
-    public function listarAtendimentos($dataAtendimento, $nome, $cpf, $status)
+    public function listarAtendimentos($dataInicio, $dataFim, $nome, $cpf, $status)
     {
         $where = '';
         if ($nome != "") {
@@ -95,7 +95,7 @@ class Atendimento
                 INNER JOIN pacientes ON atendimentos.idPaciente = pacientes.idPaciente
                 INNER JOIN usuarios ON atendimentos.idMedico = usuarios.idUsuario
                 WHERE
-                    atendimentos.data = '{$dataAtendimento}'
+                    atendimentos.data BETWEEN '{$dataInicio}' AND '{$dataFim}' 
                     $where
                 ORDER BY data, hora ASC";
         $resultado = $this->bd->query($sql);

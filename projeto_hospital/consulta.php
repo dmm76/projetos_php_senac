@@ -5,7 +5,6 @@ include_once("includes/classes/Atendimento.php");
 $bd = new Database();
 $atendimento = new Atendimento($bd);
 
-
 if (isset($_GET['status'])) {
     $idAtendimento = $_GET['idAtendimento'];
     $status = $_GET['status'];
@@ -15,18 +14,20 @@ if (isset($_GET['status'])) {
     }
 }
 
-if (isset($_GET['dataAtendimento'])) { //isset = se tem setado _GET dataAtendimento no cabeçalho da pagina
-    $dataAtendimento = $_GET['dataAtendimento'];
+if (isset($_GET['dataInicio'])) { //isset = se tem setado _GET dataInicio no cabeçalho da pagina
+    $dataInicio = $_GET['dataInicio'];
+    $dataFim = $_GET['dataFim'];
     $nome = $_GET['nome'];
     $cpf = $_GET['cpf'];
 } else {
-    $dataAtendimento = date('Y-m-d');
+    $dataInicio = date('Y-m-d');
+    $dataFim = date('Y-m-d');
     $nome = '';
     $cpf = '';
 }
 
 $status = 'triado';
-$atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, $status);
+$atendimentos = $atendimento->listarAtendimentos($dataInicio, $dataFim, $nome, $cpf, $status);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,11 @@ $atendimentos = $atendimento->listarAtendimentos($dataAtendimento, $nome, $cpf, 
                     <div class="row mb-3">
                         <div class="col-md-3">
                             <label for="">Data da Consulta:</label>
-                            <input type="date" name="dataAtendimento" value="<?php echo $dataAtendimento ?>" class="form-control">
+                            <input type="date" name="dataInicio" value="<?php echo $dataInicio ?>" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Data da Consulta:</label>
+                            <input type="date" name="dataFim" value="<?php echo $dataFim ?>" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="">Nome do Paciente:</label>
