@@ -14,7 +14,7 @@ class Usuario
         $cadastro = date('Y-m-d H:i:s');
         $nome = $data['nome'];
         $email = $data['email'];
-        $senha = $data['senha'];
+        $senha = md5($data['senha']);
         $nivel = $data['nivel'];
 
         if ($idUsuario == 0) {
@@ -74,7 +74,7 @@ class Usuario
    public function login($email, $senha)
 {
     $email = trim((string)$email);
-    $senha = (string)$senha;
+    $senha = md5((string)$senha);
 
     // acessa a instância real do mysqli
     $mysqli = $this->bd->conexao;

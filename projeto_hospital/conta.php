@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("includes/validacao.php");
+
 if (empty($_SESSION['user'])) {
   header('Location: login.php'); exit;
 }

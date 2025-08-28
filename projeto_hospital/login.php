@@ -22,6 +22,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erro = 'E-mail ou senha inválidos.';
     }
 }
+
+if(isset($user['email'])){
+  $_SESSION['idUsuario'] = $user['idUsario'];
+  $_SESSION['nivel'] = $user['nivel'];
+
+  if($_SESSION['nivel']=='recepcao'){
+    header('Location: index.php');
+  }
+
+  if($_SESSION['nivel']=='enfermeiro'){
+    header('Location: preconsulta.php');
+  }  
+
+  if($_SESSION['nivel']=='medico'){
+    header('Location: consulta.php');
+  } 
+
+  if($_SESSION['nivel']=='admin'){
+    header('Location: index.php');
+  }  
+}else{
+  header('Location: login.php?verifique os dados');
+}
+
 ?>
 <!doctype html>
 <html lang="pt-br">

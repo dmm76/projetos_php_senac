@@ -1,7 +1,7 @@
 <?php
 
 include_once("includes/classes/Usuario.php");
-
+include_once("includes/validacao.php");
 $bd = new Database();
 $usuario = new Usuario($bd);
 

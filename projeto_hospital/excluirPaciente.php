@@ -1,7 +1,7 @@
 <?php
 
 include_once("includes/classes/Paciente.php");
-
+include_once("includes/validacao.php");
 $bd = new Database();
 $paciente = new Paciente($bd);
 
