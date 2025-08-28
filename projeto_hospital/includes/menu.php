@@ -25,6 +25,7 @@
                 <li class="nav-item"> <a class="nav-link active" aria-current="page" href="relatorio.php">Relatório</a>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="index.php">Principal</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="sair.php">Sair</a> </li>
                 <li class="nav-item"> <a class="nav-link disabled" aria-disabled="true">Disabled</a> </li>
             </ul>
             <form class="d-flex" role="search"> <input class="form-control me-2" type="search" placeholder="Search"

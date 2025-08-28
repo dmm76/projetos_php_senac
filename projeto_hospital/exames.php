@@ -1,7 +1,7 @@
 <?php
 include_once("includes/conexao.php");
 include_once("includes/classes/Exame.php");
-
+include_once("includes/validacao.php");
 
 //solic_exames(idExame, idSolicitacao, cod, descricao, status, obs)
 

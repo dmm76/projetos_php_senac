@@ -1,7 +1,7 @@
 <?php
 include_once("includes/conexao.php");
 include_once("includes/classes/Usuario.php");
-
+include_once("includes/validacao.php");
 
 //usuario(idUsuario, cadastro, nome, email, senha, nivel)
 

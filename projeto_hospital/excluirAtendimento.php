@@ -1,7 +1,7 @@
 <?php
 
 include_once("includes/classes/Atendimento.php");
-
+include_once("includes/validacao.php");
 $bd = new Database();
 $atendimento = new Atendimento($bd);
 

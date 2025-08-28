@@ -8,6 +8,7 @@
 // - Tratamento de datas '0000-00-00'
 
 include_once("includes/conexao.php");
+include_once("includes/validacao.php");
 
 $bd = new Database();
 $con = $bd->conexao; // mysqli

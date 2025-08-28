@@ -1,7 +1,7 @@
 <?php
 include_once("includes/conexao.php");
 include_once("includes/classes/Solicitacao.php");
-
+include_once("includes/validacao.php");
 //solicitacoes(idSolicitacoes, cadastro, idSolicitante, idPaciente, idMedico)
 
 $bd = new Database();

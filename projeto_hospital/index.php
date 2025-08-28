@@ -1,11 +1,13 @@
 <?php
-include_once("includes/conexao.php");
 include_once("includes/classes/Atendimento.php");
+include_once("includes/validacao.php");
+
+//echo "Usuário logado: " . $_SESSION['idUsuario'];
 //atendimentos(idAtendimento, cadastro, data, hora, dataInicio, dataFim, idPaciente, idAtendimento, idMedico, status, obsTriagem, obsAtendimento)
+
 $bd = new Database();
 $atendimento = new Atendimento($bd);
 $status = 'agendado';
-
 
 if (isset($_GET['status'])) {
     $idAtendimento = $_GET['idAtendimento'];
