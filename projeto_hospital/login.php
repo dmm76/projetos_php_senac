@@ -1,101 +1,87 @@
 <?php
-include_once("includes/classes/Usuario.php");
+  
+  include_once("includes/classes/Usuario.php");
 
-$bd = new Database();
-$usuarioModel = new Usuario($bd);
-$erro = null;
+  $bd = new Database();
+  $Usuario = new Usuario($bd);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email'] ?? '');
-    $senha = $_POST['senha'] ?? '';
+  if($_SERVER['REQUEST_METHOD']=='POST'){
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-    $user = $usuarioModel->login($email, $senha);
+    $dados = $Usuario->login($email, $senha);
 
-    if ($user) {
-        $_SESSION['idUsuario'] = $user['idUsuario'];
-        $_SESSION['nivel'] = $user['nivel'];
+    if (isset($dados['email'])) {
+      
+      $_SESSION['idUsuario'] = $dados['idUsuario'];
+      $_SESSION['nivel'] = $dados['nivel'];
 
-        header('Location: index.php'); // página interna
-        exit;
+      if ($_SESSION['nivel']=='recepcao') {
+        header('Location: index.php');
+      }
 
+      if ($_SESSION['nivel']=='enfermeiro') {
+        header('Location: preconsulta.php');
+      }
+
+      if ($_SESSION['nivel']=='medico') {
+        header('Location: consulta.php');
+      }
+
+      if ($_SESSION['nivel']=='adm') {
+        header('Location: index.php');
+      }
     } else {
-        $erro = 'E-mail ou senha inválidos.';
+      header('Location: login.php?verifique os dados');
     }
-}
 
-if(isset($user['email'])){
-  $_SESSION['idUsuario'] = $user['idUsario'];
-  $_SESSION['nivel'] = $user['nivel'];
-
-  if($_SESSION['nivel']=='recepcao'){
-    header('Location: index.php');
   }
 
-  if($_SESSION['nivel']=='enfermeiro'){
-    header('Location: preconsulta.php');
-  }  
-
-  if($_SESSION['nivel']=='medico'){
-    header('Location: consulta.php');
-  } 
-
-  if($_SESSION['nivel']=='admin'){
-    header('Location: index.php');
-  }  
-}else{
-  header('Location: login.php?verifique os dados');
-}
-
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tela de Login</title>
+  <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>.login-card{max-width:420px}</style>
+  <style>
+    body {
+      background-color: #e0e0e0;
+      height: 100vh;
+    }
+    .login-card {
+      max-width: 400px;
+      width: 100%;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
-<body class="bg-light">
-  <div class="container min-vh-100 d-flex align-items-center justify-content-center">
-    <div class="login-card w-100">
-      <div class="card shadow-sm rounded-4">
-        <div class="card-body p-4">
-          <h1 class="h4 text-center mb-4">Entrar</h1>
+<body>
 
-          <?php if ($erro): ?>
-            <div class="alert alert-danger small"><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8') ?></div>
-          <?php endif; ?>
-
-          <form method="post" class="needs-validation" novalidate>
-            <div class="mb-3">
-              <label class="form-label" for="email">E-mail</label>
-              <input type="email" name="email" id="email" class="form-control" required>
-              <div class="invalid-feedback">Informe um e-mail válido.</div>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label" for="senha">Senha</label>
-              <input type="password" name="senha" id="senha" class="form-control" minlength="4" required>
-              <div class="invalid-feedback">Informe sua senha.</div>
-            </div>
-
-            <div class="d-grid">
-              <button class="btn btn-primary" type="submit">Entrar</button>
-            </div>
-          </form>
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="login-card">
+      <h3 class="text-center mb-4">Login</h3>
+      <form action="" method="POST">
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" required>
         </div>
-      </div>
-      <p class="text-center text-muted small mt-3 mb-0">Não tem conta? peça ao admin 🙂</p>
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+      </form>
     </div>
   </div>
-<script>
-(() => {
-  const forms = document.querySelectorAll('.needs-validation');
-  forms.forEach(f => f.addEventListener('submit', e => {
-    if (!f.checkValidity()) { e.preventDefault(); e.stopPropagation(); }
-    f.classList.add('was-validated');
-  }));
-})();
-</script>
+
+  <!-- Bootstrap JS (opcional, para funcionalidades como modal ou toast) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,4 @@
 <?php
-
-if(!isset($_SESSION['idUsuario'])){
-    header("Location: login.php?Você precisa esta logadoooo!");
-    exit();
+if (empty($_SESSION['idUsuario'])) {
+    header('Location: /projeto_hospital/login.php'); exit;
 }

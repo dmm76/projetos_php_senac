@@ -1,71 +1,78 @@
 <?php
-include_once("includes/conexao.php");
+	
+	include_once("includes/conexao.php");
 
-//solic_exames(idExame, idSolicitacao, cod, status, obs)
-class Exame
-{
-    private $bd;
-    public function __construct(Database $bd)
-    {
-        $this->bd = $bd;
-    }
+	class Exame {
 
-    public function inserir(array $data)
-    {
-       
-        $idSolicitacao = $data['idSolicitacao'];
-        $cod = $data['cod'];
-        $status = $data['status'];
-        $obs = $data['obs'];
-        
+		private $bd;
 
-        $sql = "INSERT INTO solic_exames(idSolicitacao, cod, status, obs)
-                    VALUES ('$idSolicitacao', '$cod', '$status', '$obs')";
+		public function __construct(Database $bd){
+			$this->bd = $bd;
+		}
 
-        return $this->bd->query($sql);
-    }
+		function inserir(array $data){
+			$cadastro = date('Y-m-d H:i:s');
+			$idMedico = $data['idMedico'];
+			$idPaciente = $data['idPaciente'];
+			$idAtendimento = $data['idAtendimento'];
+			$status = 'solicitado';
 
-    public function listar()
-    {
-        $sql = "SELECT * FROM solic_exames
-            ORDER BY idExame ASC";
+			$sql = "INSERT INTO solicitacoes (cadastro, idMedico, idPaciente, idAtendimento, status)
+					VALUES ('$cadastro', '$idMedico', '$idPaciente', '$idAtendimento', '$status')";
 
-        //essa linha pega todos os dados vindos do banco e insere em resultado
-        $resultado = $this->bd->query($sql);
+			return $this->bd->query($sql);
+		}
 
-        $rows = [];
-        if ($resultado && $resultado->num_rows > 0) {
-            while ($row = $resultado->fetch_assoc()) {
-                $rows[] = $row;
-            }
-        }
-        return $rows;
-    }
+		function inserirExames(array $data){
+			$idSolicitacao = $data['idSolicitacao'];
+			$cod = $data['cod'];
+			$descricao = $data['descricao'];
+			$obs = $data['obs'];
 
-    public function buscar($idExame)
-    {
-        $sql = "SELECT * FROM solic_exames WHERE idExame = '{$idExame}'";
-        $resultado = $this->bd->query($sql);
-        return $resultado->fetch_assoc();
-    }
 
-    public function atualizar(array $data)
-    {
-        $idExame = $data['idExame'];
-        $idSolicitacao = $data['idSolicitacao'];
-        $cod = $data['cod'];
-        $status = $data['status'];
-        $obs = $data['obs'];
-       
-        $sql = "UPDATE produto SET idExame = '$idExame', idSolicitacao = '{$idSolicitacao}', cod = '$cod', status = '$status', obs = '$obs',
-                    WHERE idExame = '{$idExame}'";
+			$sql = "INSERT INTO solic_exames (idSolicitacao, cod, descricao, obs)
+					VALUES ('$idSolicitacao', '$cod', '$descricao', '$obs')";
 
-        return $this->bd->query($sql);
-    }
+			return $this->bd->query($sql);
+		}
 
-    public function deletar($idExame){
-        $id = (int)$idExame;
-        $sql = "DELETE fROM solic_exames where idExame = {$id}";
-        return $this->bd->query($sql);
-    }
-}
+		function listar(){
+			$sql = "SELECT solicitacoes.idSolicitacao, solicitacoes.cadastro,
+                    solicitacoes.idMedico, solicitacoes.idPaciente, solicitacoes.idAtendimento,
+                    solicitacoes.status, usuarios.nome as nomeMedico,
+                    pacientes.nome as nomePaciente FROM solicitacoes
+                    INNER JOIN usuarios ON solicitacoes.idMedico = usuarios.idUsuario
+                    INNER JOIN pacientes ON solicitacoes.idPaciente = pacientes.idPaciente
+                    ORDER BY solicitacoes.cadastro ASC";
+
+			$resultado = $this->bd->query($sql);
+
+			$rows = [];
+			while($row = $resultado->fetch_assoc()){
+				$rows[] = $row;
+			}
+
+			return $rows;
+		}
+
+		function listarExamesSolicitacao($idSolicitacao){
+			$sql = "SELECT * FROM solic_exames WHERE idSolicitacao = '{$idSolicitacao}'";
+
+			$resultado = $this->bd->query($sql);
+
+			$rows = [];
+			while($row = $resultado->fetch_assoc()){
+				$rows[] = $row;
+			}
+
+			return $rows;
+		}
+
+		function cancelar($idAtendimento){
+			$sql = "DELETE FROM atendimentos WHERE idAtendimento = '{$idAtendimento}'";
+			return $this->bd->query($sql);
+		}
+
+	}
+
+?>

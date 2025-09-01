@@ -18,12 +18,12 @@ class Atendimento
         $hora = date('H:i:s');
         $dataInicio = $data['dataInicio'];
         $dataFim = $data['dataFim'];
-        $idPaciente = $data['idPaciente'];
-        $idUsuario = $data['idUsuario'];
+        $idPaciente = $data['idPaciente'];       
         $idMedico = $data['idMedico'];
         $status = $data['status'];
         $obsTriagem = $data['obsTriagem'];
         $obsAtendimento = $data['obsAtendimento'];
+        $idUsuario = $_SESSION['idUsuario'];
 
         if ($idAtendimento == 0) {
             $sql = "INSERT INTO atendimentos(cadastro, data, hora, dataInicio, dataFim, idPaciente, idUsuario, idMedico, status, obsTriagem, obsAtendimento)
