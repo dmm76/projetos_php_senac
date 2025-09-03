@@ -1,5 +1,14 @@
-
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
+}
+
+.stat-card .icon {
+  font-size: 1.75rem;
+  opacity: 0.6;
+}
+
+.table-sm td,
+.table-sm th {
+  padding: 0.5rem 0.75rem;
 }
