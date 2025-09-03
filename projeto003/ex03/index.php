@@ -26,12 +26,8 @@ $ultimosProdutos = mysqli_query($conexao, "
   LIMIT 5
 ");
 
-$ultimasCategorias = mysqli_query($conexao, "
-  SELECT idCategoria, nome
-  FROM categoria
-  ORDER BY idCategoria DESC
-  LIMIT 5
-");
+$ultimasCategorias = "SELECT idCategoria, nome FROM categoria ORDER BY idCategoria DESC LIMIT 5";
+$ultimasCategorias = mysqli_query($conexao, $ultimasCategorias);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -47,17 +43,6 @@ $ultimasCategorias = mysqli_query($conexao, "
   <!-- (Opcional) Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <style>
-    .stat-card .icon {
-      font-size: 1.75rem;
-      opacity: .6;
-    }
-
-    .table-sm td,
-    .table-sm th {
-      padding: .5rem .75rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -71,8 +56,9 @@ $ultimasCategorias = mysqli_query($conexao, "
         <div class="text-muted">Gerencie receitas, produtos e categorias com rapidez.</div>
       </div>
       <div class="d-flex gap-2">
-        <a href="receitas.php" class="btn btn-primary"><i class="bi bi-journal-check me-1"></i> Receitas</a>
-        <a href="produto.php#form" class="btn btn-outline-primary"><i class="bi bi-basket me-1"></i> Novo
+        <a href="receitas.php" class="btn btn-outline-primary"><i class="bi bi-journal-check me-1"></i>
+          Receitas</a>
+        <a href="produto.php#form" class="btn btn-outline-success"><i class="bi bi-basket me-1"></i> Novo
           Produto</a>
         <a href="categoria.php#form" class="btn btn-outline-secondary"><i class="bi bi-folder-plus me-1"></i>
           Nova Categoria</a>
