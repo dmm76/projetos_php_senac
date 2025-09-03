@@ -63,7 +63,7 @@
 
 		function deletar($idUsuario){
 			$sql = "DELETE FROM usuario WHERE id = '{$idUsuario}'";
-			return $this->bd->query($sql);
+			return $this->bd->query($sql);			
 		}
 
 		function login($email, $senha){

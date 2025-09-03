@@ -11,6 +11,8 @@ include_once("includes/classes/ferramenta.php");
 $bd = new Database();
 $ferramenta = new Ferramenta($bd);
 $ferramentaBD = new Ferramenta($bd);
+$ferramentaNomes = $ferramenta->listar();
+$ferramentasStatus= $ferramenta->listarStatus();
 
 if (isset($_GET['idferramenta'])) {
     $idferramenta = $_GET['idferramenta'];

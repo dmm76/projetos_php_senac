@@ -159,7 +159,7 @@ $usuarios = $usuario->listar();
         <h3>Cadastro de Usuários</h3>
         <div class="row">
           <form action="" method="POST">
-            <input type="hidden" name="idUsuario" value="<?php echo $idUsuario ?>">
+            <input type="" name="idUsuario" value="<?php echo $idUsuario ?>">
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="nome" class="form-label">Nome</label>

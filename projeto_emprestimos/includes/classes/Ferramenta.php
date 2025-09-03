@@ -52,6 +52,41 @@
 			return $rows;
 		}
 
+
+		function listarStatus(){
+			$sql = "SELECT COLUMN_TYPE
+              FROM INFORMATION_SCHEMA.COLUMNS
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME = 'ferramenta'
+               AND COLUMN_NAME = 'status'";
+
+			$resultado = $this->bd->query($sql);
+			if (!$resultado) return [];
+
+			$row = $resultado->fetch_assoc();
+			if (!$row || empty($row['COLUMN_TYPE'])) return [];
+
+			// Ex.: enum('ativo','inativo','em_manutencao')
+			$colType = $row['COLUMN_TYPE'];
+			if (!preg_match('/^enum\((.*)\)$/i', $colType, $m)) return [];
+
+			// explode e limpa aspas
+			$vals = array_map(function ($v) {
+				return trim($v, " '\"");
+			}, explode(',', $m[1]));
+
+			// Monta no formato esperado pelo seu <select>
+			$saida = [];
+			foreach ($vals as $v) {
+				$saida[] = [
+					'id'   => $v,   // usado em value=""
+					'nome' => $v    // texto exibido
+				];
+			}
+			return $saida;
+		}
+
+
 		function buscaID($idFerramenta){
 			$sql = "SELECT * FROM ferramenta WHERE id = '{$idFerramenta}'";
 
