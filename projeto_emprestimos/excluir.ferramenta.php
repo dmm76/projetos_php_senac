@@ -1,22 +1,19 @@
 <?php
-	
-	include_once("includes/classes/Ferramenta.php");
 
-	// if (!isset($_SESSION['idUsuario'])) {
-	// 	header("Location: login.php?Você precisa estar logado!");
-	// 	exit();
-	// }
+include_once("includes/classes/Ferramenta.php");
 
-	$bd = new Database();
-	$ferramenta = new Ferramenta($bd);
+require_once 'includes/auth.php';
+require_once 'includes/acl.php';
+requireLogin();
+requireRole(['admin']);
 
-	if (isset($_GET['idferramenta'])) {
-		$idFerramenta = $_GET['idferramenta'];
+$bd = new Database();
+$ferramenta = new Ferramenta($bd);
 
-		if ($ferramenta->deletar($idFerramenta)) {
-			header("Location: ferramentas.php?Excluído com sucesso!");
-		}
+if (isset($_GET['idferramenta'])) {
+	$idFerramenta = $_GET['idferramenta'];
+
+	if ($ferramenta->deletar($idFerramenta)) {
+		header("Location: ferramentas.php?Excluído com sucesso!");
 	}
-
-
-?>
+}

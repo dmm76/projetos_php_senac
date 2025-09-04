@@ -2,6 +2,11 @@
 include_once("includes/classes/ferramenta.php");   // sua classe Ferramenta (usa $bd->query etc.)
 include_once("includes/classes/Emprestimo.php");   // para checar empréstimo ativo
 include_once("includes/classes/Reserva.php");      // para checar reserva ativa
+require_once 'includes/auth.php';
+require_once 'includes/acl.php';
+
+requireLogin();
+requireRole(['admin']); // só admin acessa
 // include_once("includes/menu.php");
 
 // if (!isset($_SESSION['id_usuario'])) {
@@ -180,38 +185,38 @@ if ($rs) {
         <table class="table table-bordered table-sm align-middle">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Nome</th>
-              <th>Descrição</th>
-              <th>Estado</th>
-              <th>Status</th>
-              <th style="width: 180px;">Ações</th>
+              <th class="text-center">ID</th>
+              <th class="text-center">Nome</th>
+              <th class="text-center">Descrição</th>
+              <th class="text-center">Estado</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">Ações</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach ($ferramentas as $f): ?>
               <tr>
-                <td><?php echo (int)$f['id']; ?></td>
-                <td><?php echo htmlspecialchars($f['nome']); ?></td>
-                <td><?php echo htmlspecialchars($f['descricao']); ?></td>
-                <td><?php echo htmlspecialchars($f['estado']); ?></td>
-                <td>
+                <td class="text-center" ><?php echo (int)$f['id']; ?></td>
+                <td class="text-center" ><?php echo htmlspecialchars($f['nome']); ?></td>
+                <td class="text-center" ><?php echo htmlspecialchars($f['descricao']); ?></td>
+                <td class="text-center" ><?php echo htmlspecialchars($f['estado']); ?></td>
+                <td class="text-center" >
                   <?php
                     $badge = $f['status']==='emprestada' ? 'badge-emprestada' :
                              ($f['status']==='reservada' ? 'badge-reservada' : 'badge-disponivel');
                   ?>
                   <span class="badge <?php echo $badge; ?>"><?php echo htmlspecialchars($f['status']); ?></span>
                 </td>
-                <td>
-                  <a href="?idferramenta=<?php echo (int)$f['id']; ?>">Editar</a>
+                <td class="text-center" >
+                  <a class="btn btn-warning" href="?idferramenta=<?php echo (int)$f['id']; ?>">Editar</a>
                   &nbsp;|&nbsp;
-                  <a onclick="return confirm('Deseja realmente excluir?');"
+                  <a class="btn btn-danger" onclick="return confirm('Deseja realmente excluir?');"
                      href="excluir.ferramenta.php?idferramenta=<?php echo (int)$f['id']; ?>">
                     Excluir
                   </a>
                   <?php if ($f['status'] !== 'disponivel'): ?>
                     &nbsp;|&nbsp;
-                    <a class="text-decoration-none"
+                    <a class="btn btn-success text-decoration-none"
                        href="setar.status.ferramenta.php?id=<?php echo (int)$f['id']; ?>&status=disponivel"
                        onclick="return confirm('Marcar como disponível? Isso só será efetivo se não houver empréstimo/reserva ativa.');">
                       Disponibilizar

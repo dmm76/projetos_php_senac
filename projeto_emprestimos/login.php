@@ -1,35 +1,42 @@
 <?php
-
 include_once("includes/classes/Usuario.php");
+if (session_status() === PHP_SESSION_NONE) session_start();
 
 $bd = new Database();
 $Usuario = new Usuario($bd);
 
 $msg = "";
+$next = $_GET['next'] ?? $_POST['next'] ?? 'index.php'; // <- destino
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = trim($_POST['email']);
-    $senha = trim($_POST['senha']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $senha = trim($_POST['senha'] ?? '');
 
-    echo $email;
-    echo $senha;
-
-    $dados = $Usuario->login($email, $senha);
-
-    if ($dados && isset($dados['id'])) {
-        // login válido
-        $_SESSION['id_usuario']   = $dados['id'];
-        $_SESSION['email_usuario'] = $dados['email'];
-        $_SESSION['nome_usuario']  = $dados['nome'] ?? $dados['email']; // se sua tabela tiver coluna nome
-        $_SESSION['apartamento']   = $dados['apartamento'] ?? "";
-
-        header("Location: index.php"); // ou emprestimos.php, reservas.php...
-        exit();
+    if ($email === '' || $senha === '') {
+        $msg = "Informe e-mail e senha.";
     } else {
-        $msg = "E-mail ou senha inválidos!";
+        $dados = $Usuario->login($email, $senha); // precisa retornar 'nivel'
+
+        if ($dados && isset($dados['id'])) {
+            session_regenerate_id(true); // segurança
+            $_SESSION['id_usuario']    = $dados['id'];
+            $_SESSION['email_usuario'] = $dados['email'];
+            $_SESSION['nome_usuario']  = $dados['nome'] ?? $dados['email'];
+            $_SESSION['apartamento']   = $dados['apartamento'] ?? '';
+            $_SESSION['nivel']         = strtolower($dados['nivel'] ?? 'comum');
+
+            // simples sanidade para evitar open redirect
+            if (preg_match('#^https?://#i', $next)) { $next = 'index.php'; }
+
+            header("Location: {$next}");
+            exit;
+        } else {
+            $msg = "E-mail ou senha inválidos!";
+        }
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

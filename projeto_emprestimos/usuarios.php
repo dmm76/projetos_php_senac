@@ -1,12 +1,11 @@
 <?php
 
 include_once("includes/classes/Usuario.php");
-// include_once("includes/menu.php");
+require_once 'includes/auth.php';
+require_once 'includes/acl.php';
 
-// if (!isset($_SESSION['idUsuario'])) {
-// 	header("Location: login.php?Você precisa estar logado!");
-// 	exit();
-// }
+requireLogin();
+requireRole(['admin']); // só admin acessa
 
 $bd = new Database();
 $usuario = new Usuario($bd);
@@ -159,7 +158,7 @@ $usuarios = $usuario->listar();
         <h3>Cadastro de Usuários</h3>
         <div class="row">
           <form action="" method="POST">
-            <input type="" name="idUsuario" value="<?php echo $idUsuario ?>">
+            <input type="hidden" name="idUsuario" value="<?php echo $idUsuario ?>">
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="nome" class="form-label">Nome</label>
@@ -202,13 +201,13 @@ $usuarios = $usuario->listar();
             foreach ($usuarios as $usuario) {
               echo '
 									<tr>
-										<td>' . $usuario['id'] . '</td>
-										<td>' . $usuario['nome'] . '</td>
-										<td>' . $usuario['email'] . '</td>
-										<td>' . $usuario['apartamento'] . '</td>
-										<td>
-											<a href="?idUsuario=' . $usuario['id'] . '">Editar</a>
-											<a onclick="return confirm(\'Deseja realmente excluir?\');" href="excluir.usuario.php?idUsuario=' . $usuario['id'] . '">Excluir</a>
+										<td class="text-center" >' . $usuario['id'] . '</td>
+										<td class="text-center" >' . $usuario['nome'] . '</td>
+										<td class="text-center" >' . $usuario['email'] . '</td>
+										<td class="text-center" >' . $usuario['apartamento'] . '</td>
+										<td class="text-center" >
+											<a class="btn btn-warning" href="?idUsuario=' . $usuario['id'] . '">Editar</a>
+											<a class="btn btn-danger" onclick="return confirm(\'Deseja realmente excluir?\');" href="excluir.usuario.php?idUsuario=' . $usuario['id'] . '">Excluir</a>
 										</td>
 									</tr>';
             }
@@ -224,7 +223,8 @@ $usuarios = $usuario->listar();
   <script
     src="../assets/dist/js/bootstrap.bundle.min.js"
     class="astro-vvvwv3sm"></script>
-  <script src="sidebars.js" class="astro-vvvwv3sm"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

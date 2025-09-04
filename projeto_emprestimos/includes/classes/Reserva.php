@@ -166,5 +166,42 @@
       return $this->bd->query($sql);
     }
 
+    /** Libera a reserva (ativa) para empréstimo. */
+function liberarParaEmprestimo($idReserva){
+  $reserva = $this->buscaID($idReserva);
+  if (!$reserva) return false;
+  if ($reserva['status'] !== 'ativa') return false;
+
+  $id_ferramenta = (int)$reserva['id_ferramenta'];
+  $id_usuario    = (int)$reserva['id_usuario'];
+
+  $this->bd->query("START TRANSACTION");
+
+  // 1. Cria empréstimo
+  $ok1 = $this->bd->query("
+    INSERT INTO emprestimo (id_ferramenta, id_usuario, data_emprestimo)
+    VALUES ('{$id_ferramenta}', '{$id_usuario}', CURDATE())
+  ");
+
+  // 2. Atualiza reserva
+  $ok2 = $this->bd->query("
+    UPDATE reserva SET status='atendida' WHERE id='{$idReserva}'
+  ");
+
+  // 3. Atualiza ferramenta
+  $ok3 = $this->bd->query("
+    UPDATE ferramenta SET status='emprestada' WHERE id='{$id_ferramenta}'
+  ");
+
+  if ($ok1 && $ok2 && $ok3) {
+    $this->bd->query("COMMIT");
+    return true;
+  } else {
+    $this->bd->query("ROLLBACK");
+    return false;
+  }
+}
+
+
   }
 ?>

@@ -1,5 +1,10 @@
 <?php
 include_once "includes/classes/Reserva.php";
+require_once 'includes/auth.php';
+require_once 'includes/acl.php';
+
+//requireLogin();
+// requireRole(['admin']); // só admin acessa
 
 // BLOQUEIA NÃO LOGADO (descomente quando estiver com login ativo)
 if (!isset($_SESSION['id_usuario'])) {

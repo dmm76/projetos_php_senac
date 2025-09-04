@@ -7,7 +7,8 @@
   // 	header("Location: login.php?Você precisa estar logado!");
   // 	exit();
   // }
-
+  $nivel = strtolower($_SESSION['nivel'] ?? 'comum');
+  
   $bd = new Database();
   $emprestimo = new Emprestimo($bd);
   $emprestimoBD = new Emprestimo($bd);
@@ -222,7 +223,9 @@
                             <th>Ferramenta</th>
                             <th>data_emprestimo</th>
                             <th>data_devolucao</th>
-                            <th>Ações</th>
+                            <?php if ($nivel === 'admin'): ?>
+                                <th>Ações</th>
+                            <?php endif; ?>F
                         </tr>
                         <?php
                         foreach ($emprestimos as $emprestimo) {

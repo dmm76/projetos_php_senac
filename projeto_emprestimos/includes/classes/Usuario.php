@@ -70,7 +70,7 @@
 			
 			$senha = md5($senha);
 
-			$sql = "SELECT id, email, senha, apartamento 
+			$sql = "SELECT id, email, senha, apartamento, nivel 
 					FROM usuario
 					WHERE email = '{$email}' AND senha = '{$senha}'";
 
