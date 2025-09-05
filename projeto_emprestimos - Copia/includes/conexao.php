@@ -18,15 +18,4 @@ class Database
     {
         return $this->conexao->query($sql);
     }
-
-    public function prepare(string $sql)
-    {
-        return $this->conexao->prepare($sql);
-    }
-
-    public function escape_string(?string $str): string
-    {
-        if ($str === null) return '';
-        return $this->conexao->real_escape_string($str);
-    }
 }
