@@ -9,14 +9,20 @@ $reserva    = new Reserva($bd);
 $id     = (int)($_GET['id'] ?? 0);
 $status = $_GET['status'] ?? 'disponivel';
 
-if ($id <= 0) { header("Location: ferramentas.php?msg=ID inválido."); exit(); }
+if ($id <= 0) {
+  header("Location: ferramentas.php?msg=ID inválido.");
+  exit();
+}
 
 // checa vínculos
 $temEmp = $bd->query("
-  SELECT 1 FROM emprestimo
-   WHERE id_ferramenta='{$id}'
-     AND (data_devolucao IS NULL OR data_devolucao='' OR data_devolucao > CURDATE())
-   LIMIT 1
+  SELECT e.id, u.nome AS usuarioNome, e.data_emprestimo, e.data_devolucao
+  FROM emprestimo e
+  JOIN usuario u ON u.id = e.id_usuario
+ WHERE e.id_ferramenta = '{$id}'
+   AND e.data_devolucao >= CURDATE()
+ ORDER BY e.data_emprestimo DESC
+ LIMIT 1;
 ");
 $temEmp = ($temEmp && $temEmp->num_rows > 0);
 

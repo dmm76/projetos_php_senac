@@ -1,102 +1,67 @@
 <?php
-include_once("includes/classes/ferramenta.php");   // sua classe Ferramenta (usa $bd->query etc.)
-include_once("includes/classes/Emprestimo.php");   // para checar empréstimo ativo
-include_once("includes/classes/Reserva.php");      // para checar reserva ativa
+include_once("includes/classes/ferramenta.php");   // usa sua classe (com salvarComRegra/disponibilizar)
+include_once("includes/classes/Emprestimo.php");   // se precisar em outros pontos
+include_once("includes/classes/Reserva.php");      // se precisar em outros pontos
 require_once 'includes/auth.php';
 require_once 'includes/acl.php';
 
 requireLogin();
 requireRole(['admin']); // só admin acessa
 
-$bd = new Database();
-$ferramenta   = new Ferramenta($bd);
-$ferramentaBD = new Ferramenta($bd);
-
-$emprestimo = new Emprestimo($bd);
-$reserva    = new Reserva($bd);
-
-// opções fixas do ENUM
-$statusOptions = [
-    'disponivel'  => 'Disponível',
-    'reservada'   => 'Reservada',
-    'emprestada'  => 'Emprestada',
-];
+$bd         = new Database();
+$ferramenta = new Ferramenta($bd);
 
 $msg = $_GET['msg'] ?? null;
 
-/* ===== Carregar registro se edição ===== */
+/** ===== Ações por GET (ex.: disponibilizar) ===== */
+if (isset($_GET['acao']) && $_GET['acao'] === 'disponibilizar') {
+    $id = (int)($_GET['id'] ?? 0);
+    if ($id > 0) {
+        $res = $ferramenta->disponibilizar($id);  // usa método da classe
+        header("Location: ferramentas.php?msg=" . urlencode($res['msg']));
+        exit;
+    }
+}
+
+/** ===== Carregar registro se edição ===== */
 if (isset($_GET['idferramenta'])) {
     $idferramenta = (int)$_GET['idferramenta'];
-    $dados = $ferramentaBD->buscaID($idferramenta);
+    $dados        = $ferramenta->buscaID($idferramenta);
 
-    $nome      = $dados['nome'] ?? '';
+    $nome      = $dados['nome']   ?? '';
     $descricao = $dados['descricao'] ?? '';
-    $status    = $dados['status'] ?? 'disponivel';
+    $status    = $dados['status'] ?? 'disponível'; // com acento (igual ao ENUM)
     $estado    = $dados['estado'] ?? '';
 } else {
     $idferramenta = 0;
     $nome = $descricao = $estado = '';
-    $status = 'disponivel';
+    $status = 'disponível';
 }
 
-/* ===== Salvar ===== */
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $idferramenta = (int)($_POST['idferramenta'] ?? 0);
-    $nome         = trim($_POST['nome'] ?? '');
-    $descricao    = trim($_POST['descricao'] ?? '');
-    $statusReq    = $_POST['status'] ?? 'disponivel';
-    $estado       = trim($_POST['estado'] ?? '');
-
-    // Normalização de status para manter coerência com o sistema:
-    // Se existe empréstimo em aberto → 'emprestada'
-    $temEmpAtivo = false;
-    if ($idferramenta > 0) {
-        // empréstimos em aberto: sem data_devolucao ou data_devolucao futura
-        $rsEmp = $bd->query("
-      SELECT 1 FROM emprestimo
-       WHERE id_ferramenta = '{$idferramenta}'
-         AND (data_devolucao IS NULL OR data_devolucao > CURDATE())
-       LIMIT 1
-    ");
-        $temEmpAtivo = ($rsEmp && $rsEmp->num_rows > 0);
-    }
-
-    // Se não tem empréstimo em aberto, mas existe reserva ativa → 'reservada'
-    $temReservaAtiva = $idferramenta > 0 ? $reserva->existeReservaAtivaFerramenta($idferramenta) : false;
-
-    if ($temEmpAtivo) {
-        $statusFinal = 'emprestada';
-    } elseif ($temReservaAtiva) {
-        $statusFinal = 'reservada';
-    } else {
-        // sem vínculos: usa o status solicitado, mas se vier 'emprestada' sem empréstimo, normalizo para 'disponivel'
-        $statusFinal = ($statusReq === 'emprestada') ? 'disponivel' : $statusReq;
-    }
-
+/** ===== Salvar (POST) — tudo via Ferramenta::salvarComRegra ===== */
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
-        'idferramenta' => $idferramenta,
-        'nome'         => $nome,
-        'descricao'    => $descricao,
-        'status'       => $statusFinal,
-        'estado'       => $estado,
+        'idferramenta' => (int)($_POST['idferramenta'] ?? 0),
+        'nome'         => trim($_POST['nome'] ?? ''),
+        'descricao'    => trim($_POST['descricao'] ?? ''),
+        'status'       => $_POST['status'] ?? 'disponível',  // com acento
+        'estado'       => trim($_POST['estado'] ?? ''),
     ];
 
-    if ($ferramenta->inserir($data)) {
-        // mensagem mais clara
-        $msg = "Ferramenta salva com status '{$statusFinal}'.";
-        header("Location: ferramentas.php?msg=" . urlencode($msg));
-    } else {
-        header("Location: ferramentas.php?msg=" . urlencode("Erro ao salvar a ferramenta."));
-    }
-    exit();
+    $res = $ferramenta->salvarComRegra($data);
+    header("Location: ferramentas.php?msg=" . urlencode($res['msg']));
+    exit;
 }
 
-/* ===== Listagem ===== */
-$ferramentas = [];
-$rs = $bd->query("SELECT id, nome, descricao, status, COALESCE(estado,'') AS estado FROM ferramenta ORDER BY nome");
-if ($rs) {
-    while ($row = $rs->fetch_assoc()) $ferramentas[] = $row;
-}
+/** ===== Listagem ===== */
+$ferramentas = $ferramenta->listar();
+
+/** select de status — MUST bater com o ENUM do banco (com acento) */
+$statusOptions = [
+    'disponível' => 'Disponível',
+    'reservada'  => 'Reservada',
+    'emprestada' => 'Emprestada',
+];
 ?>
 <!doctype html>
 <html lang="pt-br" data-bs-theme="auto">
@@ -208,10 +173,13 @@ if ($rs) {
                                     <td class="text-center"><?php echo htmlspecialchars($f['estado']); ?></td>
                                     <td class="text-center">
                                         <?php
-                                        $badge = $f['status'] === 'emprestada' ? 'badge-emprestada' : ($f['status'] === 'reservada' ? 'badge-reservada' : 'badge-disponivel');
+                                        // classe visual (sem acento só no nome da classe)
+                                        $badge = $f['status'] === 'emprestada' ? 'badge-emprestada'
+                                            : ($f['status'] === 'reservada' ? 'badge-reservada' : 'badge-disponivel');
                                         ?>
-                                        <span
-                                            class="badge <?php echo $badge; ?>"><?php echo htmlspecialchars($f['status']); ?></span>
+                                        <span class="badge <?php echo $badge; ?>">
+                                            <?php echo htmlspecialchars($f['status']); ?>
+                                        </span>
                                     </td>
                                     <td class="text-center">
                                         <a class="btn btn-warning"
@@ -221,10 +189,10 @@ if ($rs) {
                                             href="excluir.ferramenta.php?idferramenta=<?php echo (int)$f['id']; ?>">
                                             Excluir
                                         </a>
-                                        <?php if ($f['status'] !== 'disponivel'): ?>
+                                        <?php if ($f['status'] !== 'disponível'): /* com acento */ ?>
                                             &nbsp;|&nbsp;
-                                            <a class="btn btn-success text-decoration-none"
-                                                href="setar.status.ferramenta.php?id=<?php echo (int)$f['id']; ?>&status=disponivel"
+                                            <a class="btn btn-success"
+                                                href="?acao=disponibilizar&id=<?php echo (int)$f['id']; ?>"
                                                 onclick="return confirm('Marcar como disponível? Isso só será efetivo se não houver empréstimo/reserva ativa.');">
                                                 Disponibilizar
                                             </a>
