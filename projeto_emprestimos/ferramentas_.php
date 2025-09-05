@@ -1,18 +1,11 @@
 <?php
-
 include_once("includes/classes/ferramenta.php");
-// include_once("includes/menu.php");
-
-// if (!isset($_SESSION['idferramenta'])) {
-// 	header("Location: login.php?Você precisa estar logado!");
-// 	exit();
-// }
 
 $bd = new Database();
 $ferramenta = new Ferramenta($bd);
 $ferramentaBD = new Ferramenta($bd);
 $ferramentaNomes = $ferramenta->listar();
-$ferramentasStatus= $ferramenta->listarStatus();
+$ferramentasStatus = $ferramenta->listarStatus();
 
 if (isset($_GET['idferramenta'])) {
     $idferramenta = $_GET['idferramenta'];
@@ -37,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'descricao' => $_POST['descricao'],
         'status' => $_POST['status'],
         'estado' => $_POST['estado'],
-        
+
     ];
 
     if ($ferramenta->inserir($data)) {
@@ -57,12 +50,13 @@ $ferramentas = $ferramenta->listar();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>Usuários</title>
 </head>
 
 <body>
-   <!-- <?php include_once('includes/menu.php'); ?> -->
+    <!-- <?php include_once('includes/menu.php'); ?> -->
 
     <div class="container">
         <div class="card">
@@ -74,28 +68,32 @@ $ferramentas = $ferramenta->listar();
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" value="<?php echo $nome ?>" name="nome" placeholder="Digite o nome completo">
+                                <input type="text" class="form-control" id="nome" value="<?php echo $nome ?>"
+                                    name="nome" placeholder="Digite o nome completo">
                             </div>
 
                             <div class="col-md-3 mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
-                                <input type="text" class="form-control" id="descricao" value="<?php echo $descricao ?>" name="descricao" placeholder="Digite o descricao">
+                                <input type="text" class="form-control" id="descricao" value="<?php echo $descricao ?>"
+                                    name="descricao" placeholder="Digite o descricao">
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="status" class="form-label">status</label>
-                                <input type="text" class="form-control" id="status" value="<?php echo $status ?>" name="status" placeholder="Digite bloco e numero do status">
+                                <input type="text" class="form-control" id="status" value="<?php echo $status ?>"
+                                    name="status" placeholder="Digite bloco e numero do status">
                             </div>
 
                             <div class="col-md-3 mb-3">
                                 <label for="estado" class="form-label">Estado de Conservação</label>
-                                <input type="text" class="form-control" id="estado"  value="<?php echo $estado ?>" name="estado" placeholder="Digite o estado da ferramenta">
-                             </div>
-                            
+                                <input type="text" class="form-control" id="estado" value="<?php echo $estado ?>"
+                                    name="estado" placeholder="Digite o estado da ferramenta">
+                            </div>
+
                             <div class="col-md-2 mt-2">
                                 <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>                            
+                            </div>
                         </div>
-                        
+
                     </form>
 
                 </div>

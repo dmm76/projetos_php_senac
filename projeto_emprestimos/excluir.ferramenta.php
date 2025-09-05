@@ -1,5 +1,4 @@
 <?php
-
 include_once("includes/classes/Ferramenta.php");
 
 require_once 'includes/auth.php';

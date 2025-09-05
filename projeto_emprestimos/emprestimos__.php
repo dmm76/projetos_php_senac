@@ -1,19 +1,12 @@
 <?php
-
 include_once("includes/classes/Emprestimo.php");
-// include_once("includes/menu.php");
-
-// if (!isset($_SESSION['idEmprestimo'])) {
-// 	header("Location: login.php?Você precisa estar logado!");
-// 	exit();
-// }
 
 $bd = new Database();
 $emprestimo = new Emprestimo($bd);
 $emprestimoBD = new Emprestimo($bd);
 
-$usuarios= $emprestimo->listarUsuarios();
-$ferramentas= $emprestimo->listarFerramentas();
+$usuarios = $emprestimo->listarUsuarios();
+$ferramentas = $emprestimo->listarFerramentas();
 
 if (isset($_GET['idEmprestimo'])) {
     $idEmprestimo = $_GET['idEmprestimo'];
@@ -57,12 +50,13 @@ $emprestimos = $emprestimo->listar();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>Usuários</title>
 </head>
 
 <body>
-   <!-- <?php include_once('includes/menu.php'); ?> -->
+    <!-- <?php include_once('includes/menu.php'); ?> -->
 
     <div class="container">
         <div class="card">
@@ -74,55 +68,59 @@ $emprestimos = $emprestimo->listar();
                         <div class="row">
                             <div class="col-md-3">
                                 <label for="id_usuario" class="form-label">Usuario</label>
-                                <select name="id_usuario" id="id_usuario"  class="form-select">
+                                <select name="id_usuario" id="id_usuario" class="form-select">
                                     <option value="<?php echo $id_usuario ?>">Selecione um Usuario</option>
-                                    
-                                        <?php
-                                        foreach ($usuarios as $usuario) {
-                                            if ($id_usuario == $usuario['id']) {
-                                                $sel = 'selected';
-                                            } else {
-                                                $sel = '';
-                                            }
-                                            echo '<option ' . $sel . ' value="' . $usuario['id'] . '">' . $usuario['nome'] . '</option>';
+
+                                    <?php
+                                    foreach ($usuarios as $usuario) {
+                                        if ($id_usuario == $usuario['id']) {
+                                            $sel = 'selected';
+                                        } else {
+                                            $sel = '';
                                         }
-                                        ?>
+                                        echo '<option ' . $sel . ' value="' . $usuario['id'] . '">' . $usuario['nome'] . '</option>';
+                                    }
+                                    ?>
 
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <label for="id_ferramenta" class="form-label">Ferramenta</label>
-                                <select name="id_ferramenta" id="id_ferramenta"  class="form-select">
+                                <select name="id_ferramenta" id="id_ferramenta" class="form-select">
                                     <option value="<?php echo $id_ferramenta ?>">Selecione um Ferramenta</option>
-                                    
-                                        <?php
-                                        foreach ($ferramentas as $ferramenta) {
-                                            if ($id_ferramenta == $ferramenta['id']) {
-                                                $sel = 'selected';
-                                            } else {
-                                                $sel = '';
-                                            }
-                                            echo '<option ' . $sel . ' value="' . $ferramenta['id'] . '">' . $ferramenta['nome'] . '</option>';
+
+                                    <?php
+                                    foreach ($ferramentas as $ferramenta) {
+                                        if ($id_ferramenta == $ferramenta['id']) {
+                                            $sel = 'selected';
+                                        } else {
+                                            $sel = '';
                                         }
-                                        ?>
+                                        echo '<option ' . $sel . ' value="' . $ferramenta['id'] . '">' . $ferramenta['nome'] . '</option>';
+                                    }
+                                    ?>
 
                                 </select>
                             </div>
 
                             <div class="col-md-3 mb-3">
                                 <label for="data_emprestimo" class="form-label">E-mail</label>
-                                <input type="date" class="form-control" id="data_emprestimo" value="<?php echo $data_emprestimo ?>" name="data_emprestimo" placeholder="Digite o data_emprestimo">
-                            </div>                           
+                                <input type="date" class="form-control" id="data_emprestimo"
+                                    value="<?php echo $data_emprestimo ?>" name="data_emprestimo"
+                                    placeholder="Digite o data_emprestimo">
+                            </div>
 
                             <div class="col-md-3 mb-3">
                                 <label for="data_devolucao" class="form-label">data_devolucao</label>
-                                <input type="date" class="form-control" id="data_devolucao" value="<?php echo $data_devolucao ?>" name="data_devolucao" placeholder="Digite bloco e numero do data_devolucao">
+                                <input type="date" class="form-control" id="data_devolucao"
+                                    value="<?php echo $data_devolucao ?>" name="data_devolucao"
+                                    placeholder="Digite bloco e numero do data_devolucao">
                             </div>
                             <div class="col-md-2 mt-4">
                                 <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>                            
+                            </div>
                         </div>
-                        
+
                     </form>
 
                 </div>
@@ -134,7 +132,7 @@ $emprestimos = $emprestimo->listar();
                 <div class="row">
                     <table class="table table-bordered table-sm">
                         <tr>
-                            <th>ID</th>                            
+                            <th>ID</th>
                             <th>Usuário</th>
                             <th>Ferramenta</th>
                             <th>data_emprestimo</th>

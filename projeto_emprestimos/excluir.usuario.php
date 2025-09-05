@@ -1,5 +1,4 @@
 <?php
-
 include_once("includes/classes/Usuario.php");
 require_once 'includes/auth.php';
 require_once 'includes/acl.php';

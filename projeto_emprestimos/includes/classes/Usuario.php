@@ -1,85 +1,86 @@
 <?php
-	
-	include_once("includes/conexao.php");
+include_once("includes/conexao.php");
 
-	class Usuario {
+class Usuario
+{
 
-		private $bd;
+	private $bd;
 
-		public function __construct(Database $bd){
-			$this->bd = $bd;
-		}
+	public function __construct(Database $bd)
+	{
+		$this->bd = $bd;
+	}
 
-		function inserir(array $data){
-			
-			$idUsuario = $data['idUsuario'];
-			$nome = $data['nome'];
-			$email = $data['email'];
-			$senha = md5($data['senha']);
-			$apartamento = $data['apartamento'];
+	function inserir(array $data)
+	{
 
-			if ($idUsuario==0) {
+		$idUsuario = $data['idUsuario'];
+		$nome = $data['nome'];
+		$email = $data['email'];
+		$senha = md5($data['senha']);
+		$apartamento = $data['apartamento'];
 
-				$sql = "INSERT INTO usuario (nome, email, senha, apartamento)
+		if ($idUsuario == 0) {
+
+			$sql = "INSERT INTO usuario (nome, email, senha, apartamento)
 						VALUES ('$nome', '$email', '$senha', '$apartamento')";
 
-				return $this->bd->query($sql);
-				
-			} else {
+			return $this->bd->query($sql);
+		} else {
 
-				$sql = "UPDATE usuario SET 
+			$sql = "UPDATE usuario SET 
 				nome = '{$nome}', 
 				email = '{$email}', 
 				senha = '{$senha}',
 				apartamento = '{$apartamento}'
 				WHERE id = '{$idUsuario}'";
 
-				return $this->bd->query($sql);
+			return $this->bd->query($sql);
+		}
+	}
 
-			}
+	function listar()
+	{
+		$sql = "SELECT * FROM usuario ORDER BY nome";
+
+		$resultado = $this->bd->query($sql);
+
+		$rows = [];
+		while ($row = $resultado->fetch_assoc()) {
+			$rows[] = $row;
 		}
 
-		function listar(){
-			$sql = "SELECT * FROM usuario ORDER BY nome";
+		return $rows;
+	}
 
-			$resultado = $this->bd->query($sql);
+	function buscaID($idUsuario)
+	{
+		$sql = "SELECT * FROM usuario WHERE id = '{$idUsuario}'";
 
-			$rows = [];
-			while($row = $resultado->fetch_assoc()){
-				$rows[] = $row;
-			}
+		$resultado = $this->bd->query($sql);
+		$resultado = $resultado->fetch_assoc();
 
-			return $rows;
-		}
+		return $resultado;
+	}
 
-		function buscaID($idUsuario){
-			$sql = "SELECT * FROM usuario WHERE id = '{$idUsuario}'";
+	function deletar($idUsuario)
+	{
+		$sql = "DELETE FROM usuario WHERE id = '{$idUsuario}'";
+		return $this->bd->query($sql);
+	}
 
-			$resultado = $this->bd->query($sql);
-			$resultado = $resultado->fetch_assoc();
+	function login($email, $senha)
+	{
 
-			return $resultado;
-		}
+		$senha = md5($senha);
 
-		function deletar($idUsuario){
-			$sql = "DELETE FROM usuario WHERE id = '{$idUsuario}'";
-			return $this->bd->query($sql);			
-		}
-
-		function login($email, $senha){
-			
-			$senha = md5($senha);
-
-			$sql = "SELECT id, email, senha, apartamento, nivel 
+		$sql = "SELECT id, email, senha, apartamento, nivel 
 					FROM usuario
 					WHERE email = '{$email}' AND senha = '{$senha}'";
 
-			$resultado = $this->bd->query($sql);
-			$resultado = $resultado->fetch_assoc();
+		$resultado = $this->bd->query($sql);
+		$resultado = $resultado->fetch_assoc();
 
-			return $resultado;
-		}
-
+		return $resultado;
 	}
-
-?>
+}
