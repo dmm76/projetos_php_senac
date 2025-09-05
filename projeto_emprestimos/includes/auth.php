@@ -1,8 +1,7 @@
 <?php
 // Inicie a sessão aqui (ou use um bootstrap comum do sistema)
-if (session_status() !== PHP_SESSION_ACTIVE) session_start();
-
-function requireLogin(): void {
+function requireLogin(): void
+{
   // AGORA checa as chaves que você usa no login.php
   if (empty($_SESSION['id_usuario'])) {
     // opcional: preserve a URL alvo para redirecionar depois do login
