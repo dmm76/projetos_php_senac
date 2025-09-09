@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Core\Url;
 use App\DAO\Database;
+use PDOStatement;
 
 final class DashboardController extends BaseAdminController
 {
@@ -11,13 +12,18 @@ final class DashboardController extends BaseAdminController
     {
         $pdo = Database::getConnection();
 
-        $produtos = (int)($pdo->query('SELECT COUNT(*) FROM produto')->fetchColumn() ?: 0);
-        $estoqueBaixo = (int)($pdo->query("
-            SELECT COUNT(*) 
-            FROM estoque e 
-            JOIN produto p ON p.id = e.produto_id 
+        /** @var PDOStatement|false $s1 */
+        $s1 = $pdo->query('SELECT COUNT(*) FROM produto');
+        $produtos = (int) ($s1 !== false ? $s1->fetchColumn() : 0);
+
+        /** @var PDOStatement|false $s2 */
+        $s2 = $pdo->query("
+            SELECT COUNT(*)
+            FROM estoque e
+            JOIN produto p ON p.id = e.produto_id
             WHERE e.minimo > 0 AND e.quantidade < e.minimo
-        ")->fetchColumn() ?: 0);
+        ");
+        $estoqueBaixo = (int) ($s2 !== false ? $s2->fetchColumn() : 0);
 
         $this->render('admin/dashboard/index', [
             'title' => 'Dashboard Admin',
