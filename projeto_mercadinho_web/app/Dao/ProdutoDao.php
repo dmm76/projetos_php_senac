@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace App\DAO;
 
-use App\Models\Produto;
+use App\Model\Produto;
 use PDO;
 
 final class ProdutoDAO

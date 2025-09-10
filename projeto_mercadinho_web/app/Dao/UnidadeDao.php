@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace App\DAO;
 
-use App\Models\Unidade;
+use App\Model\Unidade;
 use PDO;
 
 final class UnidadeDAO

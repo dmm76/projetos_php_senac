@@ -12,7 +12,7 @@ use App\DAO\MarcaDAO;
 use App\DAO\UnidadeDAO;
 use App\DAO\PrecoDAO;
 use App\DAO\EstoqueDAO;
-use App\Models\Produto;
+use App\Model\Produto;
 
 final class ProdutoController extends BaseAdminController
 {

@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace App\DAO;
 
-use App\Models\Categoria;
+use App\Model\Categoria;
 use PDO;
 
 final class CategoriaDAO

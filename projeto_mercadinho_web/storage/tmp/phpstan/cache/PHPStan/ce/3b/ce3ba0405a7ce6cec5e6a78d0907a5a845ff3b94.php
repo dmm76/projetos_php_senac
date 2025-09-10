@@ -22,7 +22,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\HomeController.php' => 
     array (
-      0 => 'caabe787f260ffb0dc087dd679092f074b2b8e79',
+      0 => '0466f1c5c3cec893c30900163544b1536aede9f2',
       1 => 
       array (
         0 => 'app\\controllers\\site\\homecontroller',
@@ -86,22 +86,6 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\Database.php' => 
-    array (
-      0 => 'e9550ebb219ba2f7e2d9d2b254f7f3809b1a2c57',
-      1 => 
-      array (
-        0 => 'app\\dao\\database',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\getconnection',
-        1 => 'app\\dao\\transaction',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\dashboard\\index.php' => 
     array (
       0 => '2d07abeb2c545cc262e1e80281b2bf2fe5cb7d65',
@@ -130,7 +114,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php' => 
     array (
-      0 => 'cb1b7ac6aca9f1aa4ae7b665cda03b506d7019fb',
+      0 => '8cb32147abcad9a29149cc5300a847743980c27b',
       1 => 
       array (
       ),
@@ -237,7 +221,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
     array (
-      0 => '4ff3e6245d634ff425a71e3d70c2292cc2197685',
+      0 => '86f734054490f4439ebd6f6a03236b034f95ec74',
       1 => 
       array (
         0 => 'app\\core\\auth',
@@ -319,221 +303,17 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Url.php' => 
     array (
-      0 => 'd00cc06d0d1f792364eb05362c80fcf2c7ecadaf',
+      0 => '47e3f4a90228dbb8095a765f9d3e786837cea717',
       1 => 
       array (
         0 => 'app\\core\\url',
       ),
       2 => 
       array (
-        0 => 'app\\core\\basepath',
+        0 => 'app\\core\\base',
         1 => 'app\\core\\to',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php' => 
-    array (
-      0 => '2c53229543c3806c061dc0b3274a8a7f55a75356',
-      1 => 
-      array (
-        0 => 'app\\dao\\categoriadao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\all',
-        2 => 'app\\dao\\find',
-        3 => 'app\\dao\\create',
-        4 => 'app\\dao\\update',
-        5 => 'app\\dao\\delete',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\EstoqueDao.php' => 
-    array (
-      0 => '51db0e140f058123ef5d14903babffe67ddeccc2',
-      1 => 
-      array (
-        0 => 'app\\dao\\estoquedao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\createinit',
-        2 => 'app\\dao\\getbyproduto',
-        3 => 'app\\dao\\update',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\MarcaDao.php' => 
-    array (
-      0 => '9a8870d80b1cfd774f5c3f7701fa3f4fe6b9307a',
-      1 => 
-      array (
-        0 => 'app\\dao\\marcadao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\all',
-        2 => 'app\\dao\\find',
-        3 => 'app\\dao\\create',
-        4 => 'app\\dao\\update',
-        5 => 'app\\dao\\delete',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\PrecoDao.php' => 
-    array (
-      0 => '4c5c90a5d137528d070507bc204baf16da47ccf7',
-      1 => 
-      array (
-        0 => 'app\\dao\\precodao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\create',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\ProdutoDao.php' => 
-    array (
-      0 => '71914b51c33999a4e191c4a28151a3caac9eeefc',
-      1 => 
-      array (
-        0 => 'app\\dao\\produtodao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\listwithjoins',
-        2 => 'app\\dao\\find',
-        3 => 'app\\dao\\create',
-        4 => 'app\\dao\\update',
-        5 => 'app\\dao\\delete',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UnidadeDao.php' => 
-    array (
-      0 => '1698446b8fb5af5131f3860a6bee30a7d4071630',
-      1 => 
-      array (
-        0 => 'app\\dao\\unidadedao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\all',
-        2 => 'app\\dao\\find',
-        3 => 'app\\dao\\create',
-        4 => 'app\\dao\\update',
-        5 => 'app\\dao\\delete',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php' => 
-    array (
-      0 => 'da26b737f37271314d87ec8c2ccc12bc22ffcdb2',
-      1 => 
-      array (
-        0 => 'app\\dao\\usuariodao',
-      ),
-      2 => 
-      array (
-        0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\findbyemail',
-        2 => 'app\\dao\\create',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Categoria.php' => 
-    array (
-      0 => 'a5d5614a6303a0293801ed3db9ff9357e47b875e',
-      1 => 
-      array (
-        0 => 'app\\models\\categoria',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Marca.php' => 
-    array (
-      0 => '9dd6b63bbc8cce379a64f40053fc68a60a4d5515',
-      1 => 
-      array (
-        0 => 'app\\models\\marca',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Produto.php' => 
-    array (
-      0 => '6159038a9bddac781061ee55c279b56ad969a7e1',
-      1 => 
-      array (
-        0 => 'app\\models\\produto',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Unidade.php' => 
-    array (
-      0 => 'dc4331d901d1d7ce6b50b4dc8f71f0eb11ffda8f',
-      1 => 
-      array (
-        0 => 'app\\models\\unidade',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\__construct',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Usuario.php' => 
-    array (
-      0 => 'c3cd2e2de0ca12846bb7be03e06cdfb8ca53a4c8',
-      1 => 
-      array (
-        0 => 'app\\models\\usuario',
-      ),
-      2 => 
-      array (
-        0 => 'app\\models\\__construct',
+        2 => 'app\\core\\path',
+        3 => 'app\\core\\is',
       ),
       3 => 
       array (
@@ -669,41 +449,6 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php' => 
-    array (
-      0 => '2a17d7b77727f242e6cfc133df9de2a62d072ba6',
-      1 => 
-      array (
-        0 => 'app\\controllers\\admin\\produtocontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\controllers\\admin\\index',
-        1 => 'app\\controllers\\admin\\create',
-        2 => 'app\\controllers\\admin\\store',
-        3 => 'app\\controllers\\admin\\edit',
-        4 => 'app\\controllers\\admin\\update',
-        5 => 'app\\controllers\\admin\\destroy',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
-    array (
-      0 => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
-      1 => 
-      array (
-        0 => 'app\\controllers\\site\\previewcontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\controllers\\site\\home',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\PreviewController.php' => 
     array (
       0 => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
@@ -734,7 +479,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php' => 
     array (
-      0 => 'ceea6bb4c2c24810ed974c3196f51657062d5547',
+      0 => 'd031edf9642702793be90617921913fbad3ff649',
       1 => 
       array (
       ),
@@ -745,9 +490,281 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php' => 
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php' => 
     array (
-      0 => 'b13e729d921d1fbfc74af5b1bbedf4172e392cbf',
+      0 => '8f6357a0e5e75ae04d50281b3b0cfe4e8e0e6aaf',
+      1 => 
+      array (
+        0 => 'app\\controllers\\admin\\produtocontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\admin\\index',
+        1 => 'app\\controllers\\admin\\create',
+        2 => 'app\\controllers\\admin\\store',
+        3 => 'app\\controllers\\admin\\edit',
+        4 => 'app\\controllers\\admin\\update',
+        5 => 'app\\controllers\\admin\\destroy',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\CategoriaDAO.php' => 
+    array (
+      0 => '12f332c289e663302b94c5a3350c6c02a71ffb01',
+      1 => 
+      array (
+        0 => 'app\\dao\\categoriadao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\all',
+        2 => 'app\\dao\\find',
+        3 => 'app\\dao\\create',
+        4 => 'app\\dao\\update',
+        5 => 'app\\dao\\delete',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\Database.php' => 
+    array (
+      0 => 'e9550ebb219ba2f7e2d9d2b254f7f3809b1a2c57',
+      1 => 
+      array (
+        0 => 'app\\dao\\database',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\getconnection',
+        1 => 'app\\dao\\transaction',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\EstoqueDAO.php' => 
+    array (
+      0 => '51db0e140f058123ef5d14903babffe67ddeccc2',
+      1 => 
+      array (
+        0 => 'app\\dao\\estoquedao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\createinit',
+        2 => 'app\\dao\\getbyproduto',
+        3 => 'app\\dao\\update',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\MarcaDAO.php' => 
+    array (
+      0 => '6e508d87df0655b85fd4aef8b69da505a9b3d633',
+      1 => 
+      array (
+        0 => 'app\\dao\\marcadao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\all',
+        2 => 'app\\dao\\find',
+        3 => 'app\\dao\\create',
+        4 => 'app\\dao\\update',
+        5 => 'app\\dao\\delete',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\PrecoDAO.php' => 
+    array (
+      0 => '4c5c90a5d137528d070507bc204baf16da47ccf7',
+      1 => 
+      array (
+        0 => 'app\\dao\\precodao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\create',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\ProdutoDAO.php' => 
+    array (
+      0 => 'd212e64c7a095cf0f59504e41fa9b2152dd9532a',
+      1 => 
+      array (
+        0 => 'app\\dao\\produtodao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\listwithjoins',
+        2 => 'app\\dao\\find',
+        3 => 'app\\dao\\create',
+        4 => 'app\\dao\\update',
+        5 => 'app\\dao\\delete',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UnidadeDAO.php' => 
+    array (
+      0 => '8dd7c7fc10b49f10b0dfc3a39e87d2b2f9d4f6b1',
+      1 => 
+      array (
+        0 => 'app\\dao\\unidadedao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\all',
+        2 => 'app\\dao\\find',
+        3 => 'app\\dao\\create',
+        4 => 'app\\dao\\update',
+        5 => 'app\\dao\\delete',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php' => 
+    array (
+      0 => '46cf28edf077721fbb364678cda20e9b394519eb',
+      1 => 
+      array (
+        0 => 'app\\dao\\usuariodao',
+      ),
+      2 => 
+      array (
+        0 => 'app\\dao\\__construct',
+        1 => 'app\\dao\\findbyemail',
+        2 => 'app\\dao\\create',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\CarrinhoController.php' => 
+    array (
+      0 => '5a93079a7c557df550c8232fafcfe351b85575b6',
+      1 => 
+      array (
+        0 => 'app\\controllers\\site\\carrinhocontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\site\\index',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php' => 
+    array (
+      0 => 'f43228249565dc218a50a018d0444ad82b1baf74',
+      1 => 
+      array (
+        0 => 'app\\controllers\\site\\contatocontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\site\\show',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Categoria.php' => 
+    array (
+      0 => 'df576a6868f2a584c21361c947c1b5f629c90d2d',
+      1 => 
+      array (
+        0 => 'app\\model\\categoria',
+      ),
+      2 => 
+      array (
+        0 => 'app\\model\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Marca.php' => 
+    array (
+      0 => 'c93ba8281b3d842d0ed605a594354ceded50fe17',
+      1 => 
+      array (
+        0 => 'app\\model\\marca',
+      ),
+      2 => 
+      array (
+        0 => 'app\\model\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Produto.php' => 
+    array (
+      0 => '448b7304b717e856899146b2c2006a6ad5f01a01',
+      1 => 
+      array (
+        0 => 'app\\model\\produto',
+      ),
+      2 => 
+      array (
+        0 => 'app\\model\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Unidade.php' => 
+    array (
+      0 => 'a0d8ce9d8bd701461ecdb363b3a553bd1d17717c',
+      1 => 
+      array (
+        0 => 'app\\model\\unidade',
+      ),
+      2 => 
+      array (
+        0 => 'app\\model\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Usuario.php' => 
+    array (
+      0 => '2644944dcee42adf55130882a64ae9324c1234ad',
+      1 => 
+      array (
+        0 => 'app\\model\\usuario',
+      ),
+      2 => 
+      array (
+        0 => 'app\\model\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php' => 
+    array (
+      0 => 'ab86ec307a14735318ff620782c769801081d063',
       1 => 
       array (
       ),

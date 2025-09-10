@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace App\DAO;
 
-use App\Models\Marca;
+use App\Model\Marca;
 use PDO;
 
 final class MarcaDAO

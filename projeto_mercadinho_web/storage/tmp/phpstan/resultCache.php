@@ -955,9 +955,9 @@ return [
     array (
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php' => 
   array (
-    'fileHash' => '2a17d7b77727f242e6cfc133df9de2a62d072ba6',
+    'fileHash' => '8f6357a0e5e75ae04d50281b3b0cfe4e8e0e6aaf',
     'dependentFiles' => 
     array (
     ),
@@ -976,9 +976,23 @@ return [
     array (
     ),
   ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\CarrinhoController.php' => 
+  array (
+    'fileHash' => '5a93079a7c557df550c8232fafcfe351b85575b6',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php' => 
+  array (
+    'fileHash' => 'f43228249565dc218a50a018d0444ad82b1baf74',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\HomeController.php' => 
   array (
-    'fileHash' => 'caabe787f260ffb0dc087dd679092f074b2b8e79',
+    'fileHash' => '0466f1c5c3cec893c30900163544b1536aede9f2',
     'dependentFiles' => 
     array (
     ),
@@ -991,16 +1005,9 @@ return [
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
-  array (
-    'fileHash' => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
   array (
-    'fileHash' => '4ff3e6245d634ff425a71e3d70c2292cc2197685',
+    'fileHash' => '86f734054490f4439ebd6f6a03236b034f95ec74',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\BaseAdminController.php',
@@ -1020,9 +1027,8 @@ return [
       5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
       7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\HomeController.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\PreviewController.php',
-      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\PreviewController.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Csrf.php' => 
@@ -1098,7 +1104,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Url.php' => 
   array (
-    'fileHash' => 'd00cc06d0d1f792364eb05362c80fcf2c7ecadaf',
+    'fileHash' => '47e3f4a90228dbb8095a765f9d3e786837cea717',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\CategoriaController.php',
@@ -1122,6 +1128,8 @@ return [
       18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
       19 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php',
       20 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php',
+      21 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php',
+      22 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\View.php' => 
@@ -1132,17 +1140,17 @@ return [
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Controller.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\CategoriaDAO.php' => 
   array (
-    'fileHash' => '2c53229543c3806c061dc0b3274a8a7f55a75356',
+    'fileHash' => '12f332c289e663302b94c5a3350c6c02a71ffb01',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\CategoriaController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\Database.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\Database.php' => 
   array (
     'fileHash' => 'e9550ebb219ba2f7e2d9d2b254f7f3809b1a2c57',
     'dependentFiles' => 
@@ -1150,119 +1158,153 @@ return [
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\CategoriaController.php',
       1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\DashboardController.php',
       2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\MarcaController.php',
-      3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
-      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
-      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
+      3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
+      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\EstoqueDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\EstoqueDAO.php' => 
   array (
     'fileHash' => '51db0e140f058123ef5d14903babffe67ddeccc2',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\MarcaDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\MarcaDAO.php' => 
   array (
-    'fileHash' => '9a8870d80b1cfd774f5c3f7701fa3f4fe6b9307a',
+    'fileHash' => '6e508d87df0655b85fd4aef8b69da505a9b3d633',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\MarcaController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\MarcaDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\PrecoDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\PrecoDAO.php' => 
   array (
     'fileHash' => '4c5c90a5d137528d070507bc204baf16da47ccf7',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\ProdutoDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\ProdutoDAO.php' => 
   array (
-    'fileHash' => '71914b51c33999a4e191c4a28151a3caac9eeefc',
+    'fileHash' => 'd212e64c7a095cf0f59504e41fa9b2152dd9532a',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\ProdutoDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UnidadeDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UnidadeDAO.php' => 
   array (
-    'fileHash' => '1698446b8fb5af5131f3860a6bee30a7d4071630',
+    'fileHash' => '8dd7c7fc10b49f10b0dfc3a39e87d2b2f9d4f6b1',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UnidadeDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php' => 
   array (
-    'fileHash' => 'da26b737f37271314d87ec8c2ccc12bc22ffcdb2',
+    'fileHash' => '46cf28edf077721fbb364678cda20e9b394519eb',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
       1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Categoria.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php' => 
   array (
-    'fileHash' => 'a5d5614a6303a0293801ed3db9ff9357e47b875e',
+    'fileHash' => '12f332c289e663302b94c5a3350c6c02a71ffb01',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\MarcaDao.php' => 
+  array (
+    'fileHash' => '6e508d87df0655b85fd4aef8b69da505a9b3d633',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\ProdutoDao.php' => 
+  array (
+    'fileHash' => 'd212e64c7a095cf0f59504e41fa9b2152dd9532a',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UnidadeDao.php' => 
+  array (
+    'fileHash' => '8dd7c7fc10b49f10b0dfc3a39e87d2b2f9d4f6b1',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php' => 
+  array (
+    'fileHash' => '46cf28edf077721fbb364678cda20e9b394519eb',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Categoria.php' => 
+  array (
+    'fileHash' => 'df576a6868f2a584c21361c947c1b5f629c90d2d',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\CategoriaController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\CategoriaDAO.php',
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Marca.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Marca.php' => 
   array (
-    'fileHash' => '9dd6b63bbc8cce379a64f40053fc68a60a4d5515',
+    'fileHash' => 'c93ba8281b3d842d0ed605a594354ceded50fe17',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\MarcaController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\MarcaDAO.php',
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\MarcaDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Produto.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Produto.php' => 
   array (
-    'fileHash' => '6159038a9bddac781061ee55c279b56ad969a7e1',
+    'fileHash' => '448b7304b717e856899146b2c2006a6ad5f01a01',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\ProdutoDAO.php',
       2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\ProdutoDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Unidade.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Unidade.php' => 
   array (
-    'fileHash' => 'dc4331d901d1d7ce6b50b4dc8f71f0eb11ffda8f',
+    'fileHash' => 'a0d8ce9d8bd701461ecdb363b3a553bd1d17717c',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UnidadeDAO.php',
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UnidadeDao.php',
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Usuario.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Usuario.php' => 
   array (
-    'fileHash' => 'c3cd2e2de0ca12846bb7be03e06cdfb8ca53a4c8',
+    'fileHash' => '2644944dcee42adf55130882a64ae9324c1234ad',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php' => 
@@ -1344,7 +1386,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php' => 
   array (
-    'fileHash' => 'ceea6bb4c2c24810ed974c3196f51657062d5547',
+    'fileHash' => 'd031edf9642702793be90617921913fbad3ff649',
     'dependentFiles' => 
     array (
     ),
@@ -1365,14 +1407,14 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php' => 
   array (
-    'fileHash' => 'cb1b7ac6aca9f1aa4ae7b665cda03b506d7019fb',
+    'fileHash' => '8cb32147abcad9a29149cc5300a847743980c27b',
     'dependentFiles' => 
     array (
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php' => 
   array (
-    'fileHash' => 'b13e729d921d1fbfc74af5b1bbedf4172e392cbf',
+    'fileHash' => 'ab86ec307a14735318ff620782c769801081d063',
     'dependentFiles' => 
     array (
     ),
@@ -1735,7 +1777,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -2119,6 +2161,94 @@ return [
       ),
     )),
   ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\CarrinhoController.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Controllers\\Site\\CarrinhoController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'index',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Controllers\\Site\\ContatoController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'show',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\HomeController.php' => 
   array (
     0 => 
@@ -2127,7 +2257,7 @@ return [
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,
-       'extends' => 'App\\Core\\Controller',
+       'extends' => NULL,
        'implements' => 
       array (
       ),
@@ -2207,50 +2337,6 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
-  array (
-    0 => 
-    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Controllers\\Site\\PreviewController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => true,
-       'extends' => 'App\\Core\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'home',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
   array (
     0 => 
@@ -2281,7 +2367,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => true,
-           'returnType' => '?App\\Models\\Usuario',
+           'returnType' => '?App\\Model\\Usuario',
            'parameters' => 
           array (
           ),
@@ -3029,8 +3115,57 @@ return [
       array (
         0 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'basePath',
-           'phpDoc' => NULL,
+           'name' => 'to',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** Gera URL respeitando a subpasta (ex.: /projeto_mercadinho_web) */',
+             'namespace' => 'App\\Core',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => true,
+           'returnType' => 'string',
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'path',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'path',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** Caminho atual normalizado (sem a base) */',
+             'namespace' => 'App\\Core',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -3045,17 +3180,27 @@ return [
           array (
           ),
         )),
-        1 => 
+        2 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'to',
-           'phpDoc' => NULL,
+           'name' => 'is',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** Verifica se o link é a rota atual (pra “active”) */',
+             'namespace' => 'App\\Core',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
            'abstract' => false,
            'final' => false,
            'static' => true,
-           'returnType' => 'string',
+           'returnType' => 'bool',
            'parameters' => 
           array (
             0 => 
@@ -3174,7 +3319,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\CategoriaDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -3232,7 +3377,7 @@ return [
              'namespace' => 'App\\DAO',
              'uses' => 
             array (
-              'categoria' => 'App\\Models\\Categoria',
+              'categoria' => 'App\\Model\\Categoria',
               'pdo' => 'PDO',
             ),
              'constUses' => 
@@ -3263,7 +3408,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?App\\Models\\Categoria',
+           'returnType' => '?App\\Model\\Categoria',
            'parameters' => 
           array (
             0 => 
@@ -3452,7 +3597,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\Database.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\Database.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -3540,7 +3685,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\EstoqueDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\EstoqueDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -3737,7 +3882,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\MarcaDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\MarcaDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -3795,7 +3940,7 @@ return [
              'namespace' => 'App\\DAO',
              'uses' => 
             array (
-              'marca' => 'App\\Models\\Marca',
+              'marca' => 'App\\Model\\Marca',
               'pdo' => 'PDO',
             ),
              'constUses' => 
@@ -3826,7 +3971,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?App\\Models\\Marca',
+           'returnType' => '?App\\Model\\Marca',
            'parameters' => 
           array (
             0 => 
@@ -3949,7 +4094,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\PrecoDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\PrecoDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -4077,7 +4222,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\ProdutoDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\ProdutoDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -4135,7 +4280,7 @@ return [
              'namespace' => 'App\\DAO',
              'uses' => 
             array (
-              'produto' => 'App\\Models\\Produto',
+              'produto' => 'App\\Model\\Produto',
               'pdo' => 'PDO',
             ),
              'constUses' => 
@@ -4166,7 +4311,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?App\\Models\\Produto',
+           'returnType' => '?App\\Model\\Produto',
            'parameters' => 
           array (
             0 => 
@@ -4201,7 +4346,7 @@ return [
             0 => 
             PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'p',
-               'type' => 'App\\Models\\Produto',
+               'type' => 'App\\Model\\Produto',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -4230,7 +4375,7 @@ return [
             0 => 
             PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'p',
-               'type' => 'App\\Models\\Produto',
+               'type' => 'App\\Model\\Produto',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -4278,7 +4423,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UnidadeDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UnidadeDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -4336,7 +4481,7 @@ return [
              'namespace' => 'App\\DAO',
              'uses' => 
             array (
-              'unidade' => 'App\\Models\\Unidade',
+              'unidade' => 'App\\Model\\Unidade',
               'pdo' => 'PDO',
             ),
              'constUses' => 
@@ -4367,7 +4512,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?App\\Models\\Unidade',
+           'returnType' => '?App\\Model\\Unidade',
            'parameters' => 
           array (
             0 => 
@@ -4512,7 +4657,7 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -4571,7 +4716,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?App\\Models\\Usuario',
+           'returnType' => '?App\\Model\\Usuario',
            'parameters' => 
           array (
             0 => 
@@ -4658,11 +4803,11 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Categoria.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Categoria.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\Categoria',
+       'name' => 'App\\Model\\Categoria',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,
@@ -4757,11 +4902,11 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Marca.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Marca.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\Marca',
+       'name' => 'App\\Model\\Marca',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,
@@ -4823,11 +4968,11 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Produto.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Produto.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\Produto',
+       'name' => 'App\\Model\\Produto',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,
@@ -4988,11 +5133,11 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Unidade.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Unidade.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\Unidade',
+       'name' => 'App\\Model\\Unidade',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,
@@ -5065,11 +5210,11 @@ return [
       ),
     )),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Usuario.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Model\\Usuario.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Models\\Usuario',
+       'name' => 'App\\Model\\Usuario',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,
