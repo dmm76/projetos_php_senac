@@ -2,6 +2,6 @@
 
 // variadic-method-App\DAO\UsuarioDAO-create-C:\xampp\htdocs\projeto_mercadinho_web\app\DAO\UsuarioDAO.php
 return PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => '1757532733-v4',
+   'variableKey' => '1757533958-v4',
    'data' => false,
 ));

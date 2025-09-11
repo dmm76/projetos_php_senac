@@ -202,7 +202,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php' => 
     array (
-      0 => 'e42d5a63c581e16f51ef1b4a5fe93306b98dfede',
+      0 => '318a1deff3b3ebdc4a13ff4107795e63a7c92831',
       1 => 
       array (
         0 => 'app\\controllers\\site\\authcontroller',
@@ -221,7 +221,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
     array (
-      0 => '86f734054490f4439ebd6f6a03236b034f95ec74',
+      0 => '231b0b5a83da81d5ee4dfbc3b85fbf1e760a0f73',
       1 => 
       array (
         0 => 'app\\core\\auth',
@@ -229,10 +229,11 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'app\\core\\user',
-        1 => 'app\\core\\check',
-        2 => 'app\\core\\attempt',
+        1 => 'app\\core\\isloggedin',
+        2 => 'app\\core\\requireadmin',
         3 => 'app\\core\\logout',
-        4 => 'app\\core\\requireadmin',
+        4 => 'app\\core\\login',
+        5 => 'app\\core\\ensuresession',
       ),
       3 => 
       array (
@@ -425,7 +426,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php' => 
     array (
-      0 => '92b89b7e7706bc02651688eab7634d4561f18bec',
+      0 => '1e5cf4b17350b1885ede293bb2b1adfcc7017cad',
       1 => 
       array (
       ),
@@ -438,7 +439,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php' => 
     array (
-      0 => 'e3c463869ba914b9c09fc04484de89082c69f07c',
+      0 => '6e4e611b95af676e1e3f2c9c430d9a0585ec84e2',
       1 => 
       array (
       ),
@@ -532,7 +533,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\Database.php' => 
     array (
-      0 => 'e9550ebb219ba2f7e2d9d2b254f7f3809b1a2c57',
+      0 => '1544147807f0c151778cb2f789a9bd32c78e8c7b',
       1 => 
       array (
         0 => 'app\\dao\\database',
@@ -642,7 +643,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php' => 
     array (
-      0 => '46cf28edf077721fbb364678cda20e9b394519eb',
+      0 => '1f0b1585889bdcdc615b9e0bef414d14f2994a41',
       1 => 
       array (
         0 => 'app\\dao\\usuariodao',
@@ -650,8 +651,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'app\\dao\\__construct',
-        1 => 'app\\dao\\findbyemail',
-        2 => 'app\\dao\\create',
+        1 => 'app\\dao\\create',
       ),
       3 => 
       array (
@@ -765,6 +765,139 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php' => 
     array (
       0 => 'ab86ec307a14735318ff620782c769801081d063',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php' => 
+    array (
+      0 => 'a683b2aaa622d733895a2266a19a04dc8e34e7ff',
+      1 => 
+      array (
+        0 => 'app\\controllers\\site\\contatocontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\site\\show',
+        1 => 'app\\controllers\\site\\send',
+        2 => 'app\\controllers\\site\\ensuresession',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
+    array (
+      0 => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
+      1 => 
+      array (
+        0 => 'app\\controllers\\site\\previewcontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\site\\home',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Categoria.php' => 
+    array (
+      0 => 'a5d5614a6303a0293801ed3db9ff9357e47b875e',
+      1 => 
+      array (
+        0 => 'app\\models\\categoria',
+      ),
+      2 => 
+      array (
+        0 => 'app\\models\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Marca.php' => 
+    array (
+      0 => '9dd6b63bbc8cce379a64f40053fc68a60a4d5515',
+      1 => 
+      array (
+        0 => 'app\\models\\marca',
+      ),
+      2 => 
+      array (
+        0 => 'app\\models\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Produto.php' => 
+    array (
+      0 => '6159038a9bddac781061ee55c279b56ad969a7e1',
+      1 => 
+      array (
+        0 => 'app\\models\\produto',
+      ),
+      2 => 
+      array (
+        0 => 'app\\models\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Unidade.php' => 
+    array (
+      0 => 'dc4331d901d1d7ce6b50b4dc8f71f0eb11ffda8f',
+      1 => 
+      array (
+        0 => 'app\\models\\unidade',
+      ),
+      2 => 
+      array (
+        0 => 'app\\models\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Usuario.php' => 
+    array (
+      0 => 'c3cd2e2de0ca12846bb7be03e06cdfb8ca53a4c8',
+      1 => 
+      array (
+        0 => 'app\\models\\usuario',
+      ),
+      2 => 
+      array (
+        0 => 'app\\models\\__construct',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php' => 
+    array (
+      0 => 'b13e729d921d1fbfc74af5b1bbedf4172e392cbf',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\contato.php' => 
+    array (
+      0 => '4570a47ccca9d6671a870f806027cfe39496365a',
       1 => 
       array (
       ),

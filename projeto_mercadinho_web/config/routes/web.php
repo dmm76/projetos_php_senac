@@ -16,7 +16,8 @@ $router->post('/registrar',[AuthController::class, 'register']);   // <- ADICION
 $router->get('/logout',    [AuthController::class, 'logout']);     // <- ADICIONADA
 
 // SITE
-$router->get('/contato',  [ContatoController::class, 'show']);
+$router->get('/contato', [ContatoController::class, 'show']); // exibe o formulário
+$router->post('/contato', [ContatoController::class, 'send']); // processa o envio
 $router->get('/carrinho', [CarrinhoController::class, 'index']);
 
 // LEGADO: /preview/home -> /

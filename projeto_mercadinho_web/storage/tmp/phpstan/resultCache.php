@@ -941,6 +941,13 @@ return [
     array (
     ),
   ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php' => 
+  array (
+    'fileHash' => 'a683b2aaa622d733895a2266a19a04dc8e34e7ff',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\DashboardController.php' => 
   array (
     'fileHash' => '4954914a8be670a4f448a0686c2409be5be6885b',
@@ -971,7 +978,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php' => 
   array (
-    'fileHash' => 'e42d5a63c581e16f51ef1b4a5fe93306b98dfede',
+    'fileHash' => '318a1deff3b3ebdc4a13ff4107795e63a7c92831',
     'dependentFiles' => 
     array (
     ),
@@ -1002,12 +1009,18 @@ return [
     'fileHash' => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php',
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
+  array (
+    'fileHash' => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
+    'dependentFiles' => 
+    array (
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
   array (
-    'fileHash' => '86f734054490f4439ebd6f6a03236b034f95ec74',
+    'fileHash' => '231b0b5a83da81d5ee4dfbc3b85fbf1e760a0f73',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\BaseAdminController.php',
@@ -1065,17 +1078,16 @@ return [
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
       5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
-      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
-      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
-      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
-      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
-      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
-      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
-      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
+      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
+      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
+      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
+      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
+      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
+      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Router.php' => 
@@ -1114,22 +1126,21 @@ return [
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
       6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
-      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
-      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
-      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
-      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
-      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
-      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
-      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php',
-      17 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
-      18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
-      19 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php',
-      20 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php',
-      21 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php',
-      22 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
+      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
+      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
+      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
+      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
+      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
+      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php',
+      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
+      17 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
+      18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php',
+      19 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php',
+      20 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php',
+      21 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\View.php' => 
@@ -1152,16 +1163,17 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\Database.php' => 
   array (
-    'fileHash' => 'e9550ebb219ba2f7e2d9d2b254f7f3809b1a2c57',
+    'fileHash' => '1544147807f0c151778cb2f789a9bd32c78e8c7b',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\CategoriaController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\DashboardController.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\MarcaController.php',
-      3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
-      4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
-      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\DashboardController.php',
+      3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\MarcaController.php',
+      4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
+      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\EstoqueDAO.php' => 
@@ -1211,12 +1223,11 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php' => 
   array (
-    'fileHash' => '46cf28edf077721fbb364678cda20e9b394519eb',
+    'fileHash' => '1f0b1585889bdcdc615b9e0bef414d14f2994a41',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\CategoriaDao.php' => 
@@ -1249,7 +1260,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php' => 
   array (
-    'fileHash' => '46cf28edf077721fbb364678cda20e9b394519eb',
+    'fileHash' => '1f0b1585889bdcdc615b9e0bef414d14f2994a41',
     'dependentFiles' => 
     array (
     ),
@@ -1302,9 +1313,41 @@ return [
     'fileHash' => '2644944dcee42adf55130882a64ae9324c1234ad',
     'dependentFiles' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\UsuarioDAO.php',
-      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Dao\\UsuarioDao.php',
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Categoria.php' => 
+  array (
+    'fileHash' => 'a5d5614a6303a0293801ed3db9ff9357e47b875e',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Marca.php' => 
+  array (
+    'fileHash' => '9dd6b63bbc8cce379a64f40053fc68a60a4d5515',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Produto.php' => 
+  array (
+    'fileHash' => '6159038a9bddac781061ee55c279b56ad969a7e1',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Unidade.php' => 
+  array (
+    'fileHash' => 'dc4331d901d1d7ce6b50b4dc8f71f0eb11ffda8f',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Usuario.php' => 
+  array (
+    'fileHash' => 'c3cd2e2de0ca12846bb7be03e06cdfb8ca53a4c8',
+    'dependentFiles' => 
+    array (
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php' => 
@@ -1393,14 +1436,21 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php' => 
   array (
-    'fileHash' => '92b89b7e7706bc02651688eab7634d4561f18bec',
+    'fileHash' => '1e5cf4b17350b1885ede293bb2b1adfcc7017cad',
     'dependentFiles' => 
     array (
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php' => 
   array (
-    'fileHash' => 'e3c463869ba914b9c09fc04484de89082c69f07c',
+    'fileHash' => '6e4e611b95af676e1e3f2c9c430d9a0585ec84e2',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\contato.php' => 
+  array (
+    'fileHash' => '4570a47ccca9d6671a870f806027cfe39496365a',
     'dependentFiles' => 
     array (
     ),
@@ -1415,6 +1465,13 @@ return [
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php' => 
   array (
     'fileHash' => 'ab86ec307a14735318ff620782c769801081d063',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php' => 
+  array (
+    'fileHash' => 'b13e729d921d1fbfc74af5b1bbedf4172e392cbf',
     'dependentFiles' => 
     array (
     ),
@@ -1578,6 +1635,68 @@ return [
         5 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'destroy',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Controllers\\Site\\ContatoController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => false,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'show',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'send',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -2337,6 +2456,50 @@ return [
       ),
     )),
   ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Controllers\\Site\\PreviewController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => 'App\\Core\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'home',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
   array (
     0 => 
@@ -2360,14 +2523,29 @@ return [
         0 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'user',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Retorna o usuário logado.
+     * @return array{id:int,nome:string,email:string,perfil:string,ativo:int}|null
+     */',
+             'namespace' => 'App\\Core',
+             'uses' => 
+            array (
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
            'abstract' => false,
            'final' => false,
            'static' => true,
-           'returnType' => '?App\\Model\\Usuario',
+           'returnType' => '?array',
            'parameters' => 
           array (
           ),
@@ -2377,7 +2555,7 @@ return [
         )),
         1 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'check',
+           'name' => 'isLoggedIn',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -2395,7 +2573,7 @@ return [
         )),
         2 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'attempt',
+           'name' => 'requireAdmin',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -2403,31 +2581,9 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => true,
-           'returnType' => 'bool',
+           'returnType' => 'void',
            'parameters' => 
           array (
-            0 => 
-            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'email',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-            1 => 
-            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'password',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
           ),
            'attributes' => 
           array (
@@ -2453,17 +2609,53 @@ return [
         )),
         4 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'requireAdmin',
-           'phpDoc' => NULL,
+           'name' => 'login',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Autentica e carrega o usuário na sessão.
+     */',
+             'namespace' => 'App\\Core',
+             'uses' => 
+            array (
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
            'abstract' => false,
            'final' => false,
            'static' => true,
-           'returnType' => 'void',
+           'returnType' => 'bool',
            'parameters' => 
           array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'email',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'senha',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
           ),
            'attributes' => 
           array (
@@ -4708,35 +4900,6 @@ return [
         )),
         1 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'findByEmail',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => '?App\\Model\\Usuario',
-           'parameters' => 
-          array (
-            0 => 
-            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'email',
-               'type' => 'string',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => false,
-               'attributes' => 
-              array (
-              ),
-            )),
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        2 => 
-        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'create',
            'phpDoc' => NULL,
            'byRef' => false,
@@ -4772,7 +4935,7 @@ return [
             )),
             2 => 
             PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'senhaHash',
+               'name' => 'hash',
                'type' => 'string',
                'byRef' => false,
                'variadic' => false,
@@ -5215,6 +5378,523 @@ return [
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Model\\Usuario',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'nome',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            2 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'email',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            3 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'senhaHash',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            4 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'perfil',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            5 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'ativo',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Categoria.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Models\\Categoria',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'nome',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            2 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'slug',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            3 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'ativa',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            4 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'ordem',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Marca.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Models\\Marca',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'nome',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Produto.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Models\\Produto',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'nome',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            2 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'sku',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            3 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'ean',
+               'type' => '?string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            4 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'categoriaId',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            5 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'marcaId',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            6 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'unidadeId',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            7 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'descricao',
+               'type' => '?string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            8 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'imagem',
+               'type' => '?string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            9 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'ativo',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            10 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'pesoVariavel',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Unidade.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Models\\Unidade',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => '?int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'sigla',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            2 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'descricao',
+               'type' => '?string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Models\\Usuario.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Models\\Usuario',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => true,

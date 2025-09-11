@@ -21,7 +21,7 @@
 <body>
 <div class="d-flex flex-column wrapper">
 
-  <?php require __DIR__ . '/../../partials/site/navbar.php'; ?>
+  <?php require __DIR__ . '/../../partials/navbar.php'; ?>
 
   <main class="flex-fill">
     <div class="container py-3"><!-- espaço para não “colar” na navbar -->
@@ -120,7 +120,7 @@
     </div>
   </main>
 
-  <?php require __DIR__ . '/../../partials/site/footer.php'; ?>
+  <?php require __DIR__ . '/../../partials/footer.php'; ?>
 
 </div>
 
