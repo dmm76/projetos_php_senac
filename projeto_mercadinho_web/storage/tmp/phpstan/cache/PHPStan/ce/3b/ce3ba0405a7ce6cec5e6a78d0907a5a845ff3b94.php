@@ -88,7 +88,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\dashboard\\index.php' => 
     array (
-      0 => '2d07abeb2c545cc262e1e80281b2bf2fe5cb7d65',
+      0 => '0b99c046935a4fec35356b3804d6913ad3c80e3c',
       1 => 
       array (
       ),
@@ -114,7 +114,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php' => 
     array (
-      0 => '8cb32147abcad9a29149cc5300a847743980c27b',
+      0 => 'e9ad919293dbbdc93da1eecce1a92a82e3e1a419',
       1 => 
       array (
       ),
@@ -202,7 +202,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php' => 
     array (
-      0 => '318a1deff3b3ebdc4a13ff4107795e63a7c92831',
+      0 => '63c2dc548cc2e6abee060f9cdd136f1d4f8b2c9d',
       1 => 
       array (
         0 => 'app\\controllers\\site\\authcontroller',
@@ -221,7 +221,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
     array (
-      0 => '231b0b5a83da81d5ee4dfbc3b85fbf1e760a0f73',
+      0 => '7708451ca379fc080f0757566118aa2184bd1189',
       1 => 
       array (
         0 => 'app\\core\\auth',
@@ -335,7 +335,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php' => 
     array (
-      0 => 'df645141641d72f28a05ac1c642004c1eefb2a25',
+      0 => '9de7a065abeec8ec5a6beb7403d453adc6771171',
       1 => 
       array (
       ),
@@ -361,7 +361,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php' => 
     array (
-      0 => '3ef8354bb2ff9e9f44d3a81604bef46f4f20a367',
+      0 => '54bcf6652760c309da15401eb3a0eefc2e04e3fa',
       1 => 
       array (
       ),
@@ -387,7 +387,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php' => 
     array (
-      0 => '23c3b45847046f25a89c286c7e68a7e5a9332328',
+      0 => '6ec4dcd899f33cfe33a370e3242d6d102bed59c0',
       1 => 
       array (
       ),
@@ -413,7 +413,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php' => 
     array (
-      0 => 'eda10f928719945cfb5f974a95c1a1f3afb528d0',
+      0 => 'd4c4180d136b15457a8c2b2d7061fbec47c8dae0',
       1 => 
       array (
       ),
@@ -426,7 +426,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php' => 
     array (
-      0 => '1e5cf4b17350b1885ede293bb2b1adfcc7017cad',
+      0 => 'e55ac8107becf31d3be4dd0304d34ddb8c2c64a0',
       1 => 
       array (
       ),
@@ -460,32 +460,6 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'app\\controllers\\site\\home',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\footer.php' => 
-    array (
-      0 => 'e726393164aecfa7de7eb001d8d877592c040b6c',
-      1 => 
-      array (
-      ),
-      2 => 
-      array (
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php' => 
-    array (
-      0 => 'd031edf9642702793be90617921913fbad3ff649',
-      1 => 
-      array (
-      ),
-      2 => 
-      array (
       ),
       3 => 
       array (
@@ -674,7 +648,7 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php' => 
     array (
-      0 => 'f43228249565dc218a50a018d0444ad82b1baf74',
+      0 => '3b00e632acf0d0d79cf279d0dbd6f4f8e8a75993',
       1 => 
       array (
         0 => 'app\\controllers\\site\\contatocontroller',
@@ -682,6 +656,8 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       2 => 
       array (
         0 => 'app\\controllers\\site\\show',
+        1 => 'app\\controllers\\site\\send',
+        2 => 'app\\controllers\\site\\ensuresession',
       ),
       3 => 
       array (
@@ -770,38 +746,6 @@ return PHPStan\Cache\CacheItem::__set_state(array(
       ),
       2 => 
       array (
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php' => 
-    array (
-      0 => 'a683b2aaa622d733895a2266a19a04dc8e34e7ff',
-      1 => 
-      array (
-        0 => 'app\\controllers\\site\\contatocontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\controllers\\site\\show',
-        1 => 'app\\controllers\\site\\send',
-        2 => 'app\\controllers\\site\\ensuresession',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
-    array (
-      0 => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
-      1 => 
-      array (
-        0 => 'app\\controllers\\site\\previewcontroller',
-      ),
-      2 => 
-      array (
-        0 => 'app\\controllers\\site\\home',
       ),
       3 => 
       array (
@@ -897,7 +841,169 @@ return PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\contato.php' => 
     array (
-      0 => '4570a47ccca9d6671a870f806027cfe39496365a',
+      0 => 'f14e78939aab033b09a7545cc5a29697cdaf2702',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\BaseContaController.php' => 
+    array (
+      0 => '118081e7b8fd59ecf7f5a1d1417fb9efe4236e4d',
+      1 => 
+      array (
+        0 => 'app\\controllers\\conta\\basecontacontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\conta\\__construct',
+        1 => 'app\\controllers\\conta\\view',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php' => 
+    array (
+      0 => '4e8404dd76881da369a52483184549e0da77d4e8',
+      1 => 
+      array (
+        0 => 'app\\controllers\\conta\\contacontroller',
+      ),
+      2 => 
+      array (
+        0 => 'app\\controllers\\conta\\dashboard',
+        1 => 'app\\controllers\\conta\\pedidos',
+        2 => 'app\\controllers\\conta\\dados',
+        3 => 'app\\controllers\\conta\\enderecos',
+        4 => 'app\\controllers\\conta\\novoendereco',
+        5 => 'app\\controllers\\conta\\criarendereco',
+        6 => 'app\\controllers\\conta\\editarendereco',
+        7 => 'app\\controllers\\conta\\atualizarendereco',
+        8 => 'app\\controllers\\conta\\excluirendereco',
+        9 => 'app\\controllers\\conta\\definirprincipal',
+        10 => 'app\\controllers\\conta\\sanitize',
+        11 => 'app\\controllers\\conta\\validateendereco',
+        12 => 'app\\controllers\\conta\\validatecsrf',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dados.php' => 
+    array (
+      0 => 'cd3f2a2efb262ab0c77e7f6fd79b37f103ea45b0',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dashboard.php' => 
+    array (
+      0 => 'f0a4d940d3c11eeb4f8199914021a80342d89048',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+        0 => 'status_badge',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos.php' => 
+    array (
+      0 => '8c29240af6bd56e1589d67736f2740d32fc41306',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php' => 
+    array (
+      0 => '933496e9a77606a4716950e5795aece9fc84acbe',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php' => 
+    array (
+      0 => '07f2e412121f7c697a44d551a72c194c761cf7bd',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+        0 => 'status_badge',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\admin-sidebar.php' => 
+    array (
+      0 => '66bb7acce3dfcfa0b3b31a1fcbed311614277ac0',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\conta-sidebar.php' => 
+    array (
+      0 => '2531f640875ca38e1e62eda7b81fc5fb59169ddd',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\footer.php' => 
+    array (
+      0 => 'e726393164aecfa7de7eb001d8d877592c040b6c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php' => 
+    array (
+      0 => '10420810e594c546b5bf8703369c10810427c00f',
       1 => 
       array (
       ),

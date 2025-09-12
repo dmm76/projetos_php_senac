@@ -8,7 +8,7 @@
 <body class="bg-light">
 <div class="d-flex flex-column wrapper">
 
-  <?php require __DIR__ . '/../../partials/site/navbar.php'; ?>
+ <?php require dirname(__DIR__, 2) . '/partials/navbar.php'; ?>
 
   <main class="flex-fill">
     <div class="container py-4" style="max-width: 720px;">
@@ -45,7 +45,7 @@
     </div>
   </main>
 
-  <?php require __DIR__ . '/../../partials/site/footer.php'; ?>
+  <?php require dirname(__DIR__, 2) . '/partials/footer.php'; ?>
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

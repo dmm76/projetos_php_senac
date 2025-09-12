@@ -911,6 +911,370 @@ return [
 	'projectExtensionFiles' => array (
 ),
 	'errorsCallback' => static function (): array { return array (
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php' => 
+  array (
+    0 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 35,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 35,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    1 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 74,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 74,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    2 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 81,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 81,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    3 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 116,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 116,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    4 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 157,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 157,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    5 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 164,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 164,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    6 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 173,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 173,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    7 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 196,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 196,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    8 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 214,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 214,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    9 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 219,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 219,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    10 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'id\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 220,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 220,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+    11 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method App\\Controllers\\Conta\\ContaController::sanitize() return type has no value type specified in iterable type array.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 235,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 235,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    12 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method App\\Controllers\\Conta\\ContaController::validateEndereco() has parameter $in with no value type specified in iterable type array.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 253,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 253,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    13 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method App\\Controllers\\Conta\\ContaController::validateCsrf() has parameter $src with no value type specified in iterable type array.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 278,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => 'See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type',
+       'nodeLine' => 278,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'missingType.iterableValue',
+       'metadata' => 
+      array (
+      ),
+    )),
+    14 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to function method_exists() with \'App\\\\Core\\\\Csrf\' and \'validate\' will always evaluate to false.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'line' => 281,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 281,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'function.impossibleType',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php' => 
+  array (
+    0 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Variable $endereco on left side of ?? always exists and is not nullable.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'line' => 12,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 12,
+       'nodeType' => 'PhpParser\\Node\\Expr\\BinaryOp\\Coalesce',
+       'identifier' => 'nullCoalesce.variable',
+       'metadata' => 
+      array (
+      ),
+    )),
+    1 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Variable $errors on left side of ?? always exists and is not nullable.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'line' => 13,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 13,
+       'nodeType' => 'PhpParser\\Node\\Expr\\BinaryOp\\Coalesce',
+       'identifier' => 'nullCoalesce.variable',
+       'metadata' => 
+      array (
+      ),
+    )),
+    2 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Variable $isEdit on left side of ?? always exists and is not nullable.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'line' => 14,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 14,
+       'nodeType' => 'PhpParser\\Node\\Expr\\BinaryOp\\Coalesce',
+       'identifier' => 'nullCoalesce.variable',
+       'metadata' => 
+      array (
+      ),
+    )),
+    3 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Variable $actionUrl on left side of ?? always exists and is not nullable.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'line' => 15,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 15,
+       'nodeType' => 'PhpParser\\Node\\Expr\\BinaryOp\\Coalesce',
+       'identifier' => 'nullCoalesce.variable',
+       'metadata' => 
+      array (
+      ),
+    )),
+    4 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Variable $ufs on left side of ?? always exists and is not nullable.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'line' => 16,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 16,
+       'nodeType' => 'PhpParser\\Node\\Expr\\BinaryOp\\Coalesce',
+       'identifier' => 'nullCoalesce.variable',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php' => 
+  array (
+    0 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter #2 $timestamp of function date expects int|null, int|false given.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php',
+       'line' => 54,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 54,
+       'nodeType' => 'PhpParser\\Node\\Expr\\FuncCall',
+       'identifier' => 'argument.type',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php' => 
+  array (
+    0 => 
+    PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Offset \'nome\' does not exist on array{id: int, nome: string, email: string, perfil: string, ativo: int}|null.',
+       'file' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php',
+       'line' => 52,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 52,
+       'nodeType' => 'PhpParser\\Node\\Expr\\ArrayDimFetch',
+       'identifier' => 'offsetAccess.notFound',
+       'metadata' => 
+      array (
+      ),
+    )),
+  ),
 ); },
 	'locallyIgnoredErrorsCallback' => static function (): array { return array (
 ); },
@@ -937,13 +1301,6 @@ return [
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\CategoriaController.php' => 
   array (
     'fileHash' => '147e3d38dd9e2f3c00b69242532351a204cc748a',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php' => 
-  array (
-    'fileHash' => 'a683b2aaa622d733895a2266a19a04dc8e34e7ff',
     'dependentFiles' => 
     array (
     ),
@@ -976,9 +1333,24 @@ return [
     array (
     ),
   ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\BaseContaController.php' => 
+  array (
+    'fileHash' => '118081e7b8fd59ecf7f5a1d1417fb9efe4236e4d',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php' => 
+  array (
+    'fileHash' => '4e8404dd76881da369a52483184549e0da77d4e8',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php' => 
   array (
-    'fileHash' => '318a1deff3b3ebdc4a13ff4107795e63a7c92831',
+    'fileHash' => '63c2dc548cc2e6abee060f9cdd136f1d4f8b2c9d',
     'dependentFiles' => 
     array (
     ),
@@ -992,7 +1364,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php' => 
   array (
-    'fileHash' => 'f43228249565dc218a50a018d0444ad82b1baf74',
+    'fileHash' => '3b00e632acf0d0d79cf279d0dbd6f4f8e8a75993',
     'dependentFiles' => 
     array (
     ),
@@ -1011,20 +1383,20 @@ return [
     array (
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
-  array (
-    'fileHash' => '4762f51c47f9cb27c5d6a1c9730e88a57ba77970',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php' => 
   array (
-    'fileHash' => '231b0b5a83da81d5ee4dfbc3b85fbf1e760a0f73',
+    'fileHash' => '7708451ca379fc080f0757566118aa2184bd1189',
     'dependentFiles' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\BaseAdminController.php',
-      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      1 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\BaseContaController.php',
+      2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+      3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dados.php',
+      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dashboard.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\admin-sidebar.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\conta-sidebar.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Controller.php' => 
@@ -1039,9 +1411,11 @@ return [
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
       5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\PreviewController.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\BaseContaController.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\PreviewController.php',
+      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Csrf.php' => 
@@ -1054,17 +1428,21 @@ return [
       2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
-      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
-      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
-      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
-      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
-      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
-      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
-      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
+      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
+      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
+      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
+      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
+      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
+      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
+      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dados.php',
+      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos.php',
+      17 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+      18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
+      19 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Flash.php' => 
@@ -1077,17 +1455,20 @@ return [
       2 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoContoller.php',
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
-      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
-      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
-      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
-      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
-      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
-      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
-      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
+      5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
+      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
+      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
+      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
+      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
+      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
+      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dados.php',
+      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+      17 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
+      18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Router.php' => 
@@ -1126,21 +1507,32 @@ return [
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
       6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
-      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
-      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
-      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
-      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
-      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
-      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
-      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
-      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php',
-      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
-      17 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
-      18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php',
-      19 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php',
-      20 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php',
-      21 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\form.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php',
+      10 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\dashboard\\index.php',
+      11 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\form.php',
+      12 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php',
+      13 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\form.php',
+      14 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php',
+      15 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\form.php',
+      16 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php',
+      17 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dados.php',
+      18 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dashboard.php',
+      19 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos.php',
+      20 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php',
+      21 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php',
+      22 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\admin-sidebar.php',
+      23 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\conta-sidebar.php',
+      24 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php',
+      25 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php',
+      26 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php',
+      27 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\registrar.php',
+      28 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\contato.php',
+      29 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php',
+      30 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\preview\\home.php',
+      31 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\welcome.php',
+      32 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\preview\\home.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\View.php' => 
@@ -1172,8 +1564,10 @@ return [
       3 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\MarcaController.php',
       4 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ProdutoController.php',
       5 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\UnidadeController.php',
-      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
-      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
+      6 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php',
+      7 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php',
+      8 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\ContatoController.php',
+      9 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Core\\Auth.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\DAO\\EstoqueDAO.php' => 
@@ -1359,14 +1753,14 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\categorias\\index.php' => 
   array (
-    'fileHash' => 'df645141641d72f28a05ac1c642004c1eefb2a25',
+    'fileHash' => '9de7a065abeec8ec5a6beb7403d453adc6771171',
     'dependentFiles' => 
     array (
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\dashboard\\index.php' => 
   array (
-    'fileHash' => '2d07abeb2c545cc262e1e80281b2bf2fe5cb7d65',
+    'fileHash' => '0b99c046935a4fec35356b3804d6913ad3c80e3c',
     'dependentFiles' => 
     array (
     ),
@@ -1380,7 +1774,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\marcas\\index.php' => 
   array (
-    'fileHash' => '3ef8354bb2ff9e9f44d3a81604bef46f4f20a367',
+    'fileHash' => '54bcf6652760c309da15401eb3a0eefc2e04e3fa',
     'dependentFiles' => 
     array (
     ),
@@ -1394,7 +1788,7 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\produtos\\index.php' => 
   array (
-    'fileHash' => '23c3b45847046f25a89c286c7e68a7e5a9332328',
+    'fileHash' => '6ec4dcd899f33cfe33a370e3242d6d102bed59c0',
     'dependentFiles' => 
     array (
     ),
@@ -1408,9 +1802,45 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\admin\\unidades\\index.php' => 
   array (
-    'fileHash' => 'eda10f928719945cfb5f974a95c1a1f3afb528d0',
+    'fileHash' => 'd4c4180d136b15457a8c2b2d7061fbec47c8dae0',
     'dependentFiles' => 
     array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dados.php' => 
+  array (
+    'fileHash' => 'cd3f2a2efb262ab0c77e7f6fd79b37f103ea45b0',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dashboard.php' => 
+  array (
+    'fileHash' => 'f0a4d940d3c11eeb4f8199914021a80342d89048',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos.php' => 
+  array (
+    'fileHash' => '8c29240af6bd56e1589d67736f2740d32fc41306',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\enderecos_form.php' => 
+  array (
+    'fileHash' => '933496e9a77606a4716950e5795aece9fc84acbe',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php' => 
+  array (
+    'fileHash' => '07f2e412121f7c697a44d551a72c194c761cf7bd',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dashboard.php',
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\errors\\404.php' => 
@@ -1420,23 +1850,37 @@ return [
     array (
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\footer.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\admin-sidebar.php' => 
+  array (
+    'fileHash' => '66bb7acce3dfcfa0b3b31a1fcbed311614277ac0',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\conta-sidebar.php' => 
+  array (
+    'fileHash' => '2531f640875ca38e1e62eda7b81fc5fb59169ddd',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\footer.php' => 
   array (
     'fileHash' => 'e726393164aecfa7de7eb001d8d877592c040b6c',
     'dependentFiles' => 
     array (
     ),
   ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\site\\navbar.php' => 
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\partials\\navbar.php' => 
   array (
-    'fileHash' => 'd031edf9642702793be90617921913fbad3ff649',
+    'fileHash' => '10420810e594c546b5bf8703369c10810427c00f',
     'dependentFiles' => 
     array (
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\auth\\login.php' => 
   array (
-    'fileHash' => '1e5cf4b17350b1885ede293bb2b1adfcc7017cad',
+    'fileHash' => 'e55ac8107becf31d3be4dd0304d34ddb8c2c64a0',
     'dependentFiles' => 
     array (
     ),
@@ -1450,14 +1894,14 @@ return [
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\contato.php' => 
   array (
-    'fileHash' => '4570a47ccca9d6671a870f806027cfe39496365a',
+    'fileHash' => 'f14e78939aab033b09a7545cc5a29697cdaf2702',
     'dependentFiles' => 
     array (
     ),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\site\\home\\index.php' => 
   array (
-    'fileHash' => '8cb32147abcad9a29149cc5300a847743980c27b',
+    'fileHash' => 'e9ad919293dbbdc93da1eecce1a92a82e3e1a419',
     'dependentFiles' => 
     array (
     ),
@@ -1635,68 +2079,6 @@ return [
         5 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'destroy',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Admin\\ContatoController.php' => 
-  array (
-    0 => 
-    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Controllers\\Site\\ContatoController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => false,
-       'extends' => NULL,
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'show',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-        1 => 
-        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'send',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -2164,6 +2546,436 @@ return [
       ),
     )),
   ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\BaseContaController.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Controllers\\Conta\\BaseContaController',
+       'phpDoc' => NULL,
+       'abstract' => true,
+       'final' => false,
+       'extends' => 'App\\Core\\Controller',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'view',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @param array<string,mixed> $data */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'controller' => 'App\\Core\\Controller',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => false,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'template',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'data',
+               'type' => 'array',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Conta\\ContaController.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'App\\Controllers\\Conta\\ContaController',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => 'App\\Controllers\\Conta\\BaseContaController',
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'dashboard',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'pedidos',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'dados',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'enderecos',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'novoEndereco',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** FORM: novo endereço (GET) */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'flash' => 'App\\Core\\Flash',
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'criarEndereco',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** POST: criar endereço */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'flash' => 'App\\Core\\Flash',
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'editarEndereco',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** FORM: editar (GET) */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'flash' => 'App\\Core\\Flash',
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'atualizarEndereco',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** POST: atualizar */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'flash' => 'App\\Core\\Flash',
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        8 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'excluirEndereco',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** POST: excluir */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'flash' => 'App\\Core\\Flash',
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        9 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'definirPrincipal',
+           'phpDoc' => 
+          PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** POST: definir como principal */',
+             'namespace' => 'App\\Controllers\\Conta',
+             'uses' => 
+            array (
+              'auth' => 'App\\Core\\Auth',
+              'flash' => 'App\\Core\\Flash',
+              'database' => 'App\\DAO\\Database',
+              'pdo' => 'PDO',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+            0 => 
+            PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'id',
+               'type' => 'int',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\AuthController.php' => 
   array (
     0 => 
@@ -2331,7 +3143,7 @@ return [
        'name' => 'App\\Controllers\\Site\\ContatoController',
        'phpDoc' => NULL,
        'abstract' => false,
-       'final' => true,
+       'final' => false,
        'extends' => NULL,
        'implements' => 
       array (
@@ -2347,6 +3159,24 @@ return [
         0 => 
         PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'show',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'send',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -2413,50 +3243,6 @@ return [
     )),
   ),
   'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\PreviewController.php' => 
-  array (
-    0 => 
-    PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'App\\Controllers\\Site\\PreviewController',
-       'phpDoc' => NULL,
-       'abstract' => false,
-       'final' => true,
-       'extends' => 'App\\Core\\Controller',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-        0 => 
-        PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'home',
-           'phpDoc' => NULL,
-           'byRef' => false,
-           'public' => true,
-           'private' => false,
-           'abstract' => false,
-           'final' => false,
-           'static' => false,
-           'returnType' => 'void',
-           'parameters' => 
-          array (
-          ),
-           'attributes' => 
-          array (
-          ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Controllers\\Site\\home.php' => 
   array (
     0 => 
     PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -5990,6 +6776,60 @@ return [
               ),
             )),
           ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\dashboard.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
+       'name' => 'status_badge',
+       'phpDoc' => NULL,
+       'byRef' => false,
+       'returnType' => 'string',
+       'parameters' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+           'name' => 's',
+           'type' => 'string',
+           'byRef' => false,
+           'variadic' => false,
+           'hasDefault' => false,
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\xampp\\htdocs\\projeto_mercadinho_web\\app\\Views\\conta\\pedidos.php' => 
+  array (
+    0 => 
+    PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
+       'name' => 'status_badge',
+       'phpDoc' => NULL,
+       'byRef' => false,
+       'returnType' => 'string',
+       'parameters' => 
+      array (
+        0 => 
+        PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+           'name' => 's',
+           'type' => 'string',
+           'byRef' => false,
+           'variadic' => false,
+           'hasDefault' => false,
            'attributes' => 
           array (
           ),

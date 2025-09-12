@@ -18,20 +18,15 @@ final class Auth
         self::ensureSession();
 
         $raw = $_SESSION['user'] ?? null;
-
-        // 1) precisa ser array
         if (!is_array($raw)) {
             return null;
         }
-
-        // 2) precisa ter as chaves
         foreach (['id', 'nome', 'email', 'perfil', 'ativo'] as $k) {
             if (!array_key_exists($k, $raw)) {
                 return null;
             }
         }
 
-        // 3) tipar cada campo
         $id     = filter_var($raw['id'], FILTER_VALIDATE_INT);
         $ativo  = filter_var($raw['ativo'], FILTER_VALIDATE_INT);
         $nome   = is_string($raw['nome'])   ? $raw['nome']   : null;
@@ -42,7 +37,6 @@ final class Auth
             return null;
         }
 
-        /** @var array{id:int,nome:string,email:string,perfil:string,ativo:int} */
         return [
             'id'     => $id,
             'nome'   => $nome,
@@ -57,6 +51,13 @@ final class Auth
         return self::user() !== null;
     }
 
+    /** Conveniência (opcional) */
+    public static function isAdmin(): bool
+    {
+        $u = self::user();
+        return $u !== null && $u['perfil'] === 'admin';
+    }
+
     public static function requireAdmin(): void
     {
         $u = self::user();
@@ -69,7 +70,7 @@ final class Auth
     public static function logout(): void
     {
         self::ensureSession();
-        unset($_SESSION['user'], $_SESSION['user_id'], $_SESSION['nome']); // compat com código legado
+        unset($_SESSION['user'], $_SESSION['user_id'], $_SESSION['nome'], $_SESSION['cliente_id']); // + limpa cliente_id
     }
 
     /**
@@ -109,8 +110,7 @@ final class Auth
             return false;
         }
 
-        /** @var array{id:int,nome:string,email:string,perfil:string,ativo:int} $user */
-        $user = [
+        $_SESSION['user'] = [
             'id'     => $id,
             'nome'   => $nome,
             'email'  => $mail,
@@ -118,8 +118,47 @@ final class Auth
             'ativo'  => $ativo,
         ];
 
-        $_SESSION['user'] = $user;
+        // 🔗 já resolve e cacheia o cliente_id (se existir)
+        $stmt = $pdo->prepare('SELECT id FROM cliente WHERE usuario_id = ? LIMIT 1');
+        $stmt->execute([$id]);
+        $cliId = $stmt->fetchColumn();
+        if ($cliId) {
+            $_SESSION['cliente_id'] = (int) $cliId;
+        } else {
+            unset($_SESSION['cliente_id']); // usuário pode não ter cliente
+        }
+
         return true;
+    }
+
+    /**
+     * Retorna o cliente_id associado ao usuário logado (ou null se não existir).
+     * Cacheado em $_SESSION['cliente_id'] para evitar SELECT em cada request.
+     */
+    public static function clienteId(): ?int
+    {
+        self::ensureSession();
+        $u = self::user();
+        if (!$u) {
+            return null;
+        }
+
+        // cache
+        if (isset($_SESSION['cliente_id']) && is_numeric($_SESSION['cliente_id'])) {
+            return (int) $_SESSION['cliente_id'];
+        }
+
+        $pdo = Database::getConnection();
+        $stmt = $pdo->prepare('SELECT id FROM cliente WHERE usuario_id = ? LIMIT 1');
+        $stmt->execute([$u['id']]);
+        $id = $stmt->fetchColumn();
+
+        if ($id) {
+            $_SESSION['cliente_id'] = (int) $id;
+            return (int) $id;
+        }
+
+        return null; // usuário sem registro em cliente
     }
 
     private static function ensureSession(): void
