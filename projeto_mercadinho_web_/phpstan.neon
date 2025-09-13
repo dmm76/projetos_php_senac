@@ -1,4 +1,0 @@
-parameters:
-  paths:
-    - app
-  tmpDir: storage/tmp/phpstan

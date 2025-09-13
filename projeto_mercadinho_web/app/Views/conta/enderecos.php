@@ -33,7 +33,7 @@ $enderecos = $enderecos ?? [];
       <div class="container py-3">
         <div class="row g-3">
           <div class="col-12 col-lg-3">
-          <?php require dirname(__DIR__) . '/partials/conta-sidebar.php'; ?>
+            <?php require dirname(__DIR__) . '/partials/conta-sidebar.php'; ?>
           </div>
 
           <div class="col-12 col-lg-9">
@@ -58,27 +58,42 @@ $enderecos = $enderecos ?? [];
                                 <span class="badge bg-success ms-2">Principal</span>
                               <?php endif; ?>
                             </div>
-                            <div class="text-muted small mb-2"><?= htmlspecialchars($e['nome']) ?></div>
+                            <div class="text-muted small mb-2"><?= htmlspecialchars($e['nome']) ?>
+                            </div>
                           </div>
                           <div class="text-muted small">#<?= (int)$e['id'] ?></div>
                         </div>
 
                         <div class="small">
-                          <div><?= htmlspecialchars($e['logradouro']) ?>, <?= htmlspecialchars($e['numero']) ?> <?= $e['complemento'] ? ' - ' . htmlspecialchars($e['complemento']) : '' ?></div>
-                          <div><?= htmlspecialchars($e['bairro']) ?> - <?= htmlspecialchars($e['cidade']) ?>/<?= htmlspecialchars($e['uf']) ?></div>
+                          <div><?= htmlspecialchars($e['logradouro']) ?>,
+                            <?= htmlspecialchars($e['numero']) ?><?= $e['complemento'] ? ' - ' . htmlspecialchars($e['complemento']) : '' ?>
+                          </div>
+                          <div><?= htmlspecialchars($e['bairro']) ?> -
+                            <?= htmlspecialchars($e['cidade']) ?>/<?= htmlspecialchars($e['uf']) ?>
+                          </div>
                           <div>CEP: <?= htmlspecialchars($e['cep']) ?></div>
                         </div>
                       </div>
                       <div class="card-footer bg-white d-flex flex-wrap gap-2">
-                        <a href="<?= Url::to('/conta/enderecos/' . (int)$e['id'] . '/editar') ?>" class="btn btn-sm btn-outline-primary">Editar</a>
-                        <form method="post" action="<?= Url::to('/conta/enderecos/' . (int)$e['id'] . '/excluir') ?>" onsubmit="return confirm('Excluir este endereço?')">
+                        <!-- EDITAR: GET fixo + id na query -->
+                        <a href="<?= Url::to('/conta/enderecos/editar') . '?id=' . (int)$e['id'] ?>"
+                          class="btn btn-sm btn-outline-primary">Editar</a>
+
+                        <!-- EXCLUIR: POST fixo + id hidden -->
+                        <form method="post" action="<?= Url::to('/conta/enderecos/excluir') ?>"
+                          onsubmit="return confirm('Excluir este endereço?')">
                           <?= Csrf::input() ?>
+                          <input type="hidden" name="id" value="<?= (int)$e['id'] ?>">
                           <button class="btn btn-sm btn-outline-danger" type="submit">Excluir</button>
                         </form>
+
                         <?php if ((int)$e['principal'] !== 1): ?>
-                          <form method="post" action="<?= Url::to('/conta/enderecos/' . (int)$e['id'] . '/principal') ?>">
+                          <!-- DEFINIR PRINCIPAL: POST fixo + id hidden -->
+                          <form method="post" action="<?= Url::to('/conta/enderecos/principal') ?>">
                             <?= Csrf::input() ?>
-                            <button class="btn btn-sm btn-outline-secondary" type="submit">Definir como principal</button>
+                            <input type="hidden" name="id" value="<?= (int)$e['id'] ?>">
+                            <button class="btn btn-sm btn-outline-secondary" type="submit">Definir como
+                              principal</button>
                           </form>
                         <?php endif; ?>
                       </div>
@@ -90,7 +105,8 @@ $enderecos = $enderecos ?? [];
               <div class="card shadow-sm">
                 <div class="card-body">
                   <p class="mb-2">Você ainda não cadastrou endereços.</p>
-                  <a href="<?= Url::to('/conta/enderecos/novo') ?>" class="btn btn-primary btn-sm">Cadastrar endereço</a>
+                  <a href="<?= Url::to('/conta/enderecos/novo') ?>"
+                    class="btn btn-primary btn-sm">Cadastrar endereço</a>
                 </div>
               </div>
             <?php endif; ?>
