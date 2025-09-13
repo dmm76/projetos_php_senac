@@ -50,7 +50,11 @@ $router->get('/health/autoload', function () {
 
 // PAINEL DO CLIENTE
 $router->get('/conta',                        [ContaController::class, 'dashboard']);
-$router->get('/conta/pedidos',                [ContaController::class, 'pedidos']);
+
+$router->get('/conta/pedidos',           [ContaController::class, 'pedidos']);
+$router->get('/conta/pedidos/(\d+)',     [ContaController::class, 'verPedido']);
+$router->get('/conta/pedidos/ver',        [ContaController::class, 'verPedidoQuery']);
+
 $router->get('/conta/dados',                  [ContaController::class, 'dados']);
 
 $router->get('/conta/enderecos',              [ContaController::class, 'enderecos']);

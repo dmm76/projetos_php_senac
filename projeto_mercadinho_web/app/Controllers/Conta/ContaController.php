@@ -15,20 +15,125 @@ final class ContaController extends BaseContaController
 {
     public function dashboard(): void
     {
-        $this->render('conta/dashboard', ['user' => Auth::user()]);
+        $pdo = Database::getConnection();
+        $u = Auth::user();
+        $clienteId = Auth::clienteId();
+
+        $totalPedidos = 0;
+        $qtdEnderecos = 0;
+        $ultimosPedidos = [];
+        $cartCount = (int)($_SESSION['cart_count'] ?? 0);
+
+        if ($clienteId) {
+            $st1 = $pdo->prepare('SELECT COUNT(*) FROM pedido WHERE cliente_id = ?');
+            $st1->execute([$clienteId]);
+            $totalPedidos = (int)$st1->fetchColumn();
+
+            // usa codigo_externo
+            $st2 = $pdo->prepare('SELECT id, codigo_externo AS codigo, status, total, criado_em
+                                  FROM pedido
+                                  WHERE cliente_id = ?
+                                  ORDER BY id DESC
+                                  LIMIT 5');
+            $st2->execute([$clienteId]);
+            $ultimosPedidos = $st2->fetch(PDO::FETCH_ASSOC) ? $st2->fetchAll(PDO::FETCH_ASSOC) : ($st2->fetchAll(PDO::FETCH_ASSOC) ?: []);
+
+            if (!$ultimosPedidos) {
+                $st2->execute([$clienteId]);
+                $ultimosPedidos = $st2->fetchAll(PDO::FETCH_ASSOC) ?: [];
+            }
+
+            $st3 = $pdo->prepare('SELECT COUNT(*) FROM endereco WHERE cliente_id = ?');
+            $st3->execute([$clienteId]);
+            $qtdEnderecos = (int)$st3->fetchColumn();
+        }
+
+        $this->render('conta/dashboard', [
+            'user'           => $u,
+            'totalPedidos'   => $totalPedidos,
+            'qtdEnderecos'   => $qtdEnderecos,
+            'cartCount'      => $cartCount,
+            'ultimosPedidos' => $ultimosPedidos,
+        ]);
     }
 
+    /* ========= PEDIDOS ========= */
+
+    // LISTA
     public function pedidos(): void
     {
-        $this->render('conta/pedidos');
+        $pdo = Database::getConnection();
+        $clienteId = $this->clienteIdOrFail();
+
+        $st = $pdo->prepare('SELECT id, codigo_externo AS codigo, status, total, criado_em
+                             FROM pedido
+                             WHERE cliente_id = ?
+                             ORDER BY id DESC');
+        $st->execute([$clienteId]);
+        $pedidos = $st->fetchAll(PDO::FETCH_ASSOC) ?: [];
+
+        $this->render('conta/pedidos', compact('pedidos'));
     }
+
+    public function verPedidoQuery(): void
+    {
+        $id = (int)($_GET['id'] ?? 0);
+        if ($id <= 0) {
+            \App\Core\Flash::set('error', 'Pedido inválido.');
+            $this->redirect('/conta/pedidos');
+        }
+        $this->verPedido($id);
+    }
+
+    // DETALHE (GET /conta/pedidos/123)
+    public function verPedido(int $id): void
+    {
+        $pdo = \App\DAO\Database::getConnection();
+        $clienteId = $this->clienteIdOrFail();
+
+        // Cabeçalho do pedido
+        $cab = $pdo->prepare(
+            'SELECT id,
+                codigo_externo AS codigo,
+                status, entrega, pagamento,
+                subtotal, frete, desconto, total, criado_em
+         FROM pedido
+         WHERE id = ? AND cliente_id = ?
+         LIMIT 1'
+        );
+        $cab->execute([$id, $clienteId]);
+        $pedido = $cab->fetch(\PDO::FETCH_ASSOC);
+
+        if (!$pedido) {
+            \App\Core\Flash::set('error', 'Pedido não encontrado.');
+            $this->redirect('/conta/pedidos');
+        }
+
+        // Itens (tabela item_pedido conforme seu schema: preco_unit, desconto_unit)
+        $sti = $pdo->prepare('
+        SELECT ip.produto_id,
+                p.nome,
+                ip.quantidade,
+                ip.preco_unit AS preco,
+                (ip.quantidade * ip.preco_unit) AS subtotal
+        FROM item_pedido ip
+        JOIN produto p ON p.id = ip.produto_id
+        WHERE ip.pedido_id = ?
+        ORDER BY ip.id ASC
+        ');
+        $sti->execute([$id]);
+        $itens = $sti->fetchAll(\PDO::FETCH_ASSOC) ?: [];
+
+        $this->render('conta/pedido_detalhe', compact('pedido', 'itens'));
+    }
+
+    /* ========= DADOS DO CLIENTE ========= */
 
     public function dados(): void
     {
         $pdo = Database::getConnection();
         $u = Auth::user();
 
-        // pega info do cliente (telefone, cpf, nascimento se quiser exibir)
         $cliente = [];
         $clienteId = Auth::clienteId(); // já cria se não existir
         if ($clienteId) {
@@ -38,10 +143,10 @@ final class ContaController extends BaseContaController
         }
 
         $this->render('conta/dados', [
-            'user'        => $u,
-            'cliente'     => $cliente,
+            'user'         => $u,
+            'cliente'      => $cliente,
             'perfilAction' => Url::to('/conta/dados/perfil'),
-            'senhaAction' => Url::to('/conta/dados/senha'),
+            'senhaAction'  => Url::to('/conta/dados/senha'),
         ]);
     }
 
@@ -55,6 +160,8 @@ final class ContaController extends BaseContaController
         }
         return $id;
     }
+
+    /* ========= ENDEREÇOS (inalterado) ========= */
 
     public function enderecos(): void
     {
@@ -78,7 +185,6 @@ final class ContaController extends BaseContaController
         $this->render('conta/enderecos_form', [
             'isEdit'    => false,
             'endereco'  => [],
-            // passe o PATH cru; o view aplica Url::to(...)
             'actionUrl' => '/conta/enderecos/novo',
         ]);
     }
@@ -146,17 +252,14 @@ final class ContaController extends BaseContaController
     {
         $this->editarEndereco($this->idFromRequest());
     }
-
     public function atualizarEnderecoQuery(): void
     {
         $this->atualizarEndereco($this->idFromRequest());
     }
-
     public function excluirEnderecoQuery(): void
     {
         $this->excluirEndereco($this->idFromRequest());
     }
-
     public function definirPrincipalQuery(): void
     {
         $this->definirPrincipal($this->idFromRequest());
@@ -179,7 +282,7 @@ final class ContaController extends BaseContaController
         $this->render('conta/enderecos_form', [
             'isEdit'    => true,
             'endereco'  => $endereco,
-            'actionUrl' => '/conta/enderecos/editar', // <-- FIXO
+            'actionUrl' => '/conta/enderecos/editar',
         ]);
     }
 
@@ -286,7 +389,7 @@ final class ContaController extends BaseContaController
         $this->redirect('/conta/enderecos');
     }
 
-    /* ================= Helpers ================= */
+    /* ========= HELPERS ========= */
 
     private function clienteIdOrFail(): int
     {
@@ -339,7 +442,7 @@ final class ContaController extends BaseContaController
     private function validateCsrf(array $src, string $fallbackPath = '/conta/enderecos'): bool
     {
         $token = isset($src['csrf']) ? (string)$src['csrf'] : null;
-        if (!\App\Core\Csrf::check($token)) {
+        if (!Csrf::check($token)) {
             Flash::set('error', 'Sessão expirada. Recarregue a página e tente novamente.');
             $this->redirect($fallbackPath);
             return false;
@@ -347,14 +450,13 @@ final class ContaController extends BaseContaController
         return true;
     }
 
-    /** POST: salvar nome + telefone */
     public function salvarPerfil(): void
     {
         if (!$this->validateCsrf($_POST, '/conta/dados')) return;
 
         $pdo = Database::getConnection();
         $u = Auth::user();
-        $clienteId = Auth::clienteId(); // pode ser null se não for cliente
+        $clienteId = Auth::clienteId();
 
         $nome = trim((string)($_POST['nome'] ?? ''));
         $tel  = trim((string)($_POST['telefone'] ?? ''));
@@ -372,17 +474,14 @@ final class ContaController extends BaseContaController
 
         $pdo->beginTransaction();
         try {
-            // atualiza nome do usuário
             $pdo->prepare('UPDATE usuario SET nome = ? WHERE id = ?')->execute([$nome, $u['id']]);
 
-            // atualiza telefone do cliente (se houver registro cliente)
             if ($clienteId) {
                 $pdo->prepare('UPDATE cliente SET telefone = ? WHERE id = ?')
                     ->execute([$tel !== '' ? $tel : null, $clienteId]);
             }
 
             $pdo->commit();
-            // reflete no session
             $_SESSION['user']['nome'] = $nome;
             Flash::set('success', 'Dados atualizados.');
         } catch (\Throwable $e) {
@@ -392,7 +491,6 @@ final class ContaController extends BaseContaController
         $this->redirect('/conta/dados');
     }
 
-    /** POST: alterar senha */
     public function atualizarSenha(): void
     {
         if (!$this->validateCsrf($_POST, '/conta/dados')) return;
