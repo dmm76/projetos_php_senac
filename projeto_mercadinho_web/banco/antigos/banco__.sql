@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_categoria_slug` (`slug`),
   KEY `idx_categoria_ativa` (`ativa`,`ordem`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Categorias do catálogo';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Categorias do catálogo';
 
 -- Copiando dados para a tabela mercadinho.categoria: ~5 rows (aproximadamente)
 INSERT INTO `categoria` (`id`, `nome`, `slug`, `ativa`, `ordem`) VALUES
@@ -67,12 +67,9 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   UNIQUE KEY `uq_cliente_cpf` (`cpf`),
   UNIQUE KEY `uq_cliente_usuario` (`usuario_id`),
   CONSTRAINT `fk_cliente_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Cadastro de clientes (pode vincular a um usuário)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Cadastro de clientes (pode vincular a um usuário)';
 
--- Copiando dados para a tabela mercadinho.cliente: ~2 rows (aproximadamente)
-INSERT INTO `cliente` (`id`, `usuario_id`, `cpf`, `telefone`, `nascimento`, `criado_em`) VALUES
-	(1, 2, NULL, NULL, NULL, '2025-09-15 18:06:36'),
-	(2, 3, NULL, NULL, NULL, '2025-09-15 18:06:36');
+-- Copiando dados para a tabela mercadinho.cliente: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela mercadinho.compra
 CREATE TABLE IF NOT EXISTS `compra` (
@@ -150,11 +147,9 @@ CREATE TABLE IF NOT EXISTS `endereco` (
   PRIMARY KEY (`id`),
   KEY `idx_endereco_cliente` (`cliente_id`,`principal`),
   CONSTRAINT `fk_endereco_cliente` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Endereços de clientes (um pode ser principal)';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Endereços de clientes (um pode ser principal)';
 
 -- Copiando dados para a tabela mercadinho.endereco: ~0 rows (aproximadamente)
-INSERT INTO `endereco` (`id`, `cliente_id`, `rotulo`, `nome`, `cep`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `uf`, `principal`, `criado_em`) VALUES
-	(7, 2, 'Casa', 'Pedro', '87020-080', 'Rua das Asas', '321', 'Casa', 'Jd Aeroporto', 'Maringá', 'PR', 1, '2025-09-15 15:09:22');
 
 -- Copiando estrutura para tabela mercadinho.estoque
 CREATE TABLE IF NOT EXISTS `estoque` (
@@ -231,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `nome` varchar(120) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_marca_nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Marcas dos produtos';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Marcas dos produtos';
 
 -- Copiando dados para a tabela mercadinho.marca: ~4 rows (aproximadamente)
 INSERT INTO `marca` (`id`, `nome`) VALUES
@@ -374,7 +369,7 @@ CREATE TABLE IF NOT EXISTS `unidade` (
   `descricao` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_unidade_sigla` (`sigla`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Unidades de medida';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Unidades de medida';
 
 -- Copiando dados para a tabela mercadinho.unidade: ~3 rows (aproximadamente)
 INSERT INTO `unidade` (`id`, `sigla`, `descricao`) VALUES
@@ -395,7 +390,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `uq_usuario_email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Usuários do sistema (admin/gerente/operador/cliente)';
 
--- Copiando dados para a tabela mercadinho.usuario: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela mercadinho.usuario: ~0 rows (aproximadamente)
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha_hash`, `perfil`, `ativo`, `criado_em`) VALUES
 	(1, 'Admin', 'admin@mercadinho.local', '$2y$10$DLhFnQ52KkJTimkOCn6RYe0.zC2aNfBETvNGVLbYjkB6kd6K2l9Zm', 'admin', 1, '2025-09-09 18:06:00'),
 	(2, 'João Ferlini', 'joao@email.com.br', '$2y$10$AqS90lJSbWYjpYB8WICyVuyZu6qFqWbodBuggXgPNb4K8S9GAx4pS', 'cliente', 1, '2025-09-11 17:07:59'),
